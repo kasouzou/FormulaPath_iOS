@@ -16,9 +16,9 @@ struct LaTeXView: View {
 
 // WKWebViewをSwiftUIで利用するための橋渡し構造体
 private struct KaTeXWebView: UIViewRepresentable {
-   let latex: String
-
-   func makeUIView(context: Context) -> WKWebView {
+    let latex: String
+    
+    func makeUIView(context: Context) -> WKWebView {
         let configuration = WKWebViewConfiguration()
         let webView = WKWebView(frame: .zero, configuration: configuration)
         
@@ -32,57 +32,133 @@ private struct KaTeXWebView: UIViewRepresentable {
         
         return webView
     }
-
+    
+    
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        // SwiftからJavaScriptに文字列を渡す時に、バックスラッシュ（\）が消えないようにエスケープを調整するよ
-        let escapedLaTeX = latex.replacingOccurrences(of: "\\", with: "\\\\")
+        guard let resources = KaTeXResources.load() else {
+            print("エラー: KaTeXリソースがBundle内に見つかりません。")
+            return
+        }
         
-        // KaTeXのCDNを利用したHTML文字列（ライトモード・ダークモードの自動切り替え付き）
         let htmlString = """
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-            <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-            <style>
-                body {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh;
-                    margin: 0;
-                    padding: 0 8px;
-                    background-color: transparent;
-                    /* iOSのライト/ダークモードに合わせて文字色を自動で切り替える設定だよ */
-                    color: black;
-                }
-                @media (prefers-color-scheme: dark) {
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+                
+                <style>
+                    \(resources.css)
+                </style>
+                
+                <style>
                     body {
-                        color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        margin: 0;
+                        padding: 0 8px;
+                        background-color: transparent;
+                        color: black;
                     }
-                }
-                .katex-display {
-                    margin: 0 !important;
-                    font-size: 1.1em; /* 視認性を上げるために少しだけ大きく調整 */
-                }
-            </style>
-        </head>
-        <body>
-            <div id="math"></div>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var mathExpression = "\(escapedLaTeX)";
-                    katex.render(mathExpression, document.getElementById("math"), {
-                        displayMode: true,
-                        throwOnError: false
-                    });
-                });
-            </script>
-        </body>
-        </html>
-        """
+                    @media (prefers-color-scheme: dark) {
+                        body { color: white; }
+                    }
+                    .katex-display {
+                        margin: 0 !important;
+                        font-size: 1.1em;
+                    }
+                </style>
+            </head>
+            <body>
+                <div id="math"></div>
+                <script>
+                    \(resources.javascript)
+
+                    var mathExpression = \(latex.javaScriptStringLiteral);
+
+                    if (typeof katex === 'undefined') {
+                        document.getElementById("math").innerText = "KaTeX Load Error!";
+                    } else {
+                        try {
+                            katex.render(mathExpression, document.getElementById("math"), {
+                                displayMode: true,
+                                throwOnError: false
+                            });
+                        } catch (e) {
+                            console.error(e);
+                        }
+                    }
+                </script>
+            </body>
+            </html>
+            """
         
-        uiView.loadHTMLString(htmlString, baseURL: nil)
+        uiView.loadHTMLString(htmlString, baseURL: resources.baseURL)
+    }
+}
+
+private struct KaTeXResources {
+    let baseURL: URL
+    let css: String
+    let javascript: String
+
+    static func load() -> KaTeXResources? {
+        if let folderURL = Bundle.main.url(forResource: "katex", withExtension: nil),
+           let resources = load(from: folderURL, flattenFontPaths: false) {
+            return resources
+        }
+
+        guard
+            let cssURL = Bundle.main.url(forResource: "katex.min", withExtension: "css"),
+            let jsURL = Bundle.main.url(forResource: "katex.min", withExtension: "js")
+        else {
+            return nil
+        }
+
+        return load(
+            baseURL: Bundle.main.bundleURL,
+            cssURL: cssURL,
+            jsURL: jsURL,
+            flattenFontPaths: true
+        )
+    }
+
+    private static func load(from folderURL: URL, flattenFontPaths: Bool) -> KaTeXResources? {
+        load(
+            baseURL: folderURL,
+            cssURL: folderURL.appendingPathComponent("katex.min.css"),
+            jsURL: folderURL.appendingPathComponent("katex.min.js"),
+            flattenFontPaths: flattenFontPaths
+        )
+    }
+
+    private static func load(baseURL: URL, cssURL: URL, jsURL: URL, flattenFontPaths: Bool) -> KaTeXResources? {
+        do {
+            var css = try String(contentsOf: cssURL, encoding: .utf8)
+            let javascript = try String(contentsOf: jsURL, encoding: .utf8)
+
+            if flattenFontPaths {
+                css = css.replacingOccurrences(of: "url(fonts/", with: "url(")
+            }
+
+            return KaTeXResources(baseURL: baseURL, css: css, javascript: javascript)
+        } catch {
+            print("エラー: KaTeXリソースを読み込めません: \(error)")
+            return nil
+        }
+    }
+}
+
+private extension String {
+    var javaScriptStringLiteral: String {
+        guard
+            let data = try? JSONSerialization.data(withJSONObject: [self]),
+            let arrayLiteral = String(data: data, encoding: .utf8)
+        else {
+            return "\"\""
+        }
+
+        return String(arrayLiteral.dropFirst().dropLast())
     }
 }
