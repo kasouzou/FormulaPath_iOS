@@ -9,7 +9,7 @@ struct HighStageSelectionView: View {
     // カプセル化されたステージの状態（MVP用の仮データ。本来はViewModel等から受け取るイメージだよ）
     // SwiftのRaw String（#""#）を使うことで、LaTeXのバックスラッシュをエスケープ（\\）せずにそのまま綺麗に書けるよ！
     @State private var currentEquation: String = #"\int_{\alpha}^{\beta} (x - \alpha)(\beta - x) dx = \frac{1}{6}(\beta - \alpha)^3"#
-    @State private var questionText: String = "まずは定数項 c を右辺に移項して、両辺を a で割ってみよう。どんな式になる？"
+    @State private var questionText: String = "ここに式変形のヒントを書く"
     
     // 3択か4択かを動的に試せるように、ここでは3つの選択肢を用意
     @State private var choices: [String] = [
@@ -85,7 +85,7 @@ struct HighStageSelectionView: View {
                 .padding(.bottom, 24)
             }
         }
-        .navigationTitle("インテグラルの入った式")
+        .navigationTitle("6分の1公式")
         .navigationBarTitleDisplayMode(.inline)
     }
     
