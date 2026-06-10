@@ -79,7 +79,7 @@ struct FormulaPathHomeView: View {
             .navigationDestination(for: FormulaPathDestination.self) { destination in
                 switch destination {
                 case .juniorHigh:
-                    JuniorHighStageSelectionView()
+                    JuniorHighStageSelectionView(navigationPath: $navigationPath)
                 case .High:
                     HighStageSelectionView()
                 }
