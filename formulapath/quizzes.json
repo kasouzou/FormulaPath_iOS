@@ -1,0 +1,29 @@
+[
+    {
+        "id": "quad_01",
+        "title": "二次方程式の平方完成",
+        "initialFormula": "x^2 + 4x = 5",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "左辺を平方完成するために、両辺に4を加えます。",
+                "formula": "x^2 + 4x + 4 = 5 + 4"
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "左辺を因数分解し、右辺を計算します。",
+                "formula": "(x + 2)^2 = 9"
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "平方根をとります。",
+                "formula": "x + 2 = \\pm 3"
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "2を右辺に移項して、最終的な解を求めます。",
+                "formula": "x = 1, -5"
+            }
+        ]
+    }
+]
