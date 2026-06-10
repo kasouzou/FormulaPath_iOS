@@ -28,6 +28,23 @@ struct ContentView: View {
                         print("ステップ1解説: \(firstStep.explanation)")
                         print("ステップ1数式: \(firstStep.formula)")
                     }
+
+                    // 💡 ここからSQLiteのMVPテスト（読み込み・保存）を追加するよ！
+                    print("\n--- ② SQLiteの進捗データ読み込み・保存テストスタート ---")
+                    let dbManager = SQLiteManager()
+
+                    // 1. まずは現在のステータスを読み込んでみる（初回はデータがないので初期値 "unlocked" が返るよ）
+                    let initialStatus = dbManager.getStatus(for: firstProblem.id)
+                    print("保存前のSQLite上のステータス: \(initialStatus)")
+
+                    // 2. テストとして「cleared（クリア済）」という状態をSQLiteに保存してみる
+                    dbManager.saveProgress(problemId: firstProblem.id, status: "cleared")
+
+                    // 3. 保存した後に、もう一度SQLiteから読み込んで、本当に「cleared」に変わったか確認！
+                    let savedStatus = dbManager.getStatus(for: firstProblem.id)
+                    print("保存後のSQLite上のステータス: \(savedStatus)")
+                    print("-------------------------------------------\n")
+
                 } else {
                     print("問題データが読み込めませんでした。")
                 }
