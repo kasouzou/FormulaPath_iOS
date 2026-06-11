@@ -1,29 +1,100 @@
 [
     {
         "id": "quad_01",
-        "title": "二次方程式の平方完成",
+        "title": "２次方程式の解の公式",
         "initialFormula": "x^2 + 4x = 5",
         "steps": [
             {
                 "stepNumber": 1,
                 "explanation": "左辺を平方完成するために、両辺に4を加えます。",
-                "formula": "x^2 + 4x + 4 = 5 + 4"
+                "formula": "x^2 + 4x + 4 = 5 + 4",
+                "choices": [
+                    "x^2 + 4x + 4 = 5 + 4",
+                    "x^2 + 4x + 2 = 5 + 2",
+                    "x^2 + 4x = 5 + 4",
+                    "x^2 + 4x - 4 = 5 - 4"
+                ],
+                "correctIndex": 0
             },
             {
                 "stepNumber": 2,
                 "explanation": "左辺を因数分解し、右辺を計算します。",
-                "formula": "(x + 2)^2 = 9"
+                "formula": "(x + 2)^2 = 9",
+                "choices": [
+                    "(x + 4)^2 = 9",
+                    "(x + 2)^2 = 9",
+                    "(x + 2)^2 = 5",
+                    "(x - 2)^2 = 9"
+                ],
+                "correctIndex": 1
             },
             {
                 "stepNumber": 3,
                 "explanation": "平方根をとります。",
-                "formula": "x + 2 = \\pm 3"
+                "formula": "x + 2 = \\pm 3",
+                "choices": [
+                    "x + 2 = 3",
+                    "x + 2 = \\pm 9",
+                    "x + 2 = \\pm 3",
+                    "x - 2 = \\pm 3"
+                ],
+                "correctIndex": 2
             },
             {
                 "stepNumber": 4,
                 "explanation": "2を右辺に移項して、最終的な解を求めます。",
-                "formula": "x = 1, -5"
+                "formula": "x = 1, -5",
+                "choices": [
+                    "x = 1, -5",
+                    "x = 5, -1",
+                    "x = 1, 5",
+                    "x = -1, -5"
+                ],
+                "correctIndex": 0
             }
         ]
-    }
+    },
+    {
+        "id": "pythagoras_01",
+        "title": "三平方の定理の導出（面積法）",
+        "initialFormula": "(a + b)^2 = 4 \\times \\frac{1}{2}ab + c^2",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "大正方形の面積を表す左辺の (a + b)^2 を展開してみよう。",
+                "formula": "a^2 + 2ab + b^2 = 4 \\times \\frac{1}{2}ab + c^2",
+                "choices": [
+                    "a^2 + 2ab + b^2 = 4 \\times \\frac{1}{2}ab + c^2",
+                    "a^2 + b^2 = 4 \\times \\frac{1}{2}ab + c^2",
+                    "a^2 + ab + b^2 = 4 \\times \\frac{1}{2}ab + c^2",
+                    "a^2 - 2ab + b^2 = 4 \\times \\frac{1}{2}ab + c^2"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "右辺にある「4つの直角三角形の面積」のパーツ（4 × 1/2 ab）を計算してスッキリさせよう。",
+                "formula": "a^2 + 2ab + b^2 = 2ab + c^2",
+                "choices": [
+                    "a^2 + 2ab + b^2 = 4ab + c^2",
+                    "a^2 + 2ab + b^2 = 2ab + c^2",
+                    "a^2 + 2ab + b^2 = ab + c^2",
+                    "a^2 + 2ab + b^2 = 2ab - c^2"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "両辺に共通して存在する 2ab を引いて（消去して）、数式を完成させよう！",
+                "formula": "a^2 + b^2 = c^2",
+                "choices": [
+                    "a^2 - b^2 = c^2",
+                    "a^2 + b^2 = 2c^2",
+                    "a^2 + b^2 = c^2",
+                    "a^2 + 2ab + b^2 = c^2"
+                ],
+                "correctIndex": 2
+            }
+        ]
+    },
 ]

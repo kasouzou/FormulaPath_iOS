@@ -16,6 +16,9 @@ struct JuniorHighStageSelectionView: View {
     // 💡【ココを追加！】大元のHomeViewにあるナビゲーションスタックの通り道を引き継ぐよ！
     @Binding var navigationPath: NavigationPath
 
+    // 💡 親（HomeViewとか）からデータマネージャーを受け取るか、StateObjectとして持たせる
+    @ObservedObject var dataManager: GameDataManager
+
     var body: some View {
         ZStack {
             // 背景を薄いシステム背景色に
@@ -26,21 +29,17 @@ struct JuniorHighStageSelectionView: View {
                 Spacer()
                 // 画面中央に縦に並ぶメニューリスト
                 VStack(spacing: 16) {
-                    MenuCard(title: "交換法則・結合法則・分配法則", subtitle: "Junior High School", icon: "square.and.pencil") {
-                        // TODO: 中学ステージ選択への遷移ロジック
-                    }
-                    
-                    MenuCard(title: "等式の性質", subtitle: "High School", icon: "function") {
-                        // TODO: 高校ステージ選択への遷移ロジック
-                    }
-                    
-                    MenuCard(title: "指数法則", subtitle: "University", icon: "graduationcap") {
-                        // TODO: 大学ステージ選択への遷移ロジック
-                    }
-                    
-                    MenuCard(title: "２次方程式の解の公式", subtitle: "Random", icon: "infinity") {
-                        // TODO:  2次方程式の解の公式への遷移ロジック
-                        navigationPath.append(JuniorHighStageSelectionDestination.DOTQF)
+                    // 💡 JSONから読み込んだ問題をループで回して動的にカードを作る！
+                    // （本当は「中学向け」の識別タグをJSONに持たせてフィルターするともっと良いよ！）
+                    ForEach(dataManager.menuProblems) { problemWithProgress in
+                        MenuCard(
+                            title: problemWithProgress.problem.title, 
+                            subtitle: "ステータス: \(problemWithProgress.status)", 
+                            icon: "function"
+                        ) {
+                            // タップしたら、その問題データを引っ提げてゲーム画面（DOTQFViewなど）へ遷移する
+                            navigationPath.append(problemWithProgress.problem)
+                        }
                     }
                 }
                 .padding(.horizontal, 24)
@@ -128,4 +127,6 @@ private struct MenuCardButtonStyle: ButtonStyle {
         JuniorHighStageSelectionView(navigationPath: .constant(NavigationPath()))
     }
 }
+
+
 
