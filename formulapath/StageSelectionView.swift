@@ -51,5 +51,3 @@ struct StageSelectionView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
-// （※ 下部の MenuCard や MenuCardButtonStyle のコードは前のまま一切消さずに残してね！）
