@@ -99,6 +99,7 @@ struct FormulaPathHomeView: View {
                         navigationTitle: "大学 公式一覧"
                     )            
                 }
+            }
         }
     }
 }
