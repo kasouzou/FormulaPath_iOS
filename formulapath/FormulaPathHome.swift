@@ -83,21 +83,22 @@ struct FormulaPathHomeView: View {
                 case .juniorHigh:
                     StageSelectionView(
                         navigationPath: $navigationPath,
-                        dataManager: GameDataManager(fileName: "junior_high_quizzes"), // ➔ 中学用JSON
+                        fileName: "junior_high_quizzes", // ➔ 中学用JSONの名前を渡す
                         navigationTitle: "中学校 公式一覧"
                     )
                 case .high:
                     StageSelectionView(
                         navigationPath: $navigationPath,
-                        dataManager: GameDataManager(fileName: "high_school_quizzes"), // ➔ 高校用JSON (今後追加)
+                        fileName: "high_school_quizzes", // ➔ 高校用JSON (今後追加)
                         navigationTitle: "高校 公式一覧"
                     )
                 case .university:
                     StageSelectionView(
                         navigationPath: $navigationPath,
-                        dataManager: GameDataManager(fileName: "university_quizzes"),  // ➔ 大学用JSON (今後追加)
+                        fileName: "university_quizzes",  // ➔ 大学用JSON (今後追加)                      
                         navigationTitle: "大学 公式一覧"
-                    )            }
+                    )            
+                }
         }
     }
 }

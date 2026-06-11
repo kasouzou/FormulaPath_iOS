@@ -10,19 +10,19 @@ class GameDataManager: ObservableObject {
     // SQLiteを操作するマネージャーを内部に隠し持っておく（カプセル化）
     private let sqliteManager = SQLiteManager()
     
-    init() {
+    init(fileName: String) {
         // クラスが作られた瞬間に、自動でデータを合体させて準備する
-        loadAndMergeData()
+        loadAndMergeData(fileName: fileName)
     }
     
     // 💡 【中心ロジック】JSONとSQLiteのデータをIDで合体させる関数
     func loadAndMergeData(fileName: String) {
         // 1. JSONManagerを使って、全問題のリストをJSONから取得する
-        let loadedProblems = JSONManager.loadProblems(fileName)
+        let loadedProblems = JSONManager.loadProblems(fileName: fileName)
         
         // 2. 高階関数 map を使って、全問題をループで回しながらIDを基準にSQLiteのステータスと合体させる！
         self.menuProblems = loadedProblems.map { problem in
-            // この問題のID（例: "quad"）を使って、SQLiteから現在の状態（"unlocked" や "cleared"）を取得
+            // 問題のID（例: "quad"）を使って、SQLiteから現在の状態（"unlocked" や "cleared"）を取得
             let currentStatus = sqliteManager.getStatus(for: problem.id)
             
             // 1つのパッケージにして配列に格納する

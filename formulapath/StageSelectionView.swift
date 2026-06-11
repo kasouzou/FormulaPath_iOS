@@ -10,11 +10,18 @@ struct StageSelectionView: View {
     // 大元のHomeViewにあるナビゲーションスタックの通り道を引き継ぐ
     @Binding var navigationPath: NavigationPath
 
-    // 親（HomeView）から、それぞれのファイルのデータマネージャーを受け取る（疎結合）
-    @ObservedObject var dataManager: GameDataManager
+    // 💡 【安全な設計に変更】親からはファイル名を受け取り、内部でStateObjectとして安全にライフサイクルを管理するよ（疎結合）
+    @StateObject private var dataManager: GameDataManager
     
     // 💡 画面ごとに「中学校」「高校」「大学」とタイトルを切り替えるために外から貰うよ！
     let navigationTitle: String
+
+    init(navigationPath: Binding<NavigationPath>, fileName: String, navigationTitle: String) {
+        self._navigationPath = navigationPath
+        self.navigationTitle = navigationTitle
+        // 💡 渡されたfileNameを使って、データマネージャーを安全に初期化するよ！
+        self._dataManager = StateObject(wrappedValue: GameDataManager(fileName: fileName))
+    }
 
     var body: some View {
         ZStack {
