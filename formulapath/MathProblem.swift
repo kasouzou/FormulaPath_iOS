@@ -2,7 +2,7 @@ import Foundation
 
 // 途中式の1ステップ分のデータ
 // 💡 NavigationPathで使えるように、Hashableを追加するよ！
-struct DerivationStep: Codable Hashable {
+struct DerivationStep: Codable, Hashable {
     let stepNumber: Int
     let explanation: String
     let formula: String
@@ -10,7 +10,7 @@ struct DerivationStep: Codable Hashable {
 
 // 問題全体のデータ
 // 💡 ここにも Hashable を追加してあげることで、NavigationPathに安全にappendできるようになるよ！
-struct MathProblem: Codable Hashable {
+struct MathProblem: Codable, Hashable {
     let id: String
     let title: String
     let initialFormula: String
