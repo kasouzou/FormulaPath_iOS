@@ -9,8 +9,14 @@ class GameDataManager: ObservableObject {
     
     // SQLiteを操作するマネージャーを内部に隠し持っておく（カプセル化）
     private let sqliteManager = SQLiteManager()
+
+    // 💡 【ここを追加！】今自分が担当しているファイル名をクラスの中に記憶しておく変数（カプセル化）
+    private let fileName: String
     
     init(fileName: String) {
+        // 💡 渡されたファイル名を、上の変数にしっかり記憶させておく！
+        self.fileName = fileName
+
         // クラスが作られた瞬間に、自動でデータを合体させて準備する
         loadAndMergeData(fileName: fileName)
     }
@@ -30,15 +36,16 @@ class GameDataManager: ObservableObject {
         }
         
         print("--- 💡 GameDataManager: データの合体が完了しました（総数: \(menuProblems.count)件） ---")
-        if let menuProbrems = menuProblems {
-            print(menuProbrems)
-        }
+        // 💡 【修正ポイント】for-in文を使って、配列のすべてのデータをループで回して把握するよ！
+                for item in menuProblems {
+                    print("[確認] ID: \(item.id) | タイトル: \(item.problem.title) | 進捗状態: \(item.status)")
+                }
     }
     
     // 💡 今後ゲームをクリアした時に、進捗を保存して合体データを最新に更新するための関数
     func updateProgress(problemId: String, newStatus: String) {
         sqliteManager.saveProgress(problemId: problemId, status: newStatus)
         // 保存が終わったら、もう一度合体処理を走らせて、保持しているデータを最新状態にする
-        loadAndMergeData()
+        loadAndMergeData(fileName: self.fileName)
     }
 }
