@@ -13,6 +13,21 @@ enum FormulaPathDestination: Hashable {
     case university
 }
 
+// 💡 ゲーム画面にはMathProblemだけでなく、進捗更新を担当するGameDataManagerも一緒に渡す
+struct FormulaPathGameRoute: Hashable {
+    let problem: MathProblem
+    let dataManager: GameDataManager
+
+    static func == (lhs: FormulaPathGameRoute, rhs: FormulaPathGameRoute) -> Bool {
+        lhs.problem == rhs.problem && lhs.dataManager === rhs.dataManager
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(problem)
+        hasher.combine(ObjectIdentifier(dataManager))
+    }
+}
+
 struct FormulaPathHomeView: View {
     // 画面のスタック状態を管理するパス
     @State private var navigationPath = NavigationPath()
@@ -99,6 +114,16 @@ struct FormulaPathHomeView: View {
                         navigationTitle: "大学 公式一覧"
                     )            
                 }
+            }
+            // 💡 【ココを追加！】MathProblemデータそのものが飛んできた時のゲーム画面へのルートを定義！
+            // 💡 GameDataManagerも一緒に運び、クリア時の進捗更新をStageSelectionView側の単一データ源へ戻す
+            .navigationDestination(for: FormulaPathGameRoute.self) { route in
+                // 選択された問題を渡して、ゲーム本編画面を起動する
+                GamePlayView(
+                    navigationPath: $navigationPath,
+                    problem: route.problem,
+                    dataManager: route.dataManager
+                )
             }
         }
     }

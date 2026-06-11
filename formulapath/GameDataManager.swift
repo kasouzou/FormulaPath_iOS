@@ -23,7 +23,7 @@ class GameDataManager: ObservableObject {
     
     // 💡 【中心ロジック】JSONとSQLiteのデータをIDで合体させる関数
     func loadAndMergeData(fileName: String) {
-        // 1. JSONManagerを使って、全問題のリストをJSONから取得する
+        // 1. JSONManagerを使って、引数に渡されたJSONファイル内の全問題のリストを取得する
         let loadedProblems = JSONManager.loadProblems(fileName: fileName)
         
         // 2. 高階関数 map を使って、全問題をループで回しながらIDを基準にSQLiteのステータスと合体させる！

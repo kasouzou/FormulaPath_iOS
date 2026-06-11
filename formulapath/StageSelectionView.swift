@@ -44,7 +44,12 @@ struct StageSelectionView: View {
                                 icon: "function"
                             ) {
                                 // タップしたら、その問題データを引っ提げてゲーム画面へ遷移する
-                                navigationPath.append(problemWithProgress.problem)
+                                navigationPath.append(
+                                    FormulaPathGameRoute(
+                                        problem: problemWithProgress.problem,
+                                        dataManager: dataManager
+                                    )
+                                )
                             }
                         }
                     }
