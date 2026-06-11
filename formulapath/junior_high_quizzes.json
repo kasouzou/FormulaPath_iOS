@@ -1,6 +1,6 @@
 [
     {
-        "id": "quad_01",
+        "id": "quad",
         "title": "２次方程式の解の公式",
         "initialFormula": "x^2 + 4x = 5",
         "steps": [
@@ -55,7 +55,7 @@
         ]
     },
     {
-        "id": "pythagoras_01",
+        "id": "pythagoras",
         "title": "三平方の定理の導出（面積法）",
         "initialFormula": "(a + b)^2 = 4 \\times \\frac{1}{2}ab + c^2",
         "steps": [

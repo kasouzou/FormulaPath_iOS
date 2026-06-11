@@ -2,10 +2,10 @@ import Foundation
 
 class JSONManager {
     // quizzes.jsonを読み込んで、[MathProblem]（配列）にして返す関数
-    static func loadProblems() -> [MathProblem] {
-        // 1. アプリ内（Bundle）から "quizzes.json" という名前のファイルの住所（URL）を探す
-        guard let url = Bundle.main.url(forResource: "quizzes", withExtension: "json") else {
-            print("エラー: quizzes.json ファイルがアプリ内に見つかりません。Target Membershipを確認してね。")
+    static func loadProblems(fileName: String) -> [MathProblem] {
+        // 1. アプリ内（Bundle）から JSONファイルのの住所（URL）を探す
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
+            print("エラー: JSON ファイルがアプリ内に見つかりません。Target Membershipを確認してね。")
             return []
         }
         

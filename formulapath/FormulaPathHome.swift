@@ -51,21 +51,22 @@ struct FormulaPathHomeView: View {
                     // 画面中央に縦に並ぶメニューリスト
                     VStack(spacing: 16) {
                         MenuCard(title: "中学", subtitle: "Junior High School", icon: "square.and.pencil") {
-                            // TODO: 中学ステージ選択への遷移ロジック
+                            // TODO: 中学ステージ
                             navigationPath.append(FormulaPathDestination.juniorHigh)
                         }
                         
                         MenuCard(title: "高校", subtitle: "High School", icon: "function") {
-                            // TODO: 高校ステージ選択への遷移ロジック
+                            // 高校ステージ
                             navigationPath.append(FormulaPathDestination.High)
                         }
                         
                         MenuCard(title: "大学", subtitle: "University", icon: "graduationcap") {
-                            // TODO: 大学ステージ選択への遷移ロジック
+                            // 大学ステージ
+                            navigationPath.append(FormulaPathDestination.university)
                         }
                         
                         MenuCard(title: "ランダム", subtitle: "Random", icon: "infinity") {
-                            // TODO:  ランダムステージ選択への遷移ロジック
+                            // TODO: ランダムステージ (今後追加予定)
                         }
                     }
                     .padding(.horizontal, 24)
@@ -79,11 +80,23 @@ struct FormulaPathHomeView: View {
             .navigationDestination(for: FormulaPathDestination.self) { destination in
                 switch destination {
                 case .juniorHigh:
-                    JuniorHighStageSelectionView(navigationPath: $navigationPath)
-                case .High:
-                    HighStageSelectionView()
-                }
-            }
+                    StageSelectionView(
+                        navigationPath: $navigationPath,
+                        dataManager: GameDataManager(fileName: "junior_high_quizzes"), // ➔ 中学用JSON
+                        navigationTitle: "中学校 公式一覧"
+                    )
+                case .high:
+                    StageSelectionView(
+                        navigationPath: $navigationPath,
+                        dataManager: GameDataManager(fileName: "high_school_quizzes"), // ➔ 高校用JSON (今後追加)
+                        navigationTitle: "高校 公式一覧"
+                    )
+                case .university:
+                    StageSelectionView(
+                        navigationPath: $navigationPath,
+                        dataManager: GameDataManager(fileName: "university_quizzes"),  // ➔ 大学用JSON (今後追加)
+                        navigationTitle: "大学 公式一覧"
+                    )            }
         }
     }
 }
