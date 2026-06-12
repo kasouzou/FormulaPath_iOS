@@ -45,6 +45,9 @@ final class GamePlayViewModel: ObservableObject {
 
     @discardableResult
     func submitAnswer(selectedIndex: Int) -> Bool {
+        // 💡 ViewModel側で選択肢のインデックスを受け取ったことを出力
+        print("--- [ViewModel] submitAnswer called with index: \(selectedIndex) ---")
+        
         guard !isCleared, let currentStep else { return false }
         selectedChoiceIndex = selectedIndex
 
@@ -97,7 +100,6 @@ struct GamePlayView: View {
     // 大元のHomeViewにあるナビゲーションスタックの通り道を引き継ぐ
     @Binding private var navigationPath: NavigationPath
     @StateObject private var viewModel: GamePlayViewModel
-    @State private var didRequestReturnToStageSelection = false
 
     init(navigationPath: Binding<NavigationPath>, problem: MathProblem, dataManager: GameDataManager) {
         self._navigationPath = navigationPath
@@ -125,10 +127,6 @@ struct GamePlayView: View {
         }
         .navigationTitle(viewModel.problem.title) // 💡 選択された問題のタイトルが自動で入るよ
         .navigationBarTitleDisplayMode(.inline)
-        .onChange(of: viewModel.isCleared) { _, isCleared in
-            guard isCleared else { return }
-            scheduleReturnToStageSelection()
-        }
     }
 
     // 🎉 全ステップクリア時の画面
@@ -267,23 +265,14 @@ struct GamePlayView: View {
 
     private func answerButton(step: DerivationStep, index: Int, isFullWidth: Bool = false) -> some View {
         ChoiceButton(text: step.choices[index], isFullWidth: isFullWidth) {
+            // 💡 ボタンがタップされたイベント、インデックス、テキストをコンソールに出力
+            print("--- [View Tap] ChoiceButton tapped at index: \(index), text: \(step.choices[index]) ---")
             viewModel.submitAnswer(selectedIndex: index)
         }
         .disabled(viewModel.isCleared)
     }
 
-    private func scheduleReturnToStageSelection() {
-        guard !didRequestReturnToStageSelection else { return }
-        didRequestReturnToStageSelection = true
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-            guard didRequestReturnToStageSelection else { return }
-            returnToStageSelection()
-        }
-    }
-
     private func returnToStageSelection() {
-        didRequestReturnToStageSelection = false
         guard navigationPath.count > 0 else { return }
         navigationPath.removeLast()
     }

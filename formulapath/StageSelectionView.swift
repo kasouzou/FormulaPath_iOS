@@ -43,6 +43,14 @@ struct StageSelectionView: View {
                                 subtitle: "ステータス: \(problemWithProgress.status)", 
                                 icon: "function"
                             ) {
+                                let targetProblem = problemWithProgress.problem
+                                print("--- 📱 StageSelectionView: カードがタップされました ---")
+                                print("[problemWithProgress.problemの中身]: \(targetProblem)")
+                                print("[遷移データ] 問題ID: \(targetProblem.id)")
+                                print("[遷移データ] タイトル: \(targetProblem.title)")
+                                print("[遷移データ] 初期数式: \(targetProblem.initialFormula)")
+                                print("[遷移データ] 総ステップ数: \(targetProblem.steps.count)件")
+
                                 // タップしたら、その問題データを引っ提げてゲーム画面へ遷移する
                                 navigationPath.append(
                                     FormulaPathGameRoute(

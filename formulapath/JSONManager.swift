@@ -31,6 +31,7 @@ class JSONManager {
             // 【⑤のプリント】翻訳が完了して、Swiftの構造体になった中身を表示！
             print("ーーー ⑤ problemsの中身 ーーー")
             print(problems)
+            dump(problems)
             print("------------------------\n")
             
             return problems

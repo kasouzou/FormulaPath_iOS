@@ -81,10 +81,41 @@ private struct KaTeXWebView: UIViewRepresentable {
                         document.getElementById("math").innerText = "KaTeX Load Error!";
                     } else {
                         try {
-                            katex.render(mathExpression, document.getElementById("math"), {
+                            var mathDiv = document.getElementById("math");
+                            katex.render(mathExpression, mathDiv, {
                                 displayMode: true,
                                 throwOnError: false
                             });
+
+                            // 💡 【ResizeObserverを使った極めて堅牢な自動縮小ロジック】
+                            // SwiftUIのレイアウトが確定し、WebViewの実際のサイズが決まった瞬間を監視して確実に縮小させるよ！
+                            var doScale = function() {
+                                var mathElement = mathDiv.querySelector('.katex');
+                                var displayElement = mathDiv.querySelector('.katex-display');
+                                if (!mathElement || !displayElement) return;
+
+                                // 一度スケールをリセットして本来のサイズを正確に計測
+                                displayElement.style.transform = "none";
+                                
+                                var maxWidth = window.innerWidth - 16; // 左右のpadding分を考慮
+                                var mathWidth = mathElement.scrollWidth;
+
+                                if (mathWidth > maxWidth && maxWidth > 0) {
+                                    var scale = maxWidth / mathWidth;
+                                    displayElement.style.transform = "scale(" + scale + ")";
+                                    displayElement.style.transformOrigin = "center center"; // 中央基準で綺麗に縮小
+                                }
+                            };
+
+                            // WebViewのサイズ変化（初期配置されるタイミングなど）を検知するオブザーバーを登録
+                            var observer = new ResizeObserver(function() {
+                                doScale();
+                            });
+                            observer.observe(document.body);
+
+                            // 初回レンダリング時にも即時実行
+                            doScale();
+
                         } catch (e) {
                             console.error(e);
                         }

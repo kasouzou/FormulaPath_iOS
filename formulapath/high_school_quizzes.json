@@ -1,0 +1,516 @@
+[
+    {
+        "id": "binom_thm_n2",
+        "title": "二項定理の基本（(a+b)^2 の展開）",
+        "initialFormula": "(a+b)^2",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "分配法則を使って、多項式の積の形に分解します。",
+                "formula": "(a+b)(a+b)",
+                "choices": [
+                    "(a+b)(a+b)",
+                    "a^2+b^2",
+                    "(a-b)(a+b)",
+                    "2(a+b)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "括弧を外して、すべての項を展開します。",
+                "formula": "a^2+ab+ba+b^2",
+                "choices": [
+                    "a^2+ab+ba+b^2",
+                    "a^2+ab+b^2",
+                    "a^2+2ab-b^2",
+                    "a^2+b^2"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "乗法の交換法則（ab=ba）を適用し、同類項をまとめます。",
+                "formula": "a^2+2ab+b^2",
+                "choices": [
+                    "a^2+2ab+b^2",
+                    "a^2+ab+b^2",
+                    "a^2+ba+b^2",
+                    "2a^2+2ab+2b^2"
+                ],
+                "correctIndex": 0
+            }
+        ]
+    },
+    {
+        "id": "binom_thm_n3",
+        "title": "3次式の展開（(a+b)^3 の導出）",
+        "initialFormula": "(a+b)^3",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "2乗の展開式を利用するために、指数を分解します。",
+                "formula": "(a+b)(a+b)^2",
+                "choices": [
+                    "(a+b)(a+b)^2",
+                    "(a^2+b^2)(a+b)",
+                    "3(a+b)",
+                    "(a+b)^2+(a+b)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "(a+b)^2 を展開した式を代入します。",
+                "formula": "(a+b)(a^2+2ab+b^2)",
+                "choices": [
+                    "(a+b)(a^2+2ab+b^2)",
+                    "(a+b)(a^2+ab+b^2)",
+                    "(a+b)(a^2+b^2)",
+                    "(a+b)(a^2-2ab+b^2)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "前方の括弧の各項（a と b）を、後方の括弧のすべてに分配します。",
+                "formula": "a(a^2+2ab+b^2)+b(a^2+2ab+b^2)",
+                "choices": [
+                    "a(a^2+2ab+b^2)+b(a^2+2ab+b^2)",
+                    "a^3+2ab+b^2+a^2+2ab+b^3",
+                    "ab(a^2+2ab+b^2)",
+                    "a(a^2+b^2)+b(a^2+b^2)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "それぞれの括弧を展開して、項を整理します。",
+                "formula": "a^3+2a^2b+ab^2+a^2b+2ab^2+b^3",
+                "choices": [
+                    "a^3+2a^2b+ab^2+a^2b+2ab^2+b^3",
+                    "a^3+2ab+ab^2+a^2b+2ab+b^3",
+                    "a^3+2a^2b+ab^2-a^2b-2ab^2+b^3",
+                    "a^3+4a^2b^2+b^3"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 5,
+                "explanation": "a^2b と ab^2 の同類項をそれぞれまとめて、最終形を導きます。",
+                "formula": "a^3+3a^2b+3ab^2+b^3",
+                "choices": [
+                    "a^3+3a^2b+3ab^2+b^3",
+                    "a^3+2a^2b+2ab^2+b^3",
+                    "a^3+4a^2b+4ab^2+b^3",
+                    "a^3+a^2b+ab^2+b^3"
+                ],
+                "correctIndex": 0
+            }
+        ]
+    },
+    {
+        "id": "binom_coeff_property_sum",
+        "title": "二項係数の性質（総和が 2^n になることの証明）",
+        "initialFormula": "(1+x)^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r x^r",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "二項定理の一般式において、係数の和を抽出するために x に特定の数値を代入します。",
+                "formula": "(1+1)^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r 1^r",
+                "choices": [
+                    "(1+1)^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r 1^r",
+                    "(1+0)^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r 0^r",
+                    "(1-1)^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r (-1)^r",
+                    "(1+2)^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r 2^r"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "左辺の括弧内を計算し、右辺の 1^r を簡略化します。",
+                "formula": "2^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r",
+                "choices": [
+                    "2^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r",
+                    "1^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r",
+                    "2^n = n \\sum_{r=0}^{n} {}_n \\mathrm{C}_r",
+                    "2^n = \\sum_{r=0}^{n} r \\cdot {}_n \\mathrm{C}_r"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "右辺のシグマ（総和）を具体的に各項の和の形に展開します。",
+                "formula": "2^n = {}_n \\mathrm{C}_0 + {}_n \\mathrm{C}_1 + {}_n \\mathrm{C}_2 + \\dots + {}_n \\mathrm{C}_n",
+                "choices": [
+                    "2^n = {}_n \\mathrm{C}_0 + {}_n \\mathrm{C}_1 + {}_n \\mathrm{C}_2 + \\dots + {}_n \\mathrm{C}_n",
+                    "2^n = {}_n \\mathrm{C}_1 + {}_n \\mathrm{C}_2 + \\dots + {}_n \\mathrm{C}_n",
+                    "2^n = {}_n \\mathrm{C}_0 - {}_n \\mathrm{C}_1 + {}_n \\mathrm{C}_2 - \\dots",
+                    "2^n = 1 + 2 + 3 + \\dots + n"
+                ],
+                "correctIndex": 0
+            }
+        ]
+    },
+    {
+        "id": "binom_coeff_property_alternating",
+        "title": "二項係数の性質（符号が交互に入れ替わる和が 0 になることの証明）",
+        "initialFormula": "(1+x)^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r x^r",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "各項の符号を交互に反転させるために、二項定理の恒等式の x に適切な値を代入します。",
+                "formula": "(1+(-1))^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r (-1)^r",
+                "choices": [
+                    "(1+(-1))^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r (-1)^r",
+                    "(1-0)^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r 0^r",
+                    "(1+1)^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r 1^r",
+                    "(-1+1)^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r (-1)^{n-r}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "左辺の括弧内（1 - 1）を計算し、右辺のシグマを展開できる形に整理します。",
+                "formula": "0^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r (-1)^r",
+                "choices": [
+                    "0^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r (-1)^r",
+                    "1^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r (-1)^r",
+                    "0 = \\sum_{r=0}^{n} (-1) {}_n \\mathrm{C}_r",
+                    "2^n = \\sum_{r=0}^{n} {}_n \\mathrm{C}_r (-1)^r"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "0^n = 0 であることを利用し、右辺を具体的に展開して証明を完了します。",
+                "formula": "0 = {}_n \\mathrm{C}_0 - {}_n \\mathrm{C}_1 + {}_n \\mathrm{C}_2 - \\dots + (-1)^n {}_n \\mathrm{C}_n",
+                "choices": [
+                    "0 = {}_n \\mathrm{C}_0 - {}_n \\mathrm{C}_1 + {}_n \\mathrm{C}_2 - \\dots + (-1)^n {}_n \\mathrm{C}_n",
+                    "0 = {}_n \\mathrm{C}_1 - {}_n \\mathrm{C}_2 + {}_n \\mathrm{C}_3 - \\dots",
+                    "0 = -{}_n \\mathrm{C}_0 + {}_n \\mathrm{C}_1 - {}_n \\mathrm{C}_2 + \\dots",
+                    "1 = {}_n \\mathrm{C}_0 - {}_n \\mathrm{C}_1 + {}_n \\mathrm{C}_2 - \\dots"
+                ],
+                "correctIndex": 0
+            }
+        ]
+    },
+    {
+        "id": "pascal_triangle_proof",
+        "title": "パスカルの三角形の性質（組合せの漸化式証明）",
+        "initialFormula": "{}_{n-1} \\mathrm{C}_{r-1} + {}_{n-1} \\mathrm{C}_r",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "組合せの定義式 {}_n \\mathrm{C}_r = \\frac{n!}{r!(n-r)!} を用いて、各項を階乗の形に書き換えます。",
+                "formula": "\\frac{(n-1)!}{(r-1)!\\{(n-1)-(r-1)\\}!} + \\frac{(n-1)!}{r!(n-1-r)!}",
+                "choices": [
+                    "\\frac{(n-1)!}{(r-1)!\\{(n-1)-(r-1)\\}!} + \\frac{(n-1)!}{r!(n-1-r)!}",
+                    "\\frac{n!}{(r-1)!(n-r)!} + \\frac{n!}{r!(n-r)!}",
+                    "\\frac{(n-1)!}{r!(n-r)!} + \\frac{(n-1)!}{(r-1)!(n-r)!}",
+                    "\\frac{(n-1)!}{(r-1)!(n-r)!} + \\frac{(n-1)!}{r!(n-r-1)!}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "左項の分母にある波括弧の中身を整理します。((n-1)-(r-1) = n - r)",
+                "formula": "\\frac{(n-1)!}{(r-1)!(n-r)!} + \\frac{(n-1)!}{r!(n-r-1)!}",
+                "choices": [
+                    "\\frac{(n-1)!}{(r-1)!(n-r)!} + \\frac{(n-1)!}{r!(n-r-1)!}",
+                    "\\frac{(n-1)!}{(r-1)!(n-r-2)!} + \\frac{(n-1)!}{r!(n-r-1)!}",
+                    "\\frac{(n-1)!}{(r-1)!n!} + \\frac{(n-1)!}{r!(n-r-1)!}",
+                    "\\frac{(n-1)!}{(r-1)!(n-r)!} + \\frac{(n-1)!}{r!(n-r)!}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "2つの分数を足し合わせるために、分母を r!(n-r)! に通分します。左項には分母分子に r を、右項には (n-r) を掛けます。",
+                "formula": "\\frac{r(n-1)!}{r!(n-r)!} + \\frac{(n-r)(n-1)!}{r!(n-r)!}",
+                "choices": [
+                    "\\frac{r(n-1)!}{r!(n-r)!} + \\frac{(n-r)(n-1)!}{r!(n-r)!}",
+                    "\\frac{(n-1)!}{r!(n-r)!} + \\frac{(n-1)!}{r!(n-r)!}",
+                    "\\frac{r(n-1)!}{r!(n-r)!} + \\frac{(n-r-1)(n-1)!}{r!(n-r)!}",
+                    "\\frac{(r-1)(n-1)!}{r!(n-r)!} + \\frac{(n-r)(n-1)!}{r!(n-r)!}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "分子を共通因数である (n-1)! で括って分子を整理します。",
+                "formula": "\\frac{\\{r+(n-r)\\}(n-1)!}{r!(n-r)!}",
+                "choices": [
+                    "\\frac{\\{r+(n-r)\\}(n-1)!}{r!(n-r)!}",
+                    "\\frac{\\{r(n-r)\\}(n-1)!}{r!(n-r)!}",
+                    "\\frac{\\{r-(n-r)\\}(n-1)!}{r!(n-r)!}",
+                    "\\frac{n(n-1)!}{r!(n-r-1)!}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 5,
+                "explanation": "分子の括弧内を計算すると r が相殺されて n になり、n(n-1)! は n! に変形できます。",
+                "formula": "\\frac{n!}{r!(n-r)!}",
+                "choices": [
+                    "\\frac{n!}{r!(n-r)!}",
+                    "\\frac{n(n-1)!}{r!(n-r)!}",
+                    "\\frac{(n+1)!}{r!(n-r)!}",
+                    "\\frac{n!}{r!(n-r-1)!}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 6,
+                "explanation": "最後に、この階乗の形を再び組合せの記号 C に戻してゴールです。",
+                "formula": "{}_n \\mathrm{C}_r",
+                "choices": [
+                    "{}_n \\mathrm{C}_r",
+                    "{}_{n+1} \\mathrm{C}_r",
+                    "{}_n \\mathrm{C}_{r-1}",
+                    "{}_{n-1} \\mathrm{C}_r"
+                ],
+                "correctIndex": 0
+            }
+        ]
+    },
+    {
+        "id": "diff_power_rule",
+        "title": "べき関数の微分公式の導出",
+        "initialFormula": "f(x) = x^3 \\quad \\Longrightarrow \\quad f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "定義式に f(x) = x^3 を代入して、分子を展開するために整理します。",
+                "formula": "\\lim_{h \\to 0} \\frac{(x+h)^3 - x^3}{h}",
+                "choices": [
+                    "\\lim_{h \\to 0} \\frac{(x+h)^3 - x^3}{h}",
+                    "\\lim_{h \\to 0} \\frac{x^3 + h^3 - x^3}{h}",
+                    "\\lim_{h \\to 0} \\frac{(x-h)^3 - x^3}{h}",
+                    "\\lim_{h \\to 0} \\frac{x^3 - (x+h)^3}{h}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "分子の (x+h)^3 を展開して、x^3 を引いて整理します。",
+                "formula": "\\lim_{h \\to 0} \\frac{3x^2h + 3xh^2 + h^3}{h}",
+                "choices": [
+                    "\\lim_{h \\to 0} \\frac{3x^2h + 3xh^2 + h^3}{h}",
+                    "\\lim_{h \\to 0} \\frac{3x^2 + 3xh + h^2}{h}",
+                    "\\lim_{h \\to 0} \\frac{x^3 + 3x^2h + 3xh^2 + h^3}{h}",
+                    "\\lim_{h \\to 0} \\frac{3x^2h + 3xh^2}{h}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "分子の各項を h で約分します。",
+                "formula": "\\lim_{h \\to 0} (3x^2 + 3xh + h^2)",
+                "choices": [
+                    "\\lim_{h \\to 0} (3x^2 + 3xh + h^2)",
+                    "\\lim_{h \\to 0} (3x^2 + 3xh + h)",
+                    "\\lim_{h \\to 0} (3x^2 + xh + h^2)",
+                    "\\lim_{h \\to 0} (3x^2 + 3xh^2 + h^3)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "h を 0 に近づける極限を計算し、最終的な導関数を求めます。",
+                "formula": "3x^2",
+                "choices": [
+                    "3x^2",
+                    "3x^2 + 3x",
+                    "3x^2 + 1",
+                    "x^2"
+                ],
+                "correctIndex": 0
+            }
+        ]
+    },
+    {
+        "id": "diff_product_rule",
+        "title": "積の微分公式の導出",
+        "initialFormula": "F(x) = f(x)g(x) \\quad \\Longrightarrow \\quad F'(x) = \\lim_{h \\to 0} \\frac{f(x+h)g(x+h) - f(x)g(x)}{h}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "分子に変形のための便利な項「-f(x)g(x+h) + f(x)g(x+h)」を挿入して整理します。",
+                "formula": "\\lim_{h \\to 0} \\frac{\\{f(x+h)-f(x)\\}g(x+h) + f(x)\\{g(x+h)-g(x)\\}}{h}",
+                "choices": [
+                    "\\lim_{h \\to 0} \\frac{\\{f(x+h)-f(x)\\}g(x+h) + f(x)\\{g(x+h)-g(x)\\}}{h}",
+                    "\\lim_{h \\to 0} \\frac{\\{f(x+h)-f(x)\\}g(x) + f(x+h)\\{g(x+h)-g(x)\\}}{h}",
+                    "\\lim_{h \\to 0} \\frac{\\{f(x+h)+f(x)\\}g(x+h) - f(x)\\{g(x+h)+g(x)\\}}{h}",
+                    "\\lim_{h \\to 0} \\frac{f(x+h)\\{g(x+h)-g(x)\\} - \\{f(x+h)-f(x)\\}g(x)}{h}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "分数式を2つの部分に分割し、それぞれの極限の形が見えやすいように整理します。",
+                "formula": "\\lim_{h \\to 0} \\left\\{ \\frac{f(x+h)-f(x)}{h} \\cdot g(x+h) + f(x) \\cdot \\frac{g(x+h)-g(x)}{h} \\right\\}",
+                "choices": [
+                    "\\lim_{h \\to 0} \\left\\{ \\frac{f(x+h)-f(x)}{h} \\cdot g(x+h) + f(x) \\cdot \\frac{g(x+h)-g(x)}{h} \\right\\}",
+                    "\\lim_{h \\to 0} \\left\\{ \\frac{f(x+h)-f(x)}{h} \\cdot \\frac{g(x+h)-g(x)}{h} \\right\\}",
+                    "\\lim_{h \\to 0} \\left\\{ \\frac{f(x+h)-f(x)}{h} + g(x+h) \\cdot f(x) + \\frac{g(x+h)-g(x)}{h} \\right\\}",
+                    "\\lim_{h \\to 0} \\left\\{ \\frac{f(x+h)-f(x)}{h} \\cdot g(x) + f(x+h) \\cdot \\frac{g(x+h)-g(x)}{h} \\right\\}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "h -> 0 の極限を適用し、微分係数の定義 f'(x), g'(x) に置き換えます。",
+                "formula": "f'(x)g(x) + f(x)g'(x)",
+                "choices": [
+                    "f'(x)g(x) + f(x)g'(x)",
+                    "f'(x)g'(x)",
+                    "f'(x)g(x) - f(x)g'(x)",
+                    "f'(x)g'(x) + f(x)g(x)"
+                ],
+                "correctIndex": 0
+            }
+        ]
+    },
+    {
+        "id": "diff_quotient_rule",
+        "title": "商の微分公式の導出 (1/g(x))",
+        "initialFormula": "F(x) = \\frac{1}{g(x)} \\quad \\Longrightarrow \\quad F'(x) = \\lim_{h \\to 0} \\frac{\\frac{1}{g(x+h)} - \\frac{1}{g(x)}}{h}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "分子の分数式を通分して、二重分数を解消するために整理します。",
+                "formula": "\\lim_{h \\to 0} \\frac{g(x) - g(x+h)}{h \\cdot g(x+h)g(x)}",
+                "choices": [
+                    "\\lim_{h \\to 0} \\frac{g(x) - g(x+h)}{h \\cdot g(x+h)g(x)}",
+                    "\\lim_{h \\to 0} \\frac{g(x+h) - g(x)}{h \\cdot g(x+h)g(x)}",
+                    "\\lim_{h \\to 0} \\frac{g(x) - g(x+h)}{g(x+h)g(x)}",
+                    "\\lim_{h \\to 0} \\frac{1}{h \\cdot \\{g(x+h) - g(x)\\}}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "分子の符号を反転させ、g(x)の微分係数の定義式が作れるように分離します。",
+                "formula": "\\lim_{h \\to 0} \\left\\{ -\\frac{g(x+h) - g(x)}{h} \\cdot \\frac{1}{g(x+h)g(x)} \\right\\}",
+                "choices": [
+                    "\\lim_{h \\to 0} \\left\\{ -\\frac{g(x+h) - g(x)}{h} \\cdot \\frac{1}{g(x+h)g(x)} \\right\\}",
+                    "\\lim_{h \\to 0} \\left\\{ \\frac{g(x+h) - g(x)}{h} \\cdot \\frac{1}{g(x+h)g(x)} \\right\\}",
+                    "\\lim_{h \\to 0} \\left\\{ -\\frac{g(x+h) - g(x)}{h} \\cdot \\{g(x+h)g(x)\\} \\right\\}",
+                    "\\lim_{h \\to 0} \\left\\{ -\\frac{g(x) - g(x+h)}{h} \\cdot \\frac{1}{g(x+h)g(x)} \\right\\}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "h -> 0 の極限を適用し、最終的な公式の形にまとめます。",
+                "formula": "-\\frac{g'(x)}{\\{g(x)\\}^2}",
+                "choices": [
+                    "-\\frac{g'(x)}{\\{g(x)\\}^2}",
+                    "\\frac{g'(x)}{\\{g(x)\\}^2}",
+                    "-\\frac{g'(x)}{g(x)}",
+                    "-\\frac{1}{\\{g'(x)\\}^2}"
+                ],
+                "correctIndex": 0
+            }
+        ]
+    },
+    {
+        "id": "diff_composite_chain",
+        "title": "合成関数の微分公式（チェインルール）の変形",
+        "initialFormula": "y = f(u), \\ u = g(x) \\quad \\Longrightarrow \\quad \\frac{dy}{dx} = \\lim_{\\Delta x \\to 0} \\frac{\\Delta y}{\\Delta x}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "仲介する変数 u の変化量 Δu を用いて、分数式を2つの変化率の積に分解します。",
+                "formula": "\\lim_{\\Delta x \\to 0} \\left( \\frac{\\Delta y}{\\Delta u} \\cdot \\frac{\\Delta u}{\\Delta x} \\right)",
+                "choices": [
+                    "\\lim_{\\Delta x \\to 0} \\left( \\frac{\\Delta y}{\\Delta u} \\cdot \\frac{\\Delta u}{\\Delta x} \\right)",
+                    "\\lim_{\\Delta x \\to 0} \\left( \\frac{\\Delta y}{\\Delta x} \\cdot \\frac{\\Delta u}{\\Delta y} \\right)",
+                    "\\lim_{\\Delta x \\to 0} \\left( \\frac{\\Delta u}{\\Delta y} \\cdot \\frac{\\Delta u}{\\Delta x} \\right)",
+                    "\\lim_{\\Delta x \\to 0} \\left( \\frac{\\Delta y}{\\Delta u} + \\frac{\\Delta u}{\\Delta x} \\right)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "Δx -> 0 のとき Δu -> 0 となる性質を利用して、極限の記号をそれぞれのパーツに分配します。",
+                "formula": "\\left( \\lim_{\\Delta u \\to 0} \\frac{\\Delta y}{\\Delta u} \\right) \\cdot \\left( \\lim_{\\Delta x \\to 0} \\frac{\\Delta u}{\\Delta x} \\right)",
+                "choices": [
+                    "\\left( \\lim_{\\Delta u \\to 0} \\frac{\\Delta y}{\\Delta u} \\right) \\cdot \\left( \\lim_{\\Delta x \\to 0} \\frac{\\Delta u}{\\Delta x} \\right)",
+                    "\\left( \\lim_{\\Delta x \\to 0} \\frac{\\Delta y}{\\Delta u} \\right) \\cdot \\left( \\lim_{\\Delta x \\to 0} \\frac{\\Delta u}{\\Delta x} \\right)",
+                    "\\left( \\lim_{\\Delta u \\to 0} \\frac{\\Delta y}{\\Delta u} \\right) + \\left( \\lim_{\\Delta x \\to 0} \\frac{\\Delta u}{\\Delta x} \\right)",
+                    "\\left( \\lim_{\\Delta y \\to 0} \\frac{\\Delta y}{\\Delta u} \\right) \\cdot \\left( \\lim_{\\Delta u \\to 0} \\frac{\\Delta u}{\\Delta x} \\right)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "それぞれの極限を微分商の記号に置き換えて、チェインルールの形を完成させます。",
+                "formula": "\\frac{dy}{du} \\cdot \\frac{du}{dx}",
+                "choices": [
+                    "\\frac{dy}{du} \\cdot \\frac{du}{dx}",
+                    "\\frac{dy}{dx} \\cdot \\frac{du}{dy}",
+                    "\\frac{du}{dy} \\cdot \\frac{du}{dx}",
+                    "\\frac{dy}{du} \\cdot \\frac{dx}{du}"
+                ],
+                "correctIndex": 0
+            }
+        ]
+    },
+    {
+        "id": "diff_sinx_proof",
+        "title": "三角関数 sin x の微分公式の導出",
+        "initialFormula": "f(x) = \\sin x \\quad \\Longrightarrow \\quad f'(x) = \\lim_{h \\to 0} \\frac{\\sin(x+h) - \\sin x}{h}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "分子の sin(x+h) に加法定理を適用して展開します。",
+                "formula": "\\lim_{h \\to 0} \\frac{\\sin x \\cos h + \\cos x \\sin h - \\sin x}{h}",
+                "choices": [
+                    "\\lim_{h \\to 0} \\frac{\\sin x \\cos h + \\cos x \\sin h - \\sin x}{h}",
+                    "\\lim_{h \\to 0} \\frac{\\sin x \\cos h - \\cos x \\sin h - \\sin x}{h}",
+                    "\\lim_{h \\to 0} \\frac{\\sin x \\sin h + \\cos x \\cos h - \\sin x}{h}",
+                    "\\lim_{h \\to 0} \\frac{\\sin x + \\sin h - \\sin x}{h}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "sin x を含む項と cos x を含む項に整理して、h で割る分数式を2つにわけます。",
+                "formula": "\\lim_{h \\to 0} \\left\\{ \\sin x \\cdot \\frac{\\cos h - 1}{h} + \\cos x \\cdot \\frac{\\sin h}{h} \\right\\}",
+                "choices": [
+                    "\\lim_{h \\to 0} \\left\\{ \\sin x \\cdot \\frac{\\cos h - 1}{h} + \\cos x \\cdot \\frac{\\sin h}{h} \\right\\}",
+                    "\\lim_{h \\to 0} \\left\\{ \\sin x \\cdot \\frac{\\cos h}{h} + \\cos x \\cdot \\frac{\\sin h - 1}{h} \\right\\}",
+                    "\\lim_{h \\to 0} \\left\\{ \\sin x \\cdot (\\cos h - 1) + \\cos x \\cdot \\sin h \\right\\}",
+                    "\\lim_{h \\to 0} \\left\\{ \\sin x \\cdot \\frac{1 - \\cos h}{h} - \\cos x \\cdot \\frac{\\sin h}{h} \\right\\}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "重要な極限公式「(cosh - 1)/h -> 0」および「(sinh)/h -> 1」(h->0) を適用します。",
+                "formula": "\\sin x \\cdot 0 + \\cos x \\cdot 1",
+                "choices": [
+                    "\\sin x \\cdot 0 + \\cos x \\cdot 1",
+                    "\\sin x \\cdot 1 + \\cos x \\cdot 0",
+                    "\\sin x \\cdot 0 - \\cos x \\cdot 1",
+                    "\\sin x \\cdot 1 + \\cos x \\cdot 1"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "ゼロになる項を消去し、最終的な導関数を導き出します。",
+                "formula": "\\cos x",
+                "choices": [
+                    "\\cos x",
+                    "-\\cos x",
+                    "\\sin x",
+                    "-\\sin x"
+                ],
+                "correctIndex": 0
+            }
+        ]
+    }
+]

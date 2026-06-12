@@ -1,0 +1,432 @@
+[
+  {
+    "id": "eps_delta_linear",
+    "title": "1次関数の極限のε-δ論法による証明",
+    "initialFormula": "\\lim_{x \\to 3} (2x + 1) = 7",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "任意の ε > 0 に対して、ある δ > 0 が存在し、0 < |x - 3| < δ ならば |(2x + 1) - 7| < ε が成り立つことを示します。まずは目標となる不等式 |(2x + 1) - 7| < ε を変形して、|x - 3| の形を作り出しましょう。",
+        "formula": "2|x - 3| < \\varepsilon",
+        "choices": [
+          "2|x - 3| < \\varepsilon",
+          "|2x - 6| < \\delta",
+          "2|x + 3| < \\varepsilon",
+          "|x - 3| < 2\\varepsilon"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "2|x - 3| < ε の両辺を2で割ることで、|x - 3| が満たすべき評価式が明らかになります。ここから δ を ε を用いてどのように設定すればよいかを見出します。",
+        "formula": "|x - 3| < \\frac{\\varepsilon}{2}",
+        "choices": [
+          "|x - 3| < \\frac{\\varepsilon}{2}",
+          "|x - 3| < 2\\varepsilon",
+          "|x - 3| < \\varepsilon - 2",
+          "|x - 3| < \\frac{2}{\\varepsilon}"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "0 < |x - 3| < δ としたとき、先ほどの評価式が自動的に導かれるように δ を定めます。適切な δ の値を ε を用いて指定してください。",
+        "formula": "\\delta = \\frac{\\varepsilon}{2}",
+        "choices": [
+          "\\delta = \\frac{\\varepsilon}{2}",
+          "\\delta = 2\\varepsilon",
+          "\\delta = \\varepsilon",
+          "\\delta = \\frac{2}{\\varepsilon}"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 4,
+        "explanation": "δ = ε/2 と置くことで、0 < |x - 3| < δ のとき、恒等変形によって |(2x + 1) - 7| = 2|x - 3| < 2δ = ε が成り立ち、証明が完了します。極限の定義を満たす最終的な結論の形を確認しましょう。",
+        "formula": "0 < |x - 3| < \\delta \\implies |(2x + 1) - 7| < \\varepsilon",
+        "choices": [
+          "0 < |x - 3| < \\delta \\implies |(2x + 1) - 7| < \\varepsilon",
+          "0 < |x - 7| < \\delta \\implies |(2x + 1) - 3| < \\varepsilon",
+          "0 < |x - 3| < \\varepsilon \\implies |(2x + 1) - 7| < \\delta",
+          "0 < |x - 3| < \\delta \\implies |2x + 1| < \\varepsilon"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "eps_delta_const",
+    "title": "定数関数の極限のε-δ論法による証明",
+    "initialFormula": "\\lim_{x \\to a} c = c",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "任意の ε > 0 に対して、0 < |x - a| < δ ならば |c - c| < ε となる δ > 0 を見つけます。まず、ターゲットとなる差の絶対値 |c - c| を計算して整理してください。",
+        "formula": "0 < \\varepsilon",
+        "choices": [
+          "0 < \\varepsilon",
+          "|c| < \\varepsilon",
+          "|x - a| < \\varepsilon",
+          "c < \\varepsilon"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "0 < ε は任意の ε > 0 に対して常に成立するため、δ の値は x の動きに依存せず、任意の正の実数で問題ありません。最もシンプルに δ を設定する形を選んでください。",
+        "formula": "\\delta = 1",
+        "choices": [
+          "\\delta = 1",
+          "\\delta = \\varepsilon",
+          "\\delta = \\frac{1}{\\varepsilon}",
+          "\\delta = 0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "δ = 1 とすれば、0 < |x - a| < 1 を満たす全ての x に対して |c - c| = 0 < ε が成立し、証明が完了します。",
+        "formula": "0 < |x - a| < 1 \\implies |c - c| < \\varepsilon",
+        "choices": [
+          "0 < |x - a| < 1 \\implies |c - c| < \\varepsilon",
+          "0 < |x - a| < \\delta \\implies |c| < \\varepsilon",
+          "0 < |x - a| < \\varepsilon \\implies |c - c| < 1",
+          "0 < |x - c| < 1 \\implies |a - a| < \\varepsilon"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "eps_delta_identity",
+    "title": "恒等関数 f(x) = x の極限のε-δ論法",
+    "initialFormula": "\\lim_{x \\to a} x = a",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "任意の ε > 0 に対し、0 < |x - a| < δ のとき |x - a| < ε が成り立つような δ > 0 を探します。条件式の左辺と右辺の形をそのまま比較して、δ をどのように選べばよいか決定しましょう。",
+        "formula": "\\delta = \\varepsilon",
+        "choices": [
+          "\\delta = \\varepsilon",
+          "\\delta = \\frac{\\varepsilon}{2}",
+          "\\delta = 1",
+          "\\delta = \\varepsilon^2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "δ = ε と選ぶことで、0 < |x - a| < δ という前提から直接目的の不等式が導かれ、証明が成立します。",
+        "formula": "0 < |x - a| < \\delta \\implies |x - a| < \\varepsilon",
+        "choices": [
+          "0 < |x - a| < \\delta \\implies |x - a| < \\varepsilon",
+          "0 < |x - a| < \\delta \\implies |x| < \\varepsilon",
+          "0 < |x| < \\delta \\implies |x - a| < \\varepsilon",
+          "0 < |x - a| < \\varepsilon \\implies |x - a| < \\delta"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "eps_delta_quad_step1",
+    "title": "2次関数 f(x) = x^2 の極限（x→2）におけるδの有界化",
+    "initialFormula": "\\lim_{x \\to 2} x^2 = 4",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "任意の ε > 0 に対し、0 < |x - 2| < δ のとき |x^2 - 4| < ε を目指します。まずは因数分解を使って |x^2 - 4| を |x - 2| を含む形に変形します。",
+        "formula": "|x - 2||x + 2| < \\varepsilon",
+        "choices": [
+          "|x - 2||x + 2| < \\varepsilon",
+          "|x - 2|^2 < \\varepsilon",
+          "|x - 2||x - 2| < \\varepsilon",
+          "2|x - 2| < \\varepsilon"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "|x + 2| の大きさをコントロールするため、あらかじめ δ の上限を 1 と制限します（δ ≦ 1）。このとき、|x - 2| < 1 から導かれる x のとり得る範囲を指定してください。",
+        "formula": "1 < x < 3",
+        "choices": [
+          "1 < x < 3",
+          "-1 < x < 1",
+          "0 < x < 4",
+          "2 < x < 3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "1 < x < 3 の範囲において、|x + 2| の最大値を評価します。両辺に 2 を足して |x + 2| が何より小さくなるかを突き止めましょう。",
+        "formula": "|x + 2| < 5",
+        "choices": [
+          "|x + 2| < 5",
+          "|x + 2| < 3",
+          "|x + 2| < 4",
+          "|x + 2| < 1"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 4,
+        "explanation": "|x + 2| < 5 より、|x - 2||x + 2| < 5|x - 2| が言えます。これが ε 未満となるためには、|x - 2| < ε/5 であれば十分です。δ ≦ 1 との共通範囲をとるための δ の最終的な定義を選んでください。",
+        "formula": "\\delta = \\min\\left(1, \\frac{\\varepsilon}{5}\\right)",
+        "choices": [
+          "\\delta = \\min\\left(1, \\frac{\\varepsilon}{5}\\right)",
+          "\\delta = \\max\\left(1, \\frac{\\varepsilon}{5}\\right)",
+          "\\delta = \\frac{\\varepsilon}{5}",
+          "\\delta = \\min\\left(1, 5\\varepsilon\\right)"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "eps_delta_sum_rule",
+    "title": "極限の性質（和の公式）の証明",
+    "initialFormula": "\\lim_{x \\to a} (f(x) + g(x)) = L + M",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "任意の ε > 0 に対し、|(f(x) + g(x)) - (L + M)| < ε を示すため、三角不等式 ||A| + |B|| ≧ |A + B| を利用して、f(x) と g(x) のそれぞれの誤差の形に分割します。",
+        "formula": "|(f(x) - L) + (g(x) - M)| \\le |f(x) - L| + |g(x) - M|",
+        "choices": [
+          "|(f(x) - L) + (g(x) - M)| \\le |f(x) - L| + |g(x) - M|",
+          "|(f(x) - L) + (g(x) - M)| \\le |f(x) - L| - |g(x) - M|",
+          "|(f(x) - L) + (g(x) - M)| = |f(x) - L| + |g(x) - M|",
+          "|(f(x) - L) + (g(x) - M)| \\le |f(x) + g(x)| - |L + M|"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "全体の誤差を ε 未満にするため、f(x) と g(x) それぞれの極限の定義から、各誤差が何未満となるように δ1, δ2 を選べばよいでしょうか。等分に割り振る形を考えます。",
+        "formula": "|f(x) - L| < \\frac{\\varepsilon}{2} \\quad \\text{and} \\quad |g(x) - M| < \\frac{\\varepsilon}{2}",
+        "choices": [
+          "|f(x) - L| < \\frac{\\varepsilon}{2} \\quad \\text{and} \\quad |g(x) - M| < \\frac{\\varepsilon}{2}",
+          "|f(x) - L| < \\varepsilon \\quad \\text{and} \\quad |g(x) - M| < \\varepsilon",
+          "|f(x) - L| < \\frac{\\varepsilon}{4} \\quad \\text{and} \\quad |g(x) - M| < \\frac{\\varepsilon}{4}",
+          "|f(x) - L| < 2\\varepsilon \\quad \\text{and} \\quad |g(x) - M| < 2\\varepsilon"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "0 < |x - a| < δ1 のとき f の不等式が、0 < |x - a| < δ2 のとき g の不等式が成り立ちます。両方を同時に満たさせるために設定すべき δ の条件を選択してください。",
+        "formula": "\\delta = \\min(\\delta_1, \\delta_2)",
+        "choices": [
+          "\\delta = \\min(\\delta_1, \\delta_2)",
+          "\\delta = \\max(\\delta_1, \\delta_2)",
+          "\\delta = \\delta_1 + \\delta_2",
+          "\\delta = \\frac{\\delta_1 \\delta_2}{2}"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "eps_delta_sub_rule",
+    "title": "極限の性質（差の公式）の証明",
+    "initialFormula": "\\lim_{x \\to a} (f(x) - g(x)) = L - M",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "任意の ε > 0 に対し、|(f(x) - g(x)) - (L - M)| < ε を示します。まずは絶対値の中身を f(x)-L と g(x)-M のブロックに整理し、三角不等式を適用できる形にします。",
+        "formula": "|(f(x) - L) - (g(x) - M)| \\le |f(x) - L| + |-(g(x) - M)|",
+        "choices": [
+          "|(f(x) - L) - (g(x) - M)| \\le |f(x) - L| + |-(g(x) - M)|",
+          "|(f(x) - L) - (g(x) - M)| \\le |f(x) - L| - |g(x) - M|",
+          "|(f(x) - L) - (g(x) - M)| = |f(x) - L| - |g(x) - M|",
+          "|(f(x) - L) - (g(x) - M)| \\le |f(x) - g(x)| + |L - M|"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "絶対値の性質 |-A| = |A| を利用して、右辺の第二項をスッキリさせましょう。",
+        "formula": "|f(x) - L| + |g(x) - M|",
+        "choices": [
+          "|f(x) - L| + |g(x) - M|",
+          "|f(x) - L| - |g(x) - M|",
+          "|f(x) - L| + |M - g(x)|",
+          "|f(x) - L| - |M - g(x)|"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "和の証明と同様に、各パーツを ε/2 未満に抑える δ1, δ2 を選び、その最小値を δ とします。最終的に導かれる結論を確認してください。",
+        "formula": "0 < |x - a| < \\delta \\implies |(f(x) - g(x)) - (L - M)| < \\varepsilon",
+        "choices": [
+          "0 < |x - a| < \\delta \\implies |(f(x) - g(x)) - (L - M)| < \\varepsilon",
+          "0 < |x - a| < \\delta \\implies |(f(x) - g(x)) - (L - M)| < \\frac{\\varepsilon}{2}",
+          "0 < |x - a| < \\varepsilon \\implies |(f(x) - g(x)) - (L - M)| < \\delta",
+          "0 < |x - a| < \\delta \\implies |f(x) - g(x)| < \\varepsilon"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "eps_delta_squeeze_prep",
+    "title": "はさみうちの原理のε-δによる準備",
+    "initialFormula": "g(x) \\le f(x) \\le h(x) \\quad \\text{and} \\quad \\lim_{x \\to a} g(x) = \\lim_{x \\to a} h(x) = L",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "任意の ε > 0 に対し、g(x) と h(x) が L に収束することから、ある共通の δ > 0 が存在して 0 < |x - a| < δ のとき両方の誤差が ε 未満になります。このときの g(x) と h(x) が満たす範囲の不等式を展開してください。",
+        "formula": "L - \\varepsilon < g(x) < L + \\varepsilon \\quad \\text{and} \\quad L - \\varepsilon < h(x) < L + \\varepsilon",
+        "choices": [
+          "L - \\varepsilon < g(x) < L + \\varepsilon \\quad \\text{and} \\quad L - \\varepsilon < h(x) < L + \\varepsilon",
+          "g(x) < L + \\varepsilon \\quad \\text{and} \\quad L - \\varepsilon < h(x)",
+          "L - \\delta < g(x) < L + \\delta \\quad \\text{and} \\quad L - \\delta < h(x) < L + \\delta",
+          "|g(x) - h(x)| < \\varepsilon"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "与えられた大小関係 g(x) ≦ f(x) ≦ h(x) と先ほどの不等式を結合させて、f(x) を左右からはさみこみます。",
+        "formula": "L - \\varepsilon < g(x) \\le f(x) \\le h(x) < L + \\varepsilon",
+        "choices": [
+          "L - \\varepsilon < g(x) \\le f(x) \\le h(x) < L + \\varepsilon",
+          "L - \\varepsilon < h(x) \\le f(x) \\le g(x) < L + \\varepsilon",
+          "g(x) - \\varepsilon < f(x) < h(x) + \\varepsilon",
+          "L - \\delta < g(x) \\le f(x) \\le h(x) < L + \\delta"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "結合した不等式の両端を取り出すことで、L - ε < f(x) < L + ε を得ます。これを絶対値を用いた lim f(x) = L の定義の形に書き直しましょう。",
+        "formula": "|f(x) - L| < \\varepsilon",
+        "choices": [
+          "|f(x) - L| < \\varepsilon",
+          "|f(x) - L| < \\delta",
+          "|f(x) + L| < \\varepsilon",
+          "|f(x)| < L + \\varepsilon"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "eps_N_seq_linear",
+    "title": "数列の極限（ε-N論法）の基礎証明",
+    "initialFormula": "\\lim_{n \\to \\infty} \\frac{1}{n} = 0",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "任意の ε > 0 に対して、ある自然数 N が存在し、n ≧ N ならば |1/n - 0| < ε が成り立つことを示します。まずはターゲットとなる誤差の絶対値を単純化してください（nは自然数）。",
+        "formula": "\\frac{1}{n} < \\varepsilon",
+        "choices": [
+          "\\frac{1}{n} < \\varepsilon",
+          "-\\frac{1}{n} < \\varepsilon",
+          "n < \\varepsilon",
+          "\\frac{1}{n} < \\frac{1}{N}"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "1/n < ε を n について解くことで、n がどのような数より大きければ目的が達成されるかが分かります。n に関する不等式に変形してください。",
+        "formula": "n > \\frac{1}{\\varepsilon}",
+        "choices": [
+          "n > \\frac{1}{\\varepsilon}",
+          "n < \\frac{1}{\\varepsilon}",
+          "n > \\varepsilon",
+          "n < \\varepsilon"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "n ≧ N のとき常に n > 1/ε が成り立つように、自然数 N をアルキメデスの原理に基づいて設定します。ガウス記号 [ ] を用いて適切な N の条件を選んでください。",
+        "formula": "N > \\frac{1}{\\varepsilon}",
+        "choices": [
+          "N > \\frac{1}{\\varepsilon}",
+          "N < \\frac{1}{\\varepsilon}",
+          "N > \\varepsilon",
+          "N = 1"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "eps_delta_negation",
+    "title": "極限が成り立たないことの否定命題（非収束）の構築",
+    "initialFormula": "\\neg \\left[ \\forall \\varepsilon > 0, \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "「極限が L にならない」ことを証明するため、ε-δ論法の定義文の否定をとります。論理記号の否定の規則（∀の否定は∃、∃の否定は∀）に従って、最初の「任意の ε > 0」の部分を否定してください。",
+        "formula": "\\exists \\varepsilon > 0, \\neg \\left[ \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+        "choices": [
+          "\\exists \\varepsilon > 0, \\neg \\left[ \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+          "\\forall \\varepsilon \\le 0, \\neg \\left[ \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+          "\\exists \\varepsilon \\le 0, \\neg \\left[ \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+          "\\forall \\varepsilon > 0, \\neg \\left[ \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "次に、内側の「ある δ > 0 が存在し」の部分まで否定を送り込みます。",
+        "formula": "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\neg \\left[ \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+        "choices": [
+          "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\neg \\left[ \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+          "\\exists \\varepsilon > 0, \\exists \\delta \\le 0, \\neg \\left[ \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+          "\\exists \\varepsilon > 0, \\forall \\delta \\le 0, \\neg \\left[ \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+          "\\forall \\varepsilon > 0, \\forall \\delta > 0, \\neg \\left[ \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "さらに「全ての x について」を否定し、一番奥の含意命題 P ⇒ Q の否定（P かつ Q でない）を完成させてください。",
+        "formula": "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\exists x \\left( 0 < |x - a| < \\delta \\land |f(x) - L| \\ge \\varepsilon \\right)",
+        "choices": [
+          "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\exists x \\left( 0 < |x - a| < \\delta \\land |f(x) - L| \\ge \\varepsilon \\right)",
+          "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\land |f(x) - L| \\ge \\varepsilon \\right)",
+          "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\exists x \\left( 0 < |x - a| \\ge \\delta \\land |f(x) - L| < \\varepsilon \\right)",
+          "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\exists x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| \\ge \\varepsilon \\right)"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "eps_delta_continuous",
+    "title": "関数 f(x) = x が任意の点で連続であることの証明",
+    "initialFormula": "\\forall x_0 \\in \\mathbb{R}, \\quad \\lim_{x \\to x_0} x = x_0",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "任意の x0 と任意の ε > 0 に対し、0 < |x - x0| < δ ならば |x - x0| < ε となる δ を定めます。連続性の定義のコアとなる不等式をそのまま満たすための最も簡単なアプローチを選びましょう。",
+        "formula": "\\delta = \\varepsilon",
+        "choices": [
+          "\\delta = \\varepsilon",
+          "\\delta = |x_0|",
+          "\\delta = \\frac{\\varepsilon}{|x_0|}",
+          "\\delta = 1"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "δ = ε と選べば、0 < |x - x0| < δ のとき自動的に |x - x0| < ε が導出され、関数がすべての実数において連続であることが証明されます。",
+        "formula": "|x - x_0| < \\delta \\implies |x - x_0| < \\varepsilon",
+        "choices": [
+          "|x - x_0| < \\delta \\implies |x - x_0| < \\varepsilon",
+          "|x - x_0| < \\delta \\implies |x| < \\varepsilon",
+          "|x| < \\delta \\implies |x - x_0| < \\varepsilon",
+          "|x - x_0| < \\varepsilon \\implies |x - x_0| < \\delta"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  }
+]
