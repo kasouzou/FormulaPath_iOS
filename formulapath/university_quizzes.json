@@ -52,7 +52,8 @@
         ],
         "correctIndex": 0
       }
-    ]
+    ],
+    "directory": "極限"
   },
   {
     "id": "eps_delta_const",
@@ -95,7 +96,8 @@
         ],
         "correctIndex": 0
       }
-    ]
+    ],
+    "directory": "極限"
   },
   {
     "id": "eps_delta_identity",
@@ -126,7 +128,8 @@
         ],
         "correctIndex": 0
       }
-    ]
+    ],
+    "directory": "極限"
   },
   {
     "id": "eps_delta_quad_step1",
@@ -181,7 +184,8 @@
         ],
         "correctIndex": 0
       }
-    ]
+    ],
+    "directory": "極限"
   },
   {
     "id": "eps_delta_sum_rule",
@@ -224,7 +228,8 @@
         ],
         "correctIndex": 0
       }
-    ]
+    ],
+    "directory": "極限"
   },
   {
     "id": "eps_delta_sub_rule",
@@ -267,7 +272,8 @@
         ],
         "correctIndex": 0
       }
-    ]
+    ],
+    "directory": "極限"
   },
   {
     "id": "eps_delta_squeeze_prep",
@@ -310,7 +316,8 @@
         ],
         "correctIndex": 0
       }
-    ]
+    ],
+    "directory": "極限"
   },
   {
     "id": "eps_N_seq_linear",
@@ -353,7 +360,8 @@
         ],
         "correctIndex": 0
       }
-    ]
+    ],
+    "directory": "極限"
   },
   {
     "id": "eps_delta_negation",
@@ -396,7 +404,8 @@
         ],
         "correctIndex": 0
       }
-    ]
+    ],
+    "directory": "極限"
   },
   {
     "id": "eps_delta_continuous",
@@ -427,6 +436,7 @@
         ],
         "correctIndex": 0
       }
-    ]
+    ],
+    "directory": "極限"
   }
 ]

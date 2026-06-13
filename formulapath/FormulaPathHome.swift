@@ -13,6 +13,21 @@ enum FormulaPathDestination: Hashable {
     case university
 }
 
+// 💡 ディレクトリ画面にもStageSelectionViewで管理しているGameDataManagerを渡し、同じ単一データ源から問題一覧を絞り込む
+struct FormulaDirectoryRoute: Hashable {
+    let directoryTitle: String
+    let dataManager: GameDataManager
+
+    static func == (lhs: FormulaDirectoryRoute, rhs: FormulaDirectoryRoute) -> Bool {
+        lhs.directoryTitle == rhs.directoryTitle && lhs.dataManager === rhs.dataManager
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(directoryTitle)
+        hasher.combine(ObjectIdentifier(dataManager))
+    }
+}
+
 // 💡 ゲーム画面にはMathProblemだけでなく、進捗更新を担当するGameDataManagerも一緒に渡す
 struct FormulaPathGameRoute: Hashable {
     let problem: MathProblem
@@ -114,6 +129,14 @@ struct FormulaPathHomeView: View {
                         navigationTitle: "大学 公式一覧"
                     )            
                 }
+            }
+            // 💡 ディレクトリ名が飛んできた時の問題一覧画面へのルートを定義！
+            .navigationDestination(for: FormulaDirectoryRoute.self) { route in
+                FormulaDirectoryView(
+                    navigationPath: $navigationPath,
+                    directoryTitle: route.directoryTitle,
+                    dataManager: route.dataManager
+                )
             }
             // 💡 【ココを追加！】MathProblemデータそのものが飛んできた時のゲーム画面へのルートを定義！
             // 💡 GameDataManagerも一緒に運び、クリア時の進捗更新をStageSelectionView側の単一データ源へ戻す

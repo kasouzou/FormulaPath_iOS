@@ -16,6 +16,27 @@ struct StageSelectionView: View {
     // 💡 画面ごとに「中学校」「高校」「大学」とタイトルを切り替えるために外から貰うよ！
     let navigationTitle: String
 
+    private var directorySummaries: [FormulaDirectorySummary] {
+        var summaries: [FormulaDirectorySummary] = []
+
+        for problemWithProgress in dataManager.menuProblems {
+            let directoryTitle = problemWithProgress.problem.directory
+
+            if let index = summaries.firstIndex(where: { $0.title == directoryTitle }) {
+                summaries[index].problemCount += 1
+            } else {
+                summaries.append(
+                    FormulaDirectorySummary(
+                        title: directoryTitle,
+                        problemCount: 1
+                    )
+                )
+            }
+        }
+
+        return summaries
+    }
+
     init(navigationPath: Binding<NavigationPath>, fileName: String, navigationTitle: String) {
         self._navigationPath = navigationPath
         self.navigationTitle = navigationTitle
@@ -35,26 +56,22 @@ struct StageSelectionView: View {
                 // 画面中央に縦に並ぶメニューリスト（スクロールできるようにScrollViewに包む）
                 ScrollView {
                     VStack(spacing: 16) {
-                        // 💡 渡されたデータマネージャー内の問題をループで回して動的にカードを作る！
-                        ForEach(dataManager.menuProblems) { problemWithProgress in
-                            // TitleやStatusの情報をしっかり抽出してUIに反映！
+                        // 💡 渡されたデータマネージャー内の問題をディレクトリごとにまとめて、動的にカードを作る！
+                        ForEach(directorySummaries) { directory in
+                            // Titleや問題数の情報をしっかり抽出してUIに反映！
                             MenuCard(
-                                title: problemWithProgress.problem.title, 
-                                subtitle: "ステータス: \(problemWithProgress.status)", 
-                                icon: "function"
+                                title: directory.title,
+                                subtitle: "問題数: \(directory.problemCount)件",
+                                icon: "folder"
                             ) {
-                                let targetProblem = problemWithProgress.problem
-                                print("--- 📱 StageSelectionView: カードがタップされました ---")
-                                print("[problemWithProgress.problemの中身]: \(targetProblem)")
-                                print("[遷移データ] 問題ID: \(targetProblem.id)")
-                                print("[遷移データ] タイトル: \(targetProblem.title)")
-                                print("[遷移データ] 初期数式: \(targetProblem.initialFormula)")
-                                print("[遷移データ] 総ステップ数: \(targetProblem.steps.count)件")
+                                print("--- 📱 StageSelectionView: ディレクトリカードがタップされました ---")
+                                print("[遷移データ] ディレクトリ名: \(directory.title)")
+                                print("[遷移データ] 問題数: \(directory.problemCount)件")
 
-                                // タップしたら、その問題データを引っ提げてゲーム画面へ遷移する
+                                // タップしたら、そのディレクトリ名を引っ提げて問題一覧画面へ遷移する
                                 navigationPath.append(
-                                    FormulaPathGameRoute(
-                                        problem: problemWithProgress.problem,
+                                    FormulaDirectoryRoute(
+                                        directoryTitle: directory.title,
                                         dataManager: dataManager
                                     )
                                 )
@@ -70,4 +87,11 @@ struct StageSelectionView: View {
         .navigationTitle(navigationTitle) // 💡 貰ったタイトルをここにセット！
         .navigationBarTitleDisplayMode(.inline)
     }
+}
+
+private struct FormulaDirectorySummary: Identifiable {
+    var id: String { title }
+
+    let title: String
+    var problemCount: Int
 }

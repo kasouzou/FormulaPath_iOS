@@ -15,6 +15,7 @@ struct DerivationStep: Codable, Hashable {
 struct MathProblem: Codable, Hashable {
     let id: String
     let title: String
+    let directory: String
     let initialFormula: String
     let steps: [DerivationStep]
 }

@@ -52,7 +52,8 @@
                 ],
                 "correctIndex": 0
             }
-        ]
+        ],
+        "directory": "二次方程式"
     },
     {
         "id": "pythagoras",
@@ -95,6 +96,139 @@
                 ],
                 "correctIndex": 2
             }
-        ]
+        ],
+        "directory": "三平方の定理"
     },
+    {
+        "id": "root_multiply",
+        "title": "ルートのかけ算の性質の証明",
+        "initialFormula": "\\sqrt{a}\\sqrt{b} = \\sqrt{ab} \\quad (a>0, b>0)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "左辺の \\sqrt{a}\\sqrt{b} を2乗して、指数法則を使ってバラバラにしてみよう。",
+                "formula": "(\\sqrt{a}\\sqrt{b})^2 = (\\sqrt{a})^2(\\sqrt{b})^2",
+                "choices": [
+                    "(\\sqrt{a}\\sqrt{b})^2 = (\\sqrt{a})^2(\\sqrt{b})^2",
+                    "(\\sqrt{a}\\sqrt{b})^2 = \\sqrt{a^2}\\sqrt{b^2}",
+                    "(\\sqrt{a}\\sqrt{b})^2 = ab",
+                    "(\\sqrt{a}\\sqrt{b})^2 = 2\\sqrt{a}\\sqrt{b}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "ルートの定義「2乗すると中身の数になる」を使って、それぞれのルートを外してみよう。",
+                "formula": "(\\sqrt{a}\\sqrt{b})^2 = ab",
+                "choices": [
+                    "(\\sqrt{a}\\sqrt{b})^2 = a^2b^2",
+                    "(\\sqrt{a}\\sqrt{b})^2 = \\sqrt{ab}",
+                    "(\\sqrt{a}\\sqrt{b})^2 = ab",
+                    "(\\sqrt{a}\\sqrt{b})^2 = a+b"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "\\sqrt{a}>0, \\sqrt{b}>0 より、かける前の数も正 (\\sqrt{a}\\sqrt{b}>0) だね。「2乗して ab になる正の数」をルートの記号で表すとどうなるかな？",
+                "formula": "\\sqrt{a}\\sqrt{b} = \\sqrt{ab}",
+                "choices": [
+                    "\\sqrt{a}\\sqrt{b} = ab",
+                    "\\sqrt{a}\\sqrt{b} = \\sqrt{ab}",
+                    "\\sqrt{a}\\sqrt{b} = \\pm\\sqrt{ab}",
+                    "\\sqrt{a}\\sqrt{b} = (ab)^2"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "平方根"
+    },
+    {
+        "id": "root_divide",
+        "title": "ルートのわり算の性質の証明",
+        "initialFormula": "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}} \\quad (a>0, b>0)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "左辺の分数全体を2乗して、分子と分母のそれぞれを2乗する形に変形してみよう。",
+                "formula": "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{(\\sqrt{a})^2}{(\\sqrt{b})^2}",
+                "choices": [
+                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{a}{b}",
+                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{(\\sqrt{a})^2}{(\\sqrt{b})^2}",
+                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\sqrt{\\frac{a^2}{b^2}}",
+                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{\\sqrt{a^2}}{\\sqrt{b^2}}"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "分子と分母、それぞれのルートを2乗の定義を使って外してスッキリさせよう。",
+                "formula": "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{a}{b}",
+                "choices": [
+                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{a^2}{b^2}",
+                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\sqrt{\\frac{a}{b}}",
+                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = ab",
+                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{a}{b}"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "元の分数も正の数 (\\frac{\\sqrt{a}}{\\sqrt{b}}>0) だね。「2乗して a/b になる正の数」を平方根の定義通りに表して、証明を完成させよう！",
+                "formula": "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}}",
+                "choices": [
+                    "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}}",
+                    "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\frac{a}{b}",
+                    "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\pm\\sqrt{\\frac{a}{b}}",
+                    "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\frac{a^2}{b^2}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "平方根"
+    },
+    {
+        "id": "root_simplify",
+        "title": "ルートの簡略化 (k√a) の証明",
+        "initialFormula": "\\sqrt{k^2a} = k\\sqrt{a} \\quad (a>0, k>0)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "右辺の k\\sqrt{a} を丸ごと2乗して、k と \\sqrt{a} のそれぞれに2乗を振り分けてみよう。",
+                "formula": "(k\\sqrt{a})^2 = k^2(\\sqrt{a})^2",
+                "choices": [
+                    "(k\\sqrt{a})^2 = k^2a^2",
+                    "(k\\sqrt{a})^2 = k^2(\\sqrt{a})^2",
+                    "(k\\sqrt{a})^2 = \\sqrt{k^2a}",
+                    "(k\\sqrt{a})^2 = k(\\sqrt{a})^2"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "(\\sqrt{a})^2 のルートを外して、掛け算の形にまとめよう。",
+                "formula": "(k\\sqrt{a})^2 = k^2a",
+                "choices": [
+                    "(k\\sqrt{a})^2 = ka",
+                    "(k\\sqrt{a})^2 = k^2a^2",
+                    "(k\\sqrt{a})^2 = k^2a",
+                    "(k\\sqrt{a})^2 = \\sqrt{k^2a}"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "k>0, \\sqrt{a}>0 だから 2乗する前の数も正 (k\\sqrt{a}>0) だね。「2乗して k^2a になる正の数」は元の形（左辺）に戻すとどうなるかな？",
+                "formula": "k\\sqrt{a} = \\sqrt{k^2a}",
+                "choices": [
+                    "k\\sqrt{a} = k^2a",
+                    "k\\sqrt{a} = \\sqrt{ka}",
+                    "k\\sqrt{a} = \\pm\\sqrt{k^2a}",
+                    "k\\sqrt{a} = \\sqrt{k^2a}"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "平方根"
+    }
 ]

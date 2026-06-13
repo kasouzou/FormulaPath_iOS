@@ -40,7 +40,8 @@
                 ],
                 "correctIndex": 0
             }
-        ]
+        ],
+        "directory": "二項定理"
     },
     {
         "id": "binom_thm_n3",
@@ -107,7 +108,8 @@
                 ],
                 "correctIndex": 0
             }
-        ]
+        ],
+        "directory": "二項定理"
     },
     {
         "id": "binom_coeff_property_sum",
@@ -150,7 +152,8 @@
                 ],
                 "correctIndex": 0
             }
-        ]
+        ],
+        "directory": "二項定理"
     },
     {
         "id": "binom_coeff_property_alternating",
@@ -193,7 +196,8 @@
                 ],
                 "correctIndex": 0
             }
-        ]
+        ],
+        "directory": "二項定理"
     },
     {
         "id": "pascal_triangle_proof",
@@ -272,7 +276,8 @@
                 ],
                 "correctIndex": 0
             }
-        ]
+        ],
+        "directory": "二項定理"
     },
     {
         "id": "diff_power_rule",
@@ -327,7 +332,8 @@
                 ],
                 "correctIndex": 0
             }
-        ]
+        ],
+        "directory": "微分"
     },
     {
         "id": "diff_product_rule",
@@ -370,7 +376,8 @@
                 ],
                 "correctIndex": 0
             }
-        ]
+        ],
+        "directory": "微分"
     },
     {
         "id": "diff_quotient_rule",
@@ -413,7 +420,8 @@
                 ],
                 "correctIndex": 0
             }
-        ]
+        ],
+        "directory": "微分"
     },
     {
         "id": "diff_composite_chain",
@@ -456,7 +464,8 @@
                 ],
                 "correctIndex": 0
             }
-        ]
+        ],
+        "directory": "微分"
     },
     {
         "id": "diff_sinx_proof",
@@ -511,6 +520,598 @@
                 ],
                 "correctIndex": 0
             }
-        ]
+        ],
+        "directory": "微分"
+    },
+    {
+        "id": "demorgan_proof_union",
+        "title": "ド・モルガンの法則（和集合）の論理的導出",
+        "initialFormula": "x \\\\in \\\\overline{A \\\\cup B}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "補集合の定義を適用して、要素 $x$ が和集合に属さない状態を表現しましょう。",
+                "formula": "x \\\\notin A \\\\cup B",
+                "choices": [
+                    "x \\\\notin A \\\\cup B",
+                    "x \\\\in A \\\\cup B",
+                    "x \\\\notin \\\\overline{A \\\\cup B}",
+                    "x \\\\in \\\\overline{A} \\\\cup \\\\overline{B}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "「AまたはBの和集合に属さない」という条件を、「かつ」「または」の論理言葉を使って分解しましょう。",
+                "formula": "x \\\\notin A \\\\text{ かつ } x \\\\notin B",
+                "choices": [
+                    "x \\\\notin A \\\\text{ かつ } x \\\\notin B",
+                    "x \\\\notin A \\\\text{ または } x \\\\notin B",
+                    "x \\\\in A \\\\text{ かつ } x \\\\in B",
+                    "x \\\\notin A \\\\cup B"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "「Aに属さない」「Bに属さない」を、それぞれ補集合の記号を使って表しましょう。",
+                "formula": "x \\\\in \\\\overline{A} \\\\text{ かつ } x \\\\in \\\\overline{B}",
+                "choices": [
+                    "x \\\\in \\\\overline{A} \\\\text{ かつ } x \\\\in \\\\overline{B}",
+                    "x \\\\in \\\\overline{A} \\\\text{ または } x \\\\in \\\\overline{B}",
+                    "x \\\\notin \\\\overline{A} \\\\text{ かつ } x \\\\notin \\\\overline{B}",
+                    "x \\\\in \\\\overline{A \\\\cap B}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "「かつ」で結ばれた2つの条件を、共通部分（キャップ）の記号を使って1つの集合にまとめましょう。",
+                "formula": "x \\\\in \\\\overline{A} \\\\cap \\\\overline{B}",
+                "choices": [
+                    "x \\\\in \\\\overline{A} \\\\cap \\\\overline{B}",
+                    "x \\\\in \\\\overline{A} \\\\cup \\\\overline{B}",
+                    "x \\\\in \\\\overline{A \\\\cap B}",
+                    "x \\\\in A \\\\cap B"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "集合と論理"
+    },
+    {
+        "id": "demorgan_extension_3sets",
+        "title": "3つの集合へのド・モルガンの法則の適用",
+        "initialFormula": "\\\\overline{A \\\\cup B \\\\cup C}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "A \\\\cup B をひとつのまとまりとみなして、ド・モルガンの法則を適用してみましょう。",
+                "formula": "\\\\overline{A \\\\cup B} \\\\cap \\\\overline{C}",
+                "choices": [
+                    "\\\\overline{A \\\\cup B} \\\\cap \\\\overline{C}",
+                    "\\\\overline{A \\\\cup B} \\\\cup \\\\overline{C}",
+                    "\\\\overline{A} \\\\cap \\\\overline{B \\\\cup C}",
+                    "\\\\overline{A} \\\\cup \\\\overline{B} \\\\cup \\\\overline{C}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "前方にある \\\\overline{A \\\\cup B} の部分に対して、さらにド・モルガンの法則を適用します。",
+                "formula": "(\\\\overline{A} \\\\cap \\\\overline{B}) \\\\cap \\\\overline{C}",
+                "choices": [
+                    "(\\\\overline{A} \\\\cap \\\\overline{B}) \\\\cap \\\\overline{C}",
+                    "(\\\\overline{A} \\\\cup \\\\overline{B}) \\\\cap \\\\overline{C}",
+                    "(\\\\overline{A} \\\\cap \\\\overline{B}) \\\\cup \\\\overline{C}",
+                    "\\\\overline{A} \\\\cap \\\\overline{B} \\\\cup \\\\overline{C}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "すべての演算が共通部分（\\\\cap）になったので、結合法則を用いてカッコを外して整理しましょう。",
+                "formula": "\\\\overline{A} \\\\cap \\\\overline{B} \\\\cap \\\\overline{C}",
+                "choices": [
+                    "\\\\overline{A} \\\\cap \\\\overline{B} \\\\cap \\\\overline{C}",
+                    "\\\\overline{A} \\\\cup \\\\overline{B} \\\\cup \\\\overline{C}",
+                    "\\\\overline{A \\\\cap B \\\\cap C}",
+                    "A \\\\cap B \\\\cap C"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "集合と論理"
+    },
+    {
+        "id": "demorgan_complex_simplify",
+        "title": "ド・モルガンの法則を用いた集合算の単純化",
+        "initialFormula": "\\\\overline{\\\\overline{A} \\\\cup B} \\\\cup (A \\\\cap B)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "左側の項 \\\\overline{\\\\overline{A} \\\\cup B} にド・モルガンの法則を適用して展開しましょう。",
+                "formula": "(\\\\overline{\\\\overline{A}} \\\\cap \\\\overline{B}) \\\\cup (A \\\\cap B)",
+                "choices": [
+                    "(\\\\overline{\\\\overline{A}} \\\\cap \\\\overline{B}) \\\\cup (A \\\\cap B)",
+                    "(\\\\overline{\\\\overline{A}} \\\\cup \\\\overline{B}) \\\\cup (A \\\\cap B)",
+                    "(\\\\overline{A} \\\\cap \\\\overline{B}) \\\\cup (A \\\\cap B)",
+                    "(\\\\overline{\\\\overline{A}} \\\\cap B) \\\\cup (A \\\\cap B)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "二重否定（補集合の補集合）の性質 \\\\overline{\\\\overline{A}} = A を利用して、式を簡潔にしてください。",
+                "formula": "(A \\\\cap \\\\overline{B}) \\\\cup (A \\\\cap B)",
+                "choices": [
+                    "(A \\\\cap \\\\overline{B}) \\\\cup (A \\\\cap B)",
+                    "(\\\\overline{A} \\\\cap \\\\overline{B}) \\\\cup (A \\\\cap B)",
+                    "(A \\\\cup \\\\overline{B}) \\\\cup (A \\\\cap B)",
+                    "A \\\\cap (\\\\overline{B} \\\\cup B)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "分配法則の逆（共通因数のくくり出し）を使い、共通する「A \\\\cap」で全体をまとめましょう。",
+                "formula": "A \\\\cap (\\\\overline{B} \\\\cup B)",
+                "choices": [
+                    "A \\\\cap (\\\\overline{B} \\\\cup B)",
+                    "A \\\\cap (\\\\overline{B} \\\\cap B)",
+                    "A \\\\cup (\\\\overline{B} \\\\cap B)",
+                    "(A \\\\cup A) \\\\cap (\\\\overline{B} \\\\cup B)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "Bとその補集合の和集合 \\\\overline{B} \\\\cup B は何になるか考え、全体集合 U を使って置き換えてみましょう。",
+                "formula": "A \\\\cap U",
+                "choices": [
+                    "A \\\\cap U",
+                    "A \\\\cap \\\\varnothing",
+                    "A \\\\cup U",
+                    "U"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 5,
+                "explanation": "集合Aと全体集合Uの共通部分をとり、最終的な答えの形を導き出しましょう。",
+                "formula": "A",
+                "choices": [
+                    "A",
+                    "U",
+                    "\\\\overline{A}",
+                    "\\\\varnothing"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "集合と論理"
+    },
+    {
+        "id": "quadratic_completion",
+        "title": "2次関数の平方完成（一般形から基本形への導出）",
+        "initialFormula": "y = ax^2 + bx + c",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "x^2 と x の項を、x^2 の係数 a でくくります。",
+                "formula": "y = a\\left(x^2 + \\frac{b}{a}x\\right) + c",
+                "choices": [
+                    "y = a\\left(x^2 + bx\\right) + c",
+                    "y = a\\left(x^2 + \\frac{b}{a}x\\right) + c",
+                    "y = a\\left(x^2 - \\frac{b}{a}x\\right) + c",
+                    "y = a\\left(x^2 + \\frac{b}{2a}x\\right) + c"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "括弧の中の x^2 + \\frac{b}{a}x を、(x + p)^2 の形を作るために変形（平方完成）します。",
+                "formula": "y = a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a^2}\\right\\} + c",
+                "choices": [
+                    "y = a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 + \\frac{b^2}{4a^2}\\right\\} + c",
+                    "y = a\\left\\{\\left(x + \\frac{b}{a}\\right)^2 - \\frac{b^2}{a^2}\\right\\} + c",
+                    "y = a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a^2}\\right\\} + c",
+                    "y = a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b}{2a^2}\\right\\} + c"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "外側の括弧（中括弧）を外し、係数 a をそれぞれの項に分配して整理します。",
+                "formula": "y = a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a} + c",
+                "choices": [
+                    "y = a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a} + c",
+                    "y = a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a^2} + c",
+                    "y = a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{ab^2}{4a} + c"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "定数項を通分し、マイナスの符号で括って一つの分数にまとめ、基本形を完成させます。",
+                "formula": "y = a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2 - 4ac}{4a}",
+                "choices": [
+                    "y = a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2 + 4ac}{4a}",
+                    "y = a\\left(x + \\frac{b}{2a}\\right)^2 + \\frac{b^2 - 4ac}{4a}",
+                    "y = a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2 - ac}{4a}",
+                    "y = a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2 - 4ac}{4a}"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "二次方程式"
+    },
+    {
+        "id": "quad_fact_proof",
+        "title": "因数分解による2次方程式の解法の論理",
+        "initialFormula": "ax^2+bx+c = 0 \\quad (a \\neq 0)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "左辺の3項式が1次式の積に因数分解できると仮定し、方程式の形を変形します。",
+                "formula": "(px+q)(rx+s) = 0",
+                "choices": [
+                    "(px+q)(rx+s) = 0",
+                    "(px+q)+(rx+s) = 0",
+                    "(px-q)(rx-s) = 0",
+                    "px^2+qx+r = 0"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "実数の性質「AB = 0 ならば A = 0 または B = 0」を利用して、2つの1次方程式の条件へと分解します。",
+                "formula": "px+q = 0 \\quad \\text{または} \\quad rx+s = 0",
+                "choices": [
+                    "px+q = 0 \\quad \\text{または} \\quad rx+s = 0",
+                    "px+q = 0 \\quad \\text{かつ} \\quad rx+s = 0",
+                    "px+q = rx+s",
+                    "(px+q)(rx+s) = 1"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "それぞれの1次方程式を x について解き、2次方程式の最終的な解を導きます。",
+                "formula": "x = -\\frac{q}{p}, \\; -\\frac{s}{r}",
+                "choices": [
+                    "x = -\\frac{q}{p}, \\; -\\frac{s}{r}",
+                    "x = \\frac{q}{p}, \\; \\frac{s}{r}",
+                    "x = -\\frac{p}{q}, \\; -\\frac{r}{s}",
+                    "x = -q, \\; -s"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "二次方程式"
+    },
+    {
+        "id": "quad_formula_deriv",
+        "title": "2次方程式の解の公式の導出",
+        "initialFormula": "ax^2+bx+c = 0 \\quad (a \\neq 0)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "両辺を a で割り、定数項を右辺に移項して平方完成の準備をします。",
+                "formula": "x^2 + \\frac{b}{a}x = -\\frac{c}{a}",
+                "choices": [
+                    "x^2 + \\frac{b}{a}x = -\\frac{c}{a}",
+                    "x^2 + \\frac{b}{a}x = \\frac{c}{a}",
+                    "x^2 + bx = -c",
+                    "x^2 + \\frac{b}{2a}x = -\\frac{c}{a}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "左辺を平方完成するために、両辺に x の係数の半分の2乗を加え、右辺を通分して整理します。",
+                "formula": "\\left(x + \\frac{b}{2a}\\right)^2 = \\frac{b^2-4ac}{4a^2}",
+                "choices": [
+                    "\\left(x + \\frac{b}{2a}\\right)^2 = \\frac{b^2-4ac}{4a^2}",
+                    "\\left(x + \\frac{b}{a}\\right)^2 = \\frac{b^2-4ac}{a^2}",
+                    "\\left(x + \\frac{b}{2a}\\right)^2 = \\frac{b^2+4ac}{4a^2}",
+                    "\\left(x + \\frac{b}{2a}\\right)^2 = -\\frac{c}{a} + \\frac{b^2}{a^2}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "両辺の平方根をとり、左辺の定数項を移項して x について解きます。",
+                "formula": "x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}",
+                "choices": [
+                    "x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}",
+                    "x = \\frac{b \\pm \\sqrt{b^2-4ac}}{2a}",
+                    "x = \\frac{-b \\pm \\sqrt{b^2+4ac}}{2a}",
+                    "x = -\\frac{b}{2a} \\pm \\frac{\\sqrt{b^2-4ac}}{a}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "二次方程式"
+    },
+    {
+        "id": "quad_rel_sum",
+        "title": "解の公式からの和(α+β)の導出",
+        "initialFormula": "\\alpha + \\beta = \\frac{-b + \\sqrt{b^2 - 4ac}}{2a} + \\frac{-b - \\sqrt{b^2 - 4ac}}{2a}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "分母が2aで共通しているため、分子を1つの分数にまとめましょう。",
+                "formula": "\\alpha + \\beta = \\frac{(-b + \\sqrt{b^2 - 4ac}) + (-b - \\sqrt{b^2 - 4ac})}{2a}",
+                "choices": [
+                    "\\alpha + \\beta = \\frac{(-b + \\sqrt{b^2 - 4ac}) + (-b - \\sqrt{b^2 - 4ac})}{2a}",
+                    "\\alpha + \\beta = \\frac{(-b + \\sqrt{b^2 - 4ac}) - (-b - \\sqrt{b^2 - 4ac})}{2a}",
+                    "\\alpha + \\beta = \\frac{-2b + 2\\sqrt{b^2 - 4ac}}{2a}",
+                    "\\alpha + \\beta = \\frac{-b - b}{4a}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "分子を整理すると、符号の異なる平方根の項（√b²-4ac）が相殺されます。",
+                "formula": "\\alpha + \\beta = \\frac{-2b}{2a}",
+                "choices": [
+                    "\\alpha + \\beta = \\frac{-2b}{2a}",
+                    "\\alpha + \\beta = \\frac{-2b + 2\\sqrt{b^2 - 4ac}}{2a}",
+                    "\\alpha + \\beta = \\frac{0}{2a}",
+                    "\\alpha + \\beta = \\frac{-2b}{4a}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "分母と分子の2を約分して、解の和の公式を完成させましょう。",
+                "formula": "\\alpha + \\beta = -\\frac{b}{a}",
+                "choices": [
+                    "\\alpha + \\beta = -\\frac{b}{a}",
+                    "\\alpha + \\beta = \\frac{b}{a}",
+                    "\\alpha + \\beta = -\\frac{2b}{a}",
+                    "\\alpha + \\beta = -b"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "二次方程式"
+    },
+    {
+        "id": "quad_rel_prod",
+        "title": "解の公式からの積(αβ)の導出",
+        "initialFormula": "\\alpha\\beta = \\left(\\frac{-b + \\sqrt{b^2 - 4ac}}{2a}\\right)\\left(\\frac{-b - \\sqrt{b^2 - 4ac}}{2a}\\right)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "分母どうし(2a×2a)を掛け合わせ、分子は (X+Y)(X-Y) = X² - Y² の展開公式を適用します。",
+                "formula": "\\alpha\\beta = \\frac{(-b)^2 - (\\sqrt{b^2 - 4ac})^2}{4a^2}",
+                "choices": [
+                    "\\alpha\\beta = \\frac{(-b)^2 - (\\sqrt{b^2 - 4ac})^2}{4a^2}",
+                    "\\alpha\\beta = \\frac{(-b)^2 + (\\sqrt{b^2 - 4ac})^2}{4a^2}",
+                    "\\alpha\\beta = \\frac{(-b)^2 - (\\sqrt{b^2 - 4ac})^2}{2a^2}",
+                    "\\alpha\\beta = \\frac{b^2 - b^2 - 4ac}{4a^2}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "分子の各項を計算し、平方根を外します。マイナスの分配に注意してください。",
+                "formula": "\\alpha\\beta = \\frac{b^2 - (b^2 - 4ac)}{4a^2}",
+                "choices": [
+                    "\\alpha\\beta = \\frac{b^2 - (b^2 - 4ac)}{4a^2}",
+                    "\\alpha\\beta = \\frac{b^2 - b^2 - 4ac}{4a^2}",
+                    "\\alpha\\beta = \\frac{-b^2 - (b^2 - 4ac)}{4a^2}",
+                    "\\alpha\\beta = \\frac{b^2 - b^2 + 4ac}{2a^2}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "分子のカッコを外して整理（b² - b² を計算）しましょう。",
+                "formula": "\\alpha\\beta = \\frac{4ac}{4a^2}",
+                "choices": [
+                    "\\alpha\\beta = \\frac{4ac}{4a^2}",
+                    "\\alpha\\beta = \\frac{-4ac}{4a^2}",
+                    "\\alpha\\beta = \\frac{2b^2 - 4ac}{4a^2}",
+                    "\\alpha\\beta = \\frac{4ac}{2a}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "分母と分子を 4a で約分して、解の積の公式を完成させましょう。",
+                "formula": "\\alpha\\beta = \\frac{c}{a}",
+                "choices": [
+                    "\\alpha\\beta = \\frac{c}{a}",
+                    "\\alpha\\beta = -\\frac{c}{a}",
+                    "\\alpha\\beta = \\frac{c}{a^2}",
+                    "\\alpha\\beta = \\frac{4c}{a}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "二次方程式"
+    },
+    {
+        "id": "quad_sym_expression",
+        "title": "対称式 α² + β² の変形",
+        "initialFormula": "\\alpha^2 + \\beta^2",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "基本対称式 (α+β) と αβ で表すために、平方の展開公式を基に変形します。",
+                "formula": "(\\alpha + \\beta)^2 - 2\\alpha\\beta",
+                "choices": [
+                    "(\\alpha + \\beta)^2 - 2\\alpha\\beta",
+                    "(\\alpha + \\beta)^2 - \\alpha\\beta",
+                    "(\\alpha + \\beta)^2 + 2\\alpha\\beta",
+                    "(\\alpha - \\beta)^2 + 2\\alpha\\beta"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "解と係数の関係（α+β = -b/a, αβ = c/a）をそれぞれの場所に代入します。",
+                "formula": "\\left(-\\frac{b}{a}\\right)^2 - 2\\left(\\frac{c}{a}\\right)",
+                "choices": [
+                    "\\left(-\\frac{b}{a}\\right)^2 - 2\\left(\\frac{c}{a}\\right)",
+                    "\\left(\\frac{b}{a}\\right)^2 - 2\\left(\\frac{c}{a}\\right)",
+                    "\\left(-\\frac{b}{a}\\right)^2 - \\frac{c}{a}",
+                    "\\left(-\\frac{b}{a}\\right)^2 + 2\\left(\\frac{c}{a}\\right)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "第1項の2乗を計算し、第2項の分子に2を掛けます。",
+                "formula": "\\frac{b^2}{a^2} - \\frac{2c}{a}",
+                "choices": [
+                    "\\frac{b^2}{a^2} - \\frac{2c}{a}",
+                    "-\\frac{b^2}{a^2} - \\frac{2c}{a}",
+                    "\\frac{b^2}{a^2} - \\frac{c}{a}",
+                    "\\frac{b^2}{a} - \\frac{2c}{a}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "分母を a² に通分して、1つの分数にまとめましょう。",
+                "formula": "\\frac{b^2 - 2ac}{a^2}",
+                "choices": [
+                    "\\frac{b^2 - 2ac}{a^2}",
+                    "\\frac{b^2 - 2c}{a^2}",
+                    "\\frac{b^2 + 2ac}{a^2}",
+                    "\\frac{b^2 - 2ac}{a}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "二次方程式"
+    },
+    {
+        "id": "quad_factor_proof_roots",
+        "title": "解と係数の関係を用いた因数分解公式の証明",
+        "initialFormula": "a(x - \\alpha)(x - \\beta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "右辺のカッコを展開して、\\alpha と \\beta の和と積の形を作ります。",
+                "formula": "a\\{x^2 - (\\alpha + \\beta)x + \\alpha\\beta\\}",
+                "choices": [
+                    "a\\{x^2 - (\\alpha + \\beta)x + \\alpha\\beta\\}",
+                    "a\\{x^2 + (\\alpha + \\beta)x + \\alpha\\beta\\}",
+                    "a\\{x^2 - (\\alpha - \\beta)x - \\alpha\\beta\\}",
+                    "a\\{x^2 - (\\alpha + \\beta)x - \\alpha\\beta\\}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "解と係数の関係 \\alpha + \\beta = -\\frac{b}{a}, \\alpha\\beta = \\frac{c}{a} を代入します。",
+                "formula": "a\\left\\{x^2 - \\left(-\\frac{b}{a}\\right)x + \\frac{c}{a}\\right\\}",
+                "choices": [
+                    "a\\left\\{x^2 - \\left(-\\frac{b}{a}\\right)x + \\frac{c}{a}\\right\\}",
+                    "a\\left\\{x^2 - \\left(\\frac{b}{a}\\right)x + \\frac{c}{a}\\right\\}",
+                    "a\\left\\{x^2 + \\left(-\\frac{b}{a}\\right)x - \\frac{c}{a}\\right\\}",
+                    "a\\left\\{x^2 - \\left(-\\frac{b}{a}\\right)x - \\frac{c}{a}\\right\\}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "カッコ内の符号を整理して、x の係数の二重マイナスを解消します。",
+                "formula": "a\\left(x^2 + \\frac{b}{a}x + \\frac{c}{a}\\right)",
+                "choices": [
+                    "a\\left(x^2 + \\frac{b}{a}x + \\frac{c}{a}\\right)",
+                    "a\\left(x^2 - \\frac{b}{a}x + \\frac{c}{a}\\right)",
+                    "a\\left(x^2 + \\frac{b}{a}x - \\frac{c}{a}\\right)",
+                    "a\\left(x^2 - \\frac{b}{a}x - \\frac{c}{a}\\right)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "先頭の係数 a をカッコ内の各項に分配し、元の2次式の形を導きます。",
+                "formula": "ax^2 + bx + c",
+                "choices": [
+                    "ax^2 + bx + c",
+                    "ax^2 - bx + c",
+                    "ax^2 + bx - c",
+                    "x^2 + bx + c"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "二次方程式"
+    },
+    {
+        "id": "quad_factor_completing_square",
+        "title": "平方完成による2次式の一般因数分解公式の導出",
+        "initialFormula": "ax^2 + bx + c",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "x^2 の係数 a で、x を含む項までをくくり出します。",
+                "formula": "a\\left(x^2 + \\frac{b}{a}x\\right) + c",
+                "choices": [
+                    "a\\left(x^2 + \\frac{b}{a}x\\right) + c",
+                    "a\\left(x^2 + bx\\right) + c",
+                    "a\\left(x^2 + \\frac{b}{a}x + c\\right)",
+                    "a\\left(x^2 - \\frac{b}{a}x\\right) + c"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "カッコ内を平方完成し、辻褄合わせのために余分な定数項を引きます。",
+                "formula": "a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a^2}\\right\\} + c",
+                "choices": [
+                    "a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a^2}\\right\\} + c",
+                    "a\\left\\{\\left(x + \\frac{b}{a}\\right)^2 - \\frac{b^2}{a^2}\\right\\} + c",
+                    "a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2}{2a^2}\\right\\} + c",
+                    "a\\left\\{\\left(x - \\frac{b}{2a}\\right)^2 - \\frac{b^2}{4a^2}\\right\\} + c"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "a を分配して中カッコを外し、定数項を通分してまとめます。",
+                "formula": "a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2 - 4ac}{4a}",
+                "choices": [
+                    "a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2 - 4ac}{4a}",
+                    "a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2 + 4ac}{4a}",
+                    "a\\left(x + \\frac{b}{2a}\\right)^2 - \\frac{b^2 - 4ac}{4a^2}",
+                    "a\\left(x + \\frac{b}{a}\\right)^2 - \\frac{b^2 - 4ac}{4a}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "全体をもう一度 a でくくり、定数項を「2乗の形」にして全体の差（A^2 - B^2）を作ります。",
+                "formula": "a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 - \\left(\\frac{\\sqrt{b^2 - 4ac}}{2a}\\right)^2\\right\\}",
+                "choices": [
+                    "a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 - \\left(\\frac{\\sqrt{b^2 - 4ac}}{2a}\\right)^2\\right\\}",
+                    "a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 - \\left(\\frac{b^2 - 4ac}{2a}\\right)^2\\right\\}",
+                    "a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 + \\left(\\frac{\\sqrt{b^2 - 4ac}}{2a}\\right)^2\\right\\}",
+                    "a\\left\\{\\left(x + \\frac{b}{2a}\\right)^2 - \\left(\\frac{\\sqrt{b^2 - 4ac}}{4a}\\right)^2\\right\\}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 5,
+                "explanation": "2乗の差の因数分解公式 A^2 - B^2 = (A + B)(A - B) を適用し、解の公式の形を内包した因数分解を完成させます。",
+                "formula": "a\\left(x - \\frac{-b + \\sqrt{b^2-4ac}}{2a}\\right)\\left(x - \\frac{-b - \\sqrt{b^2-4ac}}{2a}\\right)",
+                "choices": [
+                    "a\\left(x - \\frac{-b + \\sqrt{b^2-4ac}}{2a}\\right)\\left(x - \\frac{-b - \\sqrt{b^2-4ac}}{2a}\\right)",
+                    "a\\left(x + \\frac{-b + \\sqrt{b^2-4ac}}{2a}\\right)\\left(x + \\frac{-b - \\sqrt{b^2-4ac}}{2a}\\right)",
+                    "a\\left(x - \\frac{b + \\sqrt{b^2-4ac}}{2a}\\right)\\left(x - \\frac{b - \\sqrt{b^2-4ac}}{2a}\\right)",
+                    "a\\left(x - \\frac{-b + \\sqrt{b^2-4ac}}{a}\\right)\\left(x - \\frac{-b - \\sqrt{b^2-4ac}}{a}\\right)"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "二次方程式"
     }
 ]
