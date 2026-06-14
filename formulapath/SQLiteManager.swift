@@ -9,6 +9,7 @@ class SQLiteManager {
     init() {
         openDatabase()
         createTable()
+        createPinnedTable()
     }
 
     deinit {
@@ -21,7 +22,7 @@ class SQLiteManager {
         let fileURL = try! FileManager.default
             .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             .appendingPathComponent("MathGame.sqlite")
-        
+
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print("エラー: データベースを開けませんでした。")
         }
@@ -50,6 +51,23 @@ class SQLiteManager {
         sqlite3_finalize(statement)
     }
 
+    // ②-2 ピン留め状態を保存するテーブルを作成
+    private func createPinnedTable() {
+        let createTableSQL = """
+        CREATE TABLE IF NOT EXISTS pinned_problems (
+            problem_id TEXT PRIMARY KEY,
+            is_pinned INTEGER NOT NULL
+        );
+        """
+        var statement: OpaquePointer?
+        if sqlite3_prepare_v2(db, createTableSQL, -1, &statement, nil) == SQLITE_OK {
+            if sqlite3_step(statement) != SQLITE_DONE {
+                print("エラー: ピン留めテーブル作成に失敗しました。")
+            }
+        }
+        sqlite3_finalize(statement)
+    }
+
 
     // ③ データの保存（UPSERT: すでにデータがあれば上書き、なければ挿入）
     func saveProgress(problemId: String, status: String) {
@@ -57,25 +75,53 @@ class SQLiteManager {
         INSERT INTO user_progress (problem_id, status) VALUES (?, ?)
         ON CONFLICT(problem_id) DO UPDATE SET status = excluded.status;
         """
-        
+
         var statement: OpaquePointer?
-        
+
         // SQLの準備とエラーハンドリング
         guard sqlite3_prepare_v2(db, upsertSQL, -1, &statement, nil) == SQLITE_OK else {
             print("エラー: SQLの準備に失敗しました。")
             return
         }
-        
+
         // SQL文の「？」に安全に値をバインド（セキュリティ対策・SQLインジェクション防止）
         sqlite3_bind_text(statement, 1, (problemId as NSString).utf8String, -1, nil)
         sqlite3_bind_text(statement, 2, (status as NSString).utf8String, -1, nil)
-        
+
         if sqlite3_step(statement) == SQLITE_DONE {
             print("成功: SQLiteに保存しました。 [ID: \(problemId), 状態: \(status)]")
         } else {
             print("エラー: データの保存に失敗しました。")
         }
-        
+
+        sqlite3_finalize(statement) // メモリ解放
+    }
+
+    // ③-2 ピン留め状態の保存（UPSERT: すでにデータがあれば上書き、なければ挿入）
+    func savePinned(problemId: String, isPinned: Bool) {
+        let upsertSQL = """
+        INSERT INTO pinned_problems (problem_id, is_pinned) VALUES (?, ?)
+        ON CONFLICT(problem_id) DO UPDATE SET is_pinned = excluded.is_pinned;
+        """
+
+        var statement: OpaquePointer?
+
+        // SQLの準備とエラーハンドリング
+        guard sqlite3_prepare_v2(db, upsertSQL, -1, &statement, nil) == SQLITE_OK else {
+            print("エラー: ピン留めSQLの準備に失敗しました。")
+            return
+        }
+
+        // SQL文の「？」に安全に値をバインド（セキュリティ対策・SQLインジェクション防止）
+        sqlite3_bind_text(statement, 1, (problemId as NSString).utf8String, -1, nil)
+        sqlite3_bind_int(statement, 2, isPinned ? 1 : 0)
+
+        if sqlite3_step(statement) == SQLITE_DONE {
+            print("成功: SQLiteにピン留め状態を保存しました。 [ID: \(problemId), ピン留め: \(isPinned)]")
+        } else {
+            print("エラー: ピン留め状態の保存に失敗しました。")
+        }
+
         sqlite3_finalize(statement) // メモリ解放
     }
 
@@ -83,14 +129,14 @@ class SQLiteManager {
     func getStatus(for problemId: String) -> String {
         let querySQL = "SELECT status FROM user_progress WHERE problem_id = ?;"
         var statement: OpaquePointer?
-        
+
         // 💡【ココがポイント！】
         // 最初にあらかじめ「データがなかったときの初期値」として "unlocked" を用意しておく
-        var status = "unlocked" 
-        
+        var status = "unlocked"
+
         if sqlite3_prepare_v2(db, querySQL, -1, &statement, nil) == SQLITE_OK {
             sqlite3_bind_text(statement, 1, (problemId as NSString).utf8String, -1, nil)
-            
+
             // 🔍 SQLiteにデータを探してもらう SQLITE_ROWはデータ（行）が見つかったよ！という意味
             if sqlite3_step(statement) == SQLITE_ROW {
                 // ➔【データがあった場合だけ】ココを通る！
@@ -102,8 +148,30 @@ class SQLiteManager {
             // ➔【データがない場合】は SQLITE_ROW にならないので、上の if 文の中身は完全に無視される！
         }
         sqlite3_finalize(statement)
-        
+
         // 🎁 最終的な結果を返す
-        return status 
-}
+        return status
+    }
+
+    // ④-2 ピン留め状態の読み込み
+    func isPinned(for problemId: String) -> Bool {
+        let querySQL = "SELECT is_pinned FROM pinned_problems WHERE problem_id = ?;"
+        var statement: OpaquePointer?
+
+        // 💡 データがなかったときは、ピン留めされていない状態として扱う
+        var isPinned = false
+
+        if sqlite3_prepare_v2(db, querySQL, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, (problemId as NSString).utf8String, -1, nil)
+
+            // 🔍 SQLiteにデータを探してもらう SQLITE_ROWはデータ（行）が見つかったよ！という意味
+            if sqlite3_step(statement) == SQLITE_ROW {
+                isPinned = sqlite3_column_int(statement, 0) == 1
+            }
+        }
+        sqlite3_finalize(statement)
+
+        // 🎁 最終的な結果を返す
+        return isPinned
+    }
 }

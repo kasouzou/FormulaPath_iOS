@@ -28,4 +28,5 @@ struct ProblemWithProgress: Identifiable {
     
     let problem: MathProblem // JSONから読んだ問題の中身
     let status: String       // SQLiteから読んだユーザーの進捗状態
+    let isPinned: Bool       // SQLiteから読んだピン留め状態
 }

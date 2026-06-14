@@ -30,9 +30,10 @@ class GameDataManager: ObservableObject {
         self.menuProblems = loadedProblems.map { problem in
             // 問題のID（例: "quad"）を使って、SQLiteから現在の状態（"unlocked" や "cleared"）を取得
             let currentStatus = sqliteManager.getStatus(for: problem.id)
+            let isPinned = sqliteManager.isPinned(for: problem.id)
             
             // 1つのパッケージにして配列に格納する
-            return ProblemWithProgress(problem: problem, status: currentStatus)
+            return ProblemWithProgress(problem: problem, status: currentStatus, isPinned: isPinned)
         }
         
         print("--- 💡 GameDataManager: データの合体が完了しました（総数: \(menuProblems.count)件） ---")
@@ -47,5 +48,18 @@ class GameDataManager: ObservableObject {
         sqliteManager.saveProgress(problemId: problemId, status: newStatus)
         // 保存が終わったら、もう一度合体処理を走らせて、保持しているデータを最新状態にする
         loadAndMergeData(fileName: self.fileName)
+    }
+
+    // 💡 一覧画面のピン留め状態もGameDataManager経由で更新して、単一データ源を守るよ！
+    func updatePinned(problemId: String, isPinned: Bool) {
+        sqliteManager.savePinned(problemId: problemId, isPinned: isPinned)
+        // 保存が終わったら、もう一度合体処理を走らせて、保持しているデータを最新状態にする
+        loadAndMergeData(fileName: self.fileName)
+    }
+
+    // 💡 UI側は現在の状態を渡すだけで、保存処理の詳細はこのクラスに隠しておく
+    func togglePinned(problemId: String) {
+        guard let targetProblem = menuProblems.first(where: { $0.id == problemId }) else { return }
+        updatePinned(problemId: problemId, isPinned: !targetProblem.isPinned)
     }
 }
