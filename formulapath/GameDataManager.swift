@@ -62,4 +62,21 @@ class GameDataManager: ObservableObject {
         guard let targetProblem = menuProblems.first(where: { $0.id == problemId }) else { return }
         updatePinned(problemId: problemId, isPinned: !targetProblem.isPinned)
     }
+
+    // 💡 ディレクトリ一覧画面のピン留め状態も、ファイル名込みのIDで安全に管理するよ！
+    func isDirectoryPinned(directoryTitle: String) -> Bool {
+        sqliteManager.isPinned(for: directoryPinId(for: directoryTitle))
+    }
+
+    // 💡 ディレクトリのピン留めもGameDataManager経由で更新して、SQLiteを画面側から隠しておく
+    func toggleDirectoryPinned(directoryTitle: String) {
+        let nextPinnedState = !isDirectoryPinned(directoryTitle: directoryTitle)
+        sqliteManager.savePinned(problemId: directoryPinId(for: directoryTitle), isPinned: nextPinnedState)
+        // 保存が終わったら、もう一度合体処理を走らせて、保持しているデータを最新状態にする
+        loadAndMergeData(fileName: self.fileName)
+    }
+
+    private func directoryPinId(for directoryTitle: String) -> String {
+        "directory:\(fileName):\(directoryTitle)"
+    }
 }
