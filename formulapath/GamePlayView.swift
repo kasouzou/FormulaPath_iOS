@@ -13,6 +13,9 @@ final class GamePlayViewModel: ObservableObject {
     @Published var selectedChoiceIndex: Int?
     @Published private(set) var isCleared: Bool = false
     @Published var showWrongAnswerEffect: Bool = false
+    @Published private(set) var currentShuffledChoices: [String] = []
+
+    private var currentCorrectChoiceIndex: Int?
 
     var currentStepNumber: Int {
         min(currentStepIndex + 1, max(problem.steps.count, 1))
@@ -37,6 +40,7 @@ final class GamePlayViewModel: ObservableObject {
     init(problem: MathProblem, dataManager: GameDataManager) {
         self.problem = problem
         self.dataManager = dataManager
+        shuffleChoicesForCurrentStep()
     }
 
     deinit {
@@ -51,14 +55,15 @@ final class GamePlayViewModel: ObservableObject {
         guard !isCleared, let currentStep else { return false }
         selectedChoiceIndex = selectedIndex
 
-        guard currentStep.choices.indices.contains(selectedIndex),
+        guard currentShuffledChoices.indices.contains(selectedIndex),
+              let currentCorrectChoiceIndex,
               currentStep.choices.indices.contains(currentStep.correctIndex)
         else {
             triggerWrongAnswerEffect()
             return false
         }
 
-        if selectedIndex == currentStep.correctIndex {
+        if selectedIndex == currentCorrectChoiceIndex {
             // 🎉 正解：次のステップへ進むか、全クリア判定
             return advanceToNextStepOrClear()
         } else {
@@ -73,6 +78,7 @@ final class GamePlayViewModel: ObservableObject {
             withAnimation(.easeInOut) {
                 currentStepIndex += 1
                 selectedChoiceIndex = nil
+                shuffleChoicesForCurrentStep()
             }
             return false
         } else {
@@ -92,6 +98,28 @@ final class GamePlayViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
             self?.showWrongAnswerEffect = false
         }
+    }
+
+    private func shuffleChoicesForCurrentStep() {
+        guard let currentStep,
+              currentStep.choices.indices.contains(currentStep.correctIndex)
+        else {
+            currentShuffledChoices = []
+            currentCorrectChoiceIndex = nil
+            return
+        }
+
+        var shuffledChoices = Array(currentStep.choices.enumerated()).shuffled()
+
+        if shuffledChoices.count > 1,
+           let displayedCorrectIndex = shuffledChoices.firstIndex(where: { $0.offset == currentStep.correctIndex }),
+           displayedCorrectIndex == currentStep.correctIndex,
+           let swapIndex = shuffledChoices.indices.first(where: { $0 != displayedCorrectIndex }) {
+            shuffledChoices.swapAt(displayedCorrectIndex, swapIndex)
+        }
+
+        currentShuffledChoices = shuffledChoices.map(\.element)
+        currentCorrectChoiceIndex = shuffledChoices.firstIndex { $0.offset == currentStep.correctIndex }
     }
 }
 
@@ -204,7 +232,7 @@ struct GamePlayView: View {
 
             // 【下部：3択または4択ゾーン】
             // 💡 切り出した共通パーツ ChoiceButton を使って美しくレイアウト！
-            choiceButtons(for: step)
+            choiceButtons(for: viewModel.currentShuffledChoices)
                 .padding(.horizontal, 24)
                 .padding(.bottom, 24)
         }
@@ -226,44 +254,44 @@ struct GamePlayView: View {
     }
 
     @ViewBuilder
-    private func choiceButtons(for step: DerivationStep) -> some View {
+    private func choiceButtons(for choices: [String]) -> some View {
         VStack(spacing: 14) {
-            if step.choices.count == 4 {
+            if choices.count == 4 {
                 // 4択の場合は綺麗な2x2グリッド
                 VStack(spacing: 14) {
                     HStack(spacing: 14) {
-                        answerButton(step: step, index: 0)
-                        answerButton(step: step, index: 1)
+                        answerButton(choices: choices, index: 0)
+                        answerButton(choices: choices, index: 1)
                     }
                     HStack(spacing: 14) {
-                        answerButton(step: step, index: 2)
-                        answerButton(step: step, index: 3)
+                        answerButton(choices: choices, index: 2)
+                        answerButton(choices: choices, index: 3)
                     }
                 }
-            } else if step.choices.count == 3 {
+            } else if choices.count == 3 {
                 // 3択の場合は上が2つ、下が1つの全幅ボタンにして画面のガタつきを防ぐ
                 VStack(spacing: 14) {
                     HStack(spacing: 14) {
-                        answerButton(step: step, index: 0)
-                        answerButton(step: step, index: 1)
+                        answerButton(choices: choices, index: 0)
+                        answerButton(choices: choices, index: 1)
                     }
-                    answerButton(step: step, index: 2, isFullWidth: true)
+                    answerButton(choices: choices, index: 2, isFullWidth: true)
                 }
             } else {
                 // 選択肢数が変わっても崩れないように、基本は縦積みで安全に表示する
                 VStack(spacing: 14) {
-                    ForEach(step.choices.indices, id: \.self) { index in
-                        answerButton(step: step, index: index, isFullWidth: true)
+                    ForEach(choices.indices, id: \.self) { index in
+                        answerButton(choices: choices, index: index, isFullWidth: true)
                     }
                 }
             }
         }
     }
 
-    private func answerButton(step: DerivationStep, index: Int, isFullWidth: Bool = false) -> some View {
-        ChoiceButton(text: step.choices[index], isFullWidth: isFullWidth) {
+    private func answerButton(choices: [String], index: Int, isFullWidth: Bool = false) -> some View {
+        ChoiceButton(text: choices[index], isFullWidth: isFullWidth) {
             // 💡 ボタンがタップされたイベント、インデックス、テキストをコンソールに出力
-            print("--- [View Tap] ChoiceButton tapped at index: \(index), text: \(step.choices[index]) ---")
+            print("--- [View Tap] ChoiceButton tapped at index: \(index), text: \(choices[index]) ---")
             viewModel.submitAnswer(selectedIndex: index)
         }
         .disabled(viewModel.isCleared)
