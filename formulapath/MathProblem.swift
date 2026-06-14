@@ -5,6 +5,7 @@ import Foundation
 struct DerivationStep: Codable, Hashable {
     let stepNumber: Int
     let explanation: String
+    let diagramSVG: String?
     let formula: String
     let choices: [String]      // 💡 追加：4択の選択肢の文字列配列
     let correctIndex: Int   // 💡 追加：正解のインデックス（0〜3）
@@ -17,6 +18,7 @@ struct MathProblem: Codable, Hashable {
     let title: String
     let directory: String
     let initialFormula: String
+    let diagramSVG: String?
     let steps: [DerivationStep]
 }
 

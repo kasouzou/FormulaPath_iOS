@@ -199,6 +199,12 @@ struct GamePlayView: View {
                     .padding(.horizontal, 8)
                     .animation(.default, value: viewModel.showWrongAnswerEffect)
 
+                if let diagramSVG = step.diagramSVG ?? viewModel.problem.diagramSVG {
+                    // 💡 図形を使った説明があるステップだけ、JSON内のSVGを透明背景で表示するよ！
+                    SVGDiagramView(svg: diagramSVG)
+                        .padding(.horizontal, 8)
+                }
+
                 // メインの数式ボード（ほんのりピンクの枠線でFormulaPathらしさをプラス）
                 // 独自にカプセル化したLaTeXViewに差し替えて、数式レンダラーをいつでも受け入れられるようにしたよ
                 LaTeXView(latex: viewModel.currentEquation)
