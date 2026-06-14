@@ -167,10 +167,7 @@ struct GamePlayView: View {
             // 【上部：数式表示ゾーン】
             VStack(spacing: 16) {
                 // JSONから読み込んだヒントメッセージを動的に表示
-                Text(step.explanation)
-                    .font(.subheadline)
-                    .foregroundStyle(viewModel.showWrongAnswerEffect ? .red : .secondary)
-                    .multilineTextAlignment(.center)
+                LaTeXTextView(text: step.explanation, isError: viewModel.showWrongAnswerEffect)
                     .padding(.horizontal, 8)
                     .animation(.default, value: viewModel.showWrongAnswerEffect)
 
