@@ -1113,5 +1113,2297 @@
             }
         ],
         "directory": "二次方程式"
-    }
+    },
+    {
+        "id": "double_radical_plus",
+        "title": "二重根号の非負の基本変形（和）",
+        "initialFormula": "\\sqrt{a+b+2\\sqrt{ab}}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "根号の中身を、平方の形を作るために各項を平方根の2乗の形に分解します。",
+                "formula": "\\sqrt{(\\sqrt{a})^2+2\\sqrt{a}\\sqrt{b}+(\\sqrt{b})^2}",
+                "choices": [
+                    "\\sqrt{(\\sqrt{a})^2+2\\sqrt{a}\\sqrt{b}+(\\sqrt{b})^2}",
+                    "\\sqrt{(\\sqrt{a})^2+\\sqrt{a}\\sqrt{b}+(\\sqrt{b})^2}",
+                    "\\sqrt{a^2+2ab+b^2}",
+                    "\\sqrt{(\\sqrt{a})^2+2a+2b+(\\sqrt{b})^2}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "因数分解の公式 x^2+2xy+y^2=(x+y)^2 を用いて、根号の中身を平方の形にまとめます。",
+                "formula": "\\sqrt{(\\sqrt{a}+\\sqrt{b})^2}",
+                "choices": [
+                    "\\sqrt{(\\sqrt{a}-\\sqrt{b})^2}",
+                    "\\sqrt{(\\sqrt{a}+\\sqrt{b})^2}",
+                    "(\\sqrt{a}+\\sqrt{b})^2",
+                    "\\sqrt{(\\sqrt{a}+2\\sqrt{b})^2}"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "a > 0, b > 0 より 根号の性質 \\sqrt{A^2} = A (A \\geqq 0) を用いて外側の大きな外根号を外します。",
+                "formula": "\\sqrt{a}+\\sqrt{b}",
+                "choices": [
+                    "a+b",
+                    "\\sqrt{a}-\\sqrt{b}",
+                    "\\sqrt{a\\vphantom{b}}+\\sqrt{b}",
+                    "ab"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "二重根号"
+    },
+    {
+        "id": "double_radical_minus",
+        "title": "二重根号の非負の基本変形（差）",
+        "initialFormula": "\\sqrt{a+b-2\\sqrt{ab}}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "根号の中身を、因数分解の公式が使えるように各項を平方根の2乗の形に表します。",
+                "formula": "\\sqrt{(\\sqrt{a})^2-2\\sqrt{a}\\sqrt{b}+(\\sqrt{b})^2}",
+                "choices": [
+                    "\\sqrt{(\\sqrt{a})^2-2ab+(\\sqrt{b})^2}",
+                    "\\sqrt{(\\sqrt{a})^2-2\\sqrt{a}\\sqrt{b}-(\\sqrt{b})^2}",
+                    "\\sqrt{(\\sqrt{a})^2-\\sqrt{a}\\sqrt{b}+(\\sqrt{b})^2}",
+                    "\\sqrt{(\\sqrt{a})^2-2\\sqrt{a}\\sqrt{b}+(\\sqrt{b})^2}"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "因数分解の公式 x^2-2xy+y^2=(x-y)^2 を用いて、根号の中身を平方の形にまとめます。",
+                "formula": "\\sqrt{(\\sqrt{a}-\\sqrt{b})^2}",
+                "choices": [
+                    "\\sqrt{(\\sqrt{a}+\\sqrt{b})^2}",
+                    "\\sqrt{(\\sqrt{a}-\\sqrt{b})^2}",
+                    "(\\sqrt{a}-\\sqrt{b})^2",
+                    "\\sqrt{(\\sqrt{b}-\\sqrt{a})^2}"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "a > b > 0 より \\sqrt{a}-\\sqrt{b} > 0 であるため、そのまま外側の根号を外します。",
+                "formula": "\\sqrt{a}-\\sqrt{b}",
+                "choices": [
+                    "\\sqrt{a}-\\sqrt{b}",
+                    "\\sqrt{b}-\\sqrt{a}",
+                    "a-b",
+                    "\\sqrt{a\\vphantom{b}}-\\sqrt{b}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "二重根号"
+    },
+    {
+        "id": "trig_identity_sin_cos",
+        "title": "二乗の和の公式の証明",
+        "initialFormula": "\\sin^2\\theta + \\cos^2\\theta",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "直角三角形の定義（斜辺a, 底辺b, 対辺c）より、sinθ = c/a, cosθ = b/a を代入します。",
+                "formula": "\\left(\\frac{c}{a}\\right)^2 + \\left(\\frac{b}{a}\\right)^2",
+                "choices": [
+                    "\\frac{c}{a} + \\frac{b}{a}",
+                    "\\left(\\frac{a}{c}\\right)^2 + \\left(\\frac{a}{b}\\right)^2",
+                    "\\left(\\frac{c}{a}\\right)^2 + \\left(\\frac{b}{a}\\right)^2",
+                    "\\left(\\frac{c}{a}\\right)^2 - \\left(\\frac{b}{a}\\right)^2"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "それぞれの項を2乗し、分母を a^2 に通分して分子をまとめます。",
+                "formula": "\\frac{c^2 + b^2}{a^2}",
+                "choices": [
+                    "\\frac{c^2 + b^2}{a^2}",
+                    "\\frac{c^2 + b^2}{2a^2}",
+                    "\\frac{c+b}{a}",
+                    "\\frac{c^2 - b^2}{a^2}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "三平方の定理 c^2 + b^2 = a^2 を用いて、分子を書き換えます。",
+                "formula": "\\frac{a^2}{a^2}",
+                "choices": [
+                    "\\frac{b^2}{a^2}",
+                    "\\frac{c^2}{a^2}",
+                    "\\frac{2a^2}{a^2}",
+                    "\\frac{a^2}{a^2}"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "分母と分子を約分して、最終的な値を導きます。",
+                "formula": "1",
+                "choices": [
+                    "0",
+                    "1",
+                    "a^2",
+                    "-1"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "三角関数の相互関係"
+    },
+    {
+        "id": "trig_identity_tan",
+        "title": "タンジェントの定義の証明",
+        "initialFormula": "\\frac{\\sin\\theta}{\\cos\\theta}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "直角三角形の定義より、分子の sinθ に c/a、分母の cosθ に b/a を代入します。",
+                "formula": "\\frac{\\frac{c}{a}}{\\frac{b}{a}}",
+                "choices": [
+                    "\\frac{\\frac{b}{a}}{\\frac{c}{a}}",
+                    "\\frac{\\frac{c}{a}}{\\frac{b}{a}}",
+                    "\\frac{\\frac{c}{b}}{\\frac{b}{a}}",
+                    "\\frac{c}{a} \\cdot \\frac{b}{a}"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "繁分数の形を解消するために、分子に分母の逆数を掛け合わせる形に変形します。",
+                "formula": "\\frac{c}{a} \\cdot \\frac{a}{b}",
+                "choices": [
+                    "\\frac{c}{a} \\cdot \\frac{b}{a}",
+                    "\\frac{a}{c} \\cdot \\frac{a}{b}",
+                    "\\frac{c}{a} + \\frac{a}{b}",
+                    "\\frac{c}{a} \\cdot \\frac{a}{b}"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "共通因数である a を約分して整理します。",
+                "formula": "\\frac{c}{b}",
+                "choices": [
+                    "\\frac{c}{b}",
+                    "\\frac{b}{c}",
+                    "\\frac{c a^2}{b}",
+                    "1"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "c/b は直角三角形における tanθ の定義そのものであるため、置き換えます。",
+                "formula": "\\tan\\theta",
+                "choices": [
+                    "\\frac{1}{\\tan\\theta}",
+                    "\\sin\\theta",
+                    "\\tan\\theta",
+                    "\\cos\\theta"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "三角関数の相互関係"
+    },
+    {
+        "id": "trig_identity_sec",
+        "title": "タンジェントとコサインの公式の証明",
+        "initialFormula": "\\sin^2\\theta + \\cos^2\\theta = 1",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "先ほど証明した基本公式の両辺を cos^2θ で割ります。",
+                "formula": "\\frac{\\sin^2\\theta}{\\cos^2\\theta} + \\frac{\\cos^2\\theta}{\\cos^2\\theta} = \\frac{1}{\\cos^2\\theta}",
+                "choices": [
+                    "\\frac{\\sin^2\\theta}{\\cos^2\\theta} + \\cos^2\\theta = 1",
+                    "\\frac{\\sin^2\\theta}{\\cos^2\\theta} + 1 = 1",
+                    "\\sin^2\\theta + \\frac{\\cos^2\\theta}{\\cos^2\\theta} = \\frac{1}{\\cos^2\\theta}",
+                    "\\frac{\\sin^2\\theta}{\\cos^2\\theta} + \\frac{\\cos^2\\theta}{\\cos^2\\theta} = \\frac{1}{\\cos^2\\theta}"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "左辺の第1項を2乗の形にまとめ、第2項の分子分母が同じである部分を 1 にします。",
+                "formula": "\\left(\\frac{\\sin\\theta}{\\cos\\theta}\\right)^2 + 1 = \\frac{1}{\\cos^2\\theta}",
+                "choices": [
+                    "\\left(\\frac{\\sin\\theta}{\\cos\\theta}\\right)^2 + 0 = \\frac{1}{\\cos^2\\theta}",
+                    "\\left(\\frac{\\sin\\theta}{\\cos\\theta}\\right)^2 + 1 = \\frac{1}{\\cos^2\\theta}",
+                    "\\frac{\\sin\\theta}{\\cos\\theta} + 1 = \\frac{1}{\\cos^2\\theta}",
+                    "\\left(\\frac{\\sin\\theta}{\\cos\\theta}\\right)^2 + 1 = 1"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "tanθ = sinθ/cosθ の関係を用いて、括弧の中身を tanθ に置き換えます。",
+                "formula": "\\tan^2\\theta + 1 = \\frac{1}{\\cos^2\\theta}",
+                "choices": [
+                    "\\tan\\theta + 1 = \\frac{1}{\\cos^2\\theta}",
+                    "\\frac{1}{\\tan^2\\theta} + 1 = \\frac{1}{\\cos^2\\theta}",
+                    "\\tan^2\\theta + 1 = \\frac{1}{\\cos^2\\theta}",
+                    "\\tan^2\\theta + 1 = \\frac{1}{\\sin^2\\theta}"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "左辺の項の順序を整理して、公式の形を完成させます。",
+                "formula": "1 + \\tan^2\\theta = \\frac{1}{\\cos^2\\theta}",
+                "choices": [
+                    "1 + \\tan^2\\theta = \\frac{1}{\\cos^2\\theta}",
+                    "1 - \\tan^2\\theta = \\frac{1}{\\cos^2\\theta}",
+                    "1 + \\tan^2\\theta = \\frac{1}{\\sin^2\\theta}",
+                    "1 + \\tan^2\\theta = \\cos^2\\theta"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "三角関数の相互関係"
+    },
+    {
+        "id": "trig_90_minus_theta_sin",
+        "title": "90° - θ のサインの公式証明",
+        "initialFormula": "\\sin(90^\\circ - \\theta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "直角三角形（斜辺1, 角度θの対辺a, 隣辺b）において、もう一つの鋭角 (90° - θ) から見た対辺の長さ（sin）を求めます。",
+                "formula": "b",
+                "choices": [
+                    "a",
+                    "\\frac{a}{b}",
+                    "b",
+                    "\\frac{b}{a}"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "元の角度 θ において、辺の長さ b は cosθ の定義（斜辺1に対する隣辺）そのものであるため、置き換えます。",
+                "formula": "\\cos\\theta",
+                "choices": [
+                    "\\sin\\theta",
+                    "\\tan\\theta",
+                    "\\frac{1}{\\cos\\theta}",
+                    "\\cos\\theta"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "90度-θの三角比"
+    },
+    {
+        "id": "trig_90_minus_theta_cos",
+        "title": "90° - θ のコサインの公式証明",
+        "initialFormula": "\\cos(90^\\circ - \\theta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "直角三角形（斜辺1, 角度θの対辺a, 隣辺b）において、もう一つの鋭角 (90° - θ) から見た隣辺の長さ（cos）を求めます。",
+                "formula": "a",
+                "choices": [
+                    "b",
+                    "a",
+                    "\\frac{a}{b}",
+                    "1"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "元の角度 θ において、辺の長さ a は sinθ の定義（斜辺1に対する対辺）そのものであるため、置き換えます。",
+                "formula": "\\sin\\theta",
+                "choices": [
+                    "\\sin\\theta",
+                    "\\cos\\theta",
+                    "-\\sin\\theta",
+                    "\\frac{1}{\\sin\\theta}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "90度-θの三角比"
+    },
+    {
+        "id": "trig_90_minus_theta_tan",
+        "title": "90° - θ のタンジェントの公式証明",
+        "initialFormula": "\\tan(90^\\circ - \\theta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "直角三角形（斜辺1, 角度θの対辺a, 隣辺b）において、もう一つの鋭角 (90° - θ) から見たタンジェント（対辺/隣辺）を求めます。",
+                "formula": "\\frac{b}{a}",
+                "choices": [
+                    "\\frac{a}{b}",
+                    "ab",
+                    "\\frac{1}{b}",
+                    "\\frac{b}{a}"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "元の角度 θ において tanθ = a/b であるため、その逆数である b/a を tanθ を用いて表します。",
+                "formula": "\\frac{1}{\\tan\\theta}",
+                "choices": [
+                    "\\frac{1}{\\tan\\theta}",
+                    "\\tan\\theta",
+                    "-\\tan\\theta",
+                    "\\frac{1}{\\tan^2\\theta}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "90度-θの三角比"
+    },
+    {
+        "id": "trig_180_minus_theta_sin",
+        "title": "180° - θ のサインの公式証明",
+        "initialFormula": "\\sin(180^\\circ - \\theta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "単位円上の動径、または座標（角度θのときx=b, y=a）を基準として、180° - θ の動径における y 座標（sin）を読み取ります。",
+                "formula": "a",
+                "choices": [
+                    "-a",
+                    "b",
+                    "-b",
+                    "a"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "元の角度 θ において、y 座標の長さ a は sinθ の定義そのものであるため、これに置き換えます。",
+                "formula": "\\sin\\theta",
+                "choices": [
+                    "\\sin\\theta",
+                    "\\cos\\theta",
+                    "-\\sin\\theta",
+                    "-\\cos\\theta"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "180度-θの三角比"
+    },
+    {
+        "id": "trig_180_minus_theta_cos",
+        "title": "180° - θ のコサインの公式証明",
+        "initialFormula": "\\cos(180^\\circ - \\theta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "単位円上において、180° - θ の動径に対する x 座標（cos）を読み取ります。x 軸の負の方向に対称移動するため符号に注意します。",
+                "formula": "-b",
+                "choices": [
+                    "b",
+                    "a",
+                    "-b",
+                    "-a"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "元の角度 θ において、x 座標の長さ b は cosθ であるため、これを用いて表します。",
+                "formula": "-\\cos\\theta",
+                "choices": [
+                    "\\cos\\theta",
+                    "-\\cos\\theta",
+                    "\\sin\\theta",
+                    "-\\sin\\theta"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "180度-θの三角比"
+    },
+    {
+        "id": "trig_180_minus_theta_tan",
+        "title": "180° - θ のタンジェントの公式証明",
+        "initialFormula": "\\tan(180^\\circ - \\theta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "180° - θ の動径の傾き（tan = y/x）を、対称移動した位置の座標を用いて表します。",
+                "formula": "-\\frac{a}{b}",
+                "choices": [
+                    "-\\frac{a}{b}",
+                    "\\frac{a}{b}",
+                    "-\\frac{b}{a}",
+                    "\\frac{b}{a}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "元の角度 θ において tanθ = a/b であるため、これを用いて置き換えます。",
+                "formula": "-\\tan\\theta",
+                "choices": [
+                    "\\tan\\theta",
+                    "-\\frac{1}{\\tan\\theta}",
+                    "\\frac{1}{\\tan\\theta}",
+                    "-\\tan\\theta"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "180度-θの三角比"
+    },
+    {
+        "id": "sine_theorem_acute",
+        "title": "正弦定理の証明（鋭角）",
+        "initialFormula": "a = 2R \\sin A'",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "円周角の定理により、同じ弧に対する円周角は等しい（∠A = ∠A'）ため、A' を A に置き換えます。",
+                "formula": "a = 2R \\sin A",
+                "choices": [
+                    "a = 2R \\cos A",
+                    "a = R \\sin A",
+                    "a = 2R \\sin A",
+                    "a = 2R \\tan A"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "両辺を sin A で割ることで、正弦定理の対辺と比の形に変形します。",
+                "formula": "\\frac{a}{\\sin A} = 2R",
+                "choices": [
+                    "\\frac{a}{\\sin A} = 2R",
+                    "\\frac{\\sin A}{a} = 2R",
+                    "\\frac{a}{\\cos A} = 2R",
+                    "\\frac{a}{\\sin A} = R"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "正弦定理"
+    },
+    {
+        "id": "sine_theorem_right",
+        "title": "正弦定理の証明（直角）",
+        "initialFormula": "\\sin A",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "∠A = 90° のとき、sin 90° の値を求めます。",
+                "formula": "1",
+                "choices": [
+                    "0",
+                    "\\frac{1}{2}",
+                    "-1",
+                    "1"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "直角三角形において対辺 a は外接円の直径 2R に一致します。これと sin A = 1 を利用して、a / sin A の形を作ります。",
+                "formula": "\\frac{a}{\\sin A} = 2R",
+                "choices": [
+                    "\\frac{a}{\\sin A} = R",
+                    "\\frac{a}{\\sin A} = 2R",
+                    "\\frac{\\sin A}{a} = 2R",
+                    "\\frac{a}{\\cos A} = 2R"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "正弦定理"
+    },
+    {
+        "id": "sine_theorem_obtuse",
+        "title": "正弦定理の証明（鈍角）",
+        "initialFormula": "a",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "直径に対する円周角が 90° となる直角三角形 △BCA' を作り、斜辺 2R と ∠A' を用いて辺 a の長さを表します。",
+                "formula": "2R \\sin A'",
+                "choices": [
+                    "2R \\cos A'",
+                    "2R \\sin A'",
+                    "R \\sin A'",
+                    "2R \\tan A'"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "円に内接する四角形の対角の和は 180° である性質（∠A + ∠A' = 180°）から、∠A' を ∠A を用いた式に書き換えます。",
+                "formula": "2R \\sin(180^\\circ - A)",
+                "choices": [
+                    "2R \\sin(180^\\circ - A)",
+                    "2R \\sin(90^\\circ - A)",
+                    "2R \\cos(180^\\circ - A)",
+                    "2R \\sin(180^\\circ + A)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "三角関数の性質 sin(180° - θ) = sin θ を用いて式を整理します。",
+                "formula": "2R \\sin A",
+                "choices": [
+                    "-2R \\sin A",
+                    "2R \\cos A",
+                    "2R \\sin A",
+                    "2R \\tan A"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "両辺を sin A で割り、目的の正弦定理の形を導き出します。",
+                "formula": "\\frac{a}{\\sin A} = 2R",
+                "choices": [
+                    "\\frac{a}{\\sin A} = R",
+                    "\\frac{\\sin A}{a} = 2R",
+                    "\\frac{a}{\\sin A} = 2R",
+                    "\\frac{a}{\\cos A} = 2R"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "正弦定理"
+    },
+    {
+        "id": "cosine_theorem_proof",
+        "title": "余弦定理の証明",
+        "initialFormula": "a^2 = (c \\sin A)^2 + (b - c \\cos A)^2",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "三平方の定理から導いた式の右辺をそれぞれ展開します。第2項の (b - c cos A)^2 の展開による符号と2倍の係数に注意しましょう。",
+                "formula": "c^2 \\sin^2 A + b^2 - 2bc \\cos A + c^2 \\cos^2 A",
+                "choices": [
+                    "c^2 \\sin^2 A + b^2 - bc \\cos A + c^2 \\cos^2 A",
+                    "c^2 \\sin^2 A + b^2 + 2bc \\cos A - c^2 \\cos^2 A",
+                    "c^2 \\sin^2 A + b^2 - 2bc \\cos A + c^2 \\cos^2 A",
+                    "c^2 \\sin^2 A + b^2 - 2bc \\cos A - c^2 \\cos^2 A"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "展開した式の中から、共通因数である c^2 を含む項（c^2 sin^2 A と c^2 cos^2 A）を c^2 でくくって整理します。",
+                "formula": "b^2 + c^2(\\sin^2 A + \\cos^2 A) - 2bc \\cos A",
+                "choices": [
+                    "b^2 + c^2(\\sin^2 A - \\cos^2 A) - 2bc \\cos A",
+                    "b^2 + c^2(\\sin^2 A + \\cos^2 A) - 2bc \\cos A",
+                    "b^2 + c(\\sin^2 A + \\cos^2 A) - 2bc \\cos A",
+                    "b^2 + c^2(\\sin^2 A + \\cos^2 A) + 2bc \\cos A"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "三角関数の相互関係の基本公式 sin^2 A + cos^2 A = 1 を括弧の中に代入して式を簡潔にします。",
+                "formula": "b^2 + c^2 - 2bc \\cos A",
+                "choices": [
+                    "b^2 + c^2 - 2bc \\cos A",
+                    "b^2 - 2bc \\cos A",
+                    "b^2 + c^2 + 2bc \\cos A",
+                    "b^2 - c^2 - 2bc \\cos A"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "余弦定理"
+    },
+    {
+        "id": "euclidean_algorithm_proof",
+        "title": "ユークリッドの互除法の原理の証明",
+        "initialFormula": "a = bq + r",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "a と b の最大公約数を g とし、a = a'g, b = b'g と表せる動径を、割り算の基本式 a = bq + r に代入します。",
+                "formula": "a'g = b'gq + r",
+                "choices": [
+                    "a'g = b'q + r",
+                    "a' = b'gq + r",
+                    "a'g = b'gq + r",
+                    "a'g = b'gq + rg"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "余り r についての性質を調べるために、b'gq を左辺に移項して r について整理します。",
+                "formula": "r = a'g - b'gq",
+                "choices": [
+                    "r = a'g - b'gq",
+                    "r = a'g + b'gq",
+                    "r = b'gq - a'g",
+                    "r = g(a'g - b'q)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "右辺の共通因数である g で全体をくくり、r が g を因数に持つ（gの倍数である）ことを示します。",
+                "formula": "r = g(a' - b'q)",
+                "choices": [
+                    "r = g(a' + b'q)",
+                    "r = a' - b'q",
+                    "r = g(a' - b'gq)",
+                    "r = g(a' - b'q)"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "整数の性質"
+    },
+    {
+        "id": "euclidean_algorithm_proof",
+        "title": "ユークリッドの互除法の原理の証明",
+        "initialFormula": "a = bq + r",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "a と b の最大公約数を g とし、a = a'g, b = b'g と表せる動径を、割り算の基本式 a = bq + r に代入します。",
+                "formula": "a'g = b'gq + r",
+                "choices": [
+                    "a'g = b'q + r",
+                    "a' = b'gq + r",
+                    "a'g = b'gq + r",
+                    "a'g = b'gq + rg"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "余り r についての性質を調べるために、b'gq を左辺に移項して r について整理します。",
+                "formula": "r = a'g - b'gq",
+                "choices": [
+                    "r = a'g - b'gq",
+                    "r = a'g + b'gq",
+                    "r = b'gq - a'g",
+                    "r = g(a'g - b'q)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "右辺の共通因数である g で全体をくくり、r が g を因数に持つ（gの倍数である）ことを示します。",
+                "formula": "r = g(a' - b'q)",
+                "choices": [
+                    "r = g(a' + b'q)",
+                    "r = a' - b'q",
+                    "r = g(a' - b'gq)",
+                    "r = g(a' - b'q)"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "整数の性質"
+    },
+    {
+        "id": "angle_bisector_similarity",
+        "title": "内角の二等分線と比の証明（平行線と相似）",
+        "initialFormula": "AP \\parallel QC",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "平行線の同位角・錯角が等しいこと、およびAPが角の二等分線であることから ∠BQC = ∠ACQ となり、△ACQが二等辺三角形であることを導きます。",
+                "formula": "AQ = AC",
+                "choices": [
+                    "AQ = AB",
+                    "AQ = QC",
+                    "AQ = AC",
+                    "AP = AC"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "平行線と線分の比の性質（または △BAP ∽ △BQC の相似比）から、底辺の比を側面の辺の比で表します。",
+                "formula": "BP : PC = AB : AQ",
+                "choices": [
+                    "BP : PC = AB : AQ",
+                    "BP : PC = AQ : AB",
+                    "BP : PC = AP : AC",
+                    "BP : PC = AB : QC"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "先ほど導いた二等辺三角形の辺の関係（AQ = AC）を比の式に代入し、定理の形を完成させます。",
+                "formula": "BP : PC = AB : AC",
+                "choices": [
+                    "BP : PC = AC : AB",
+                    "BP : PC = AB : AP",
+                    "BP : PC = AP : AC",
+                    "BP : PC = AB : AC"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "図形の性質"
+    },
+    {
+        "id": "angle_bisector_area",
+        "title": "内角の二等分線と比の証明（面積比）",
+        "initialFormula": "\\triangle ABP : \\triangle ACP",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "2つの三角形は頂点 A を共有しており高さが等しいため、面積の比はそのまま底辺の比に変形できます。",
+                "formula": "BP : PC",
+                "choices": [
+                    "AB : AC",
+                    "BP : PC",
+                    "AP : PC",
+                    "BP : AC"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "次に、角の二等分線によってできた角度を θ と置き、三角形の面積公式 S = 1/2 absinθ を用いてそれぞれの面積の比を立式します。",
+                "formula": "\\left(\\frac{1}{2} \\times AB \\times AP \\times \\sin\\theta\\right) : \\left(\\frac{1}{2} \\times AC \\times AP \\times \\sin\\theta\\right)",
+                "choices": [
+                    "\\left(\\frac{1}{2} \\times AB \\times BC \\times \\sin\\theta\\right) : \\left(\\frac{1}{2} \\times AC \\times BC \\times \\sin\\theta\\right)",
+                    "\\left(\\frac{1}{2} \\times AB \\times AP \\times \\cos\\theta\\right) : \\left(\\frac{1}{2} \\times AC \\times AP \\times \\cos\\theta\\right)",
+                    "\\left(\\frac{1}{2} \\times AB \\times AP \\times \\sin\\theta\\right) : \\left(\\frac{1}{2} \\times AC \\times AP \\times \\sin\\theta\\right)",
+                    "(AB \\times AP \\times \\sin\\theta) : (AC \\times AP \\times \\sin\\theta)"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "比の両項に共通する因数（1/2、線分AP、sinθ）をすべて約分して式をスマートに整理します。",
+                "formula": "AB : AC",
+                "choices": [
+                    "AB : AC",
+                    "AC : AB",
+                    "AP : AC",
+                    "AB : AP"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "最初のアプローチで求めた底辺の比（BP : PC）と、面積公式から導いた辺の比（AB : AC）は同じ面積比を表しているため、これらを等号で結びます。",
+                "formula": "BP : PC = AB : AC",
+                "choices": [
+                    "BP : PC = AC : AB",
+                    "BP : PC = AB : AP",
+                    "BP : PC = AB : AC",
+                    "BP : PC = AP : AC"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "図形の性質"
+    },
+    {
+        "id": "am_gm_inequality_proof",
+        "title": "相加平均と相乗平均の大小関係の証明",
+        "initialFormula": "\\frac{a+b}{2} - \\sqrt{ab}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "（左辺）－（右辺）の差を計算するために、分母を 2 に通分して分子の式をまとめます。",
+                "formula": "\\frac{a + b - 2\\sqrt{ab}}{2}",
+                "choices": [
+                    "\\frac{a + b - \\sqrt{ab}}{2}",
+                    "\\frac{a + b - 2\\sqrt{ab}}{2}",
+                    "\\frac{a + b - 2ab}{2}",
+                    "\\frac{a + b + 2\\sqrt{ab}}{2}"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "分子の a + b - 2√ab を (√a)^2 - 2√a√b + (√b)^2 と捉え、因数分解の公式を用いて平方（2乗）の形に変形します。",
+                "formula": "\\frac{(\\sqrt{a} - \\sqrt{b})^2}{2}",
+                "choices": [
+                    "\\frac{(\\sqrt{a} - \\sqrt{b})^2}{2}",
+                    "\\frac{(\\sqrt{a} + \\sqrt{b})^2}{2}",
+                    "\\frac{(a - b)^2}{2}",
+                    "\\frac{\\sqrt{a} - \\sqrt{b}}{2}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "実数の2乗は必ず0以上（負にならない）という性質から、この式全体が 0 以上であることを示します。",
+                "formula": "\\frac{(\\sqrt{a} - \\sqrt{b})^2}{2} \\geqq 0",
+                "choices": [
+                    "\\frac{(\\sqrt{a} - \\sqrt{b})^2}{2} > 0",
+                    "\\frac{(\\sqrt{a} - \\sqrt{b})^2}{2} \\leqq 0",
+                    "\\frac{(\\sqrt{a} - \\sqrt{b})^2}{2} = 0",
+                    "\\frac{(\\sqrt{a} - \\sqrt{b})^2}{2} \\geqq 0"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "（左辺）－（右辺）≧ 0 が成り立たつことが証明されたため、マイナスの項を右辺へ移項して本来の定理の形を導きます。",
+                "formula": "\\frac{a+b}{2} \\geqq \\sqrt{ab}",
+                "choices": [
+                    "\\frac{a+b}{2} > \\sqrt{ab}",
+                    "\\frac{a+b}{2} \\leqq \\sqrt{ab}",
+                    "\\frac{a+b}{2} \\geqq \\sqrt{ab}",
+                    "a+b \\geqq \\sqrt{ab}"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "相加平均と相乗平均"
+    },
+    {
+        "id": "internal_division_1d",
+        "title": "1次元の内分点公式の導出",
+        "initialFormula": "(p - a) : (b - p) = m : n",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "比の性質「内項の積 ＝ 外項の積」を用いて、比例式を通常の方程式に変形します。",
+                "formula": "m(b - p) = n(p - a)",
+                "choices": [
+                    "m(p - a) = n(b - p)",
+                    "m(b - p) = n(p - a)",
+                    "n(b - p) = m(p - a)",
+                    "m(b + p) = n(p + a)"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "両辺の括弧を展開し、各項をバラバラにします。",
+                "formula": "mb - mp = np - na",
+                "choices": [
+                    "mb - mp = np - na",
+                    "mb - p = np - a",
+                    "mb + mp = np + na",
+                    "mb - mp = np + na"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "求めたい変数 p を含む項を左辺に、それ以外の項（a, bを含む項）を右辺に移項して整理します。",
+                "formula": "mp + np = na + mb",
+                "choices": [
+                    "mp - np = na - mb",
+                    "mp + np = na - mb",
+                    "mp + np = na + mb",
+                    "mp - np = na + mb"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "左辺を共通因数である p でくくり、因数分解の形にします。",
+                "formula": "(m + n)p = na + mb",
+                "choices": [
+                    "(m + n)p = na + mb",
+                    "(m - n)p = na + mb",
+                    "mnp = na + mb",
+                    "(m + n)p = na - mb"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 5,
+                "explanation": "m + n は 0 ではないため、両辺を m + n で割ることで、内分点 p の座標公式を導き出します。",
+                "formula": "p = \\frac{na + mb}{m+n}",
+                "choices": [
+                    "p = \\frac{na - mb}{m+n}",
+                    "p = \\frac{na + mb}{m-n}",
+                    "p = \\frac{ma + nb}{m+n}",
+                    "p = \\frac{na + mb}{m+n}"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "内分点・外分点"
+    },
+    {
+        "id": "external_division_1d",
+        "title": "1次元の外分点公式の導出",
+        "initialFormula": "(p - a) : (p - b) = m : n",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "内分点と同様に、比の性質「内項の積 ＝ 外項の積」を用いて方程式を立てます。",
+                "formula": "m(p - b) = n(p - a)",
+                "choices": [
+                    "m(p - b) = n(p - a)",
+                    "n(p - b) = m(p - a)",
+                    "m(b - p) = n(a - p)",
+                    "m(p - b) = n(a - p)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "両辺の括弧を展開し、それぞれの項を整理します。符号のミスに注意しましょう。",
+                "formula": "mp - mb = np - na",
+                "choices": [
+                    "mp - b = np - a",
+                    "mp - mb = np - na",
+                    "mp + mb = np + na",
+                    "mp - mb = np + na"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "変数 p を含む項を左辺に集め、定数項（a, bの項）を右辺に移項します。",
+                "formula": "mp - np = -na + mb",
+                "choices": [
+                    "mp - np = na - mb",
+                    "mp + np = -na + mb",
+                    "mp - np = -na + mb",
+                    "mp - np = na + mb"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "左辺を共通因数である p でくくります。",
+                "formula": "(m - n)p = -na + mb",
+                "choices": [
+                    "(m - n)p = -na + mb",
+                    "(m + n)p = -na + mb",
+                    "(m - n)p = na + mb",
+                    "(m - n)p = -na - mb"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 5,
+                "explanation": "外分では比が等しくなることはない（m ≠ n）ため、両辺を m - n で割って外分点 p の座標公式を完成させます。",
+                "formula": "p = \\frac{-na + mb}{m-n}",
+                "choices": [
+                    "p = \\frac{-na + mb}{m+n}",
+                    "p = \\frac{-na + mb}{m-n}",
+                    "p = \\frac{na - mb}{m-n}",
+                    "p = \\frac{-na - mb}{m-n}"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "内分点・外分点"
+    },
+    {
+        "id": "triangle_centroid_proof",
+        "title": "三角形の重心の座標公式の証明",
+        "initialFormula": "\\frac{1 \\cdot x_1 + 2 \\cdot x_m}{2 + 1}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "頂点 A(x1, y1) と辺 BC の中点 M(xm, ym) を 2 : 1 に内分する点の x 座標を求めるため、まずは分母の計算をして比の式を整理します。",
+                "formula": "\\frac{x_1 + 2x_m}{3}",
+                "choices": [
+                    "\\frac{2x_1 + x_m}{3}",
+                    "\\frac{x_1 + 2x_m}{2}",
+                    "\\frac{x_1 + x_m}{3}",
+                    "\\frac{x_1 + 2x_m}{3}"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "辺 BC の中点 M の x 座標は、B と C の x 座標の平均（xm = (x2 + x3) / 2）であるため、これを式に代入します。",
+                "formula": "\\frac{x_1 + 2 \\times \\left(\\frac{x_2 + x_3}{2}\\right)}{3}",
+                "choices": [
+                    "\\frac{x_1 + 2 \\times \\left(\\frac{x_2 + x_3}{2}\\right)}{3}",
+                    "\\frac{x_1 + 2 \\times (x_2 + x_3)}{3}",
+                    "\\frac{x_1 + \\frac{x_2 + x_3}{2}}{3}",
+                    "\\frac{2x_1 + \\frac{x_2 + x_3}{2}}{3}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "分子の第2項にある「2 × 1/2」の部分を綺麗に約分して消去し、分子の式を整理します。",
+                "formula": "\\frac{x_1 + x_2 + x_3}{3}",
+                "choices": [
+                    "\\frac{x_1 + x_2 + x_3}{2}",
+                    "\\frac{x_1 + 2x_2 + 2x_3}{3}",
+                    "\\frac{x_1 + x_2 + x_3}{3}",
+                    "x_1 + x_2 + x_3"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "三角形の重心"
+    },
+    {
+        "id": "point_line_distance_k",
+        "title": "点と直線の距離の公式の証明（パラメータkの導出）",
+        "initialFormula": "a(x_1 + ak) + b(y_1 + bk) + c = 0",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "直線の方程式に代入した式を展開し、変数 k を含む項を左辺に、含まない項を右辺に移項して整理します。",
+                "formula": "(a^2 + b^2)k = -(ax_1 + by_1 + c)",
+                "choices": [
+                    "(a^2 + b^2)k = ax_1 + by_1 + c",
+                    "(a^2 - b^2)k = -(ax_1 + by_1 + c)",
+                    "(a^2 + b^2)k = -(ax_1 + by_1 + c)",
+                    "(a + b)k = -(ax_1 + by_1 + c)"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "両辺を (a^2 + b^2) で割ることで、パラメータ k の値を求めます。",
+                "formula": "k = -\\frac{ax_1 + by_1 + c}{a^2 + b^2}",
+                "choices": [
+                    "k = -\\frac{ax_1 + by_1 + c}{a^2 + b^2}",
+                    "k = \\frac{ax_1 + by_1 + c}{a^2 + b^2}",
+                    "k = -\\frac{ax_1 + by_1 + c}{\\sqrt{a^2 + b^2}}",
+                    "k = -\\frac{ax_1 - by_1 - c}{a^2 + b^2}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "点と直線の距離"
+    },
+    {
+        "id": "point_line_distance_d",
+        "title": "点と直線の距離の公式の証明（距離の計算）",
+        "initialFormula": "d = \\sqrt{(ak)^2 + (bk)^2}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "ルートの中身を展開して k^2 でくくり、k^2 を絶対値 |k| としてルートの外に括り出します。",
+                "formula": "\\sqrt{a^2 + b^2} \\cdot |k|",
+                "choices": [
+                    "(a^2 + b^2) \\cdot |k|",
+                    "\\sqrt{a^2 + b^2} \\cdot k",
+                    "\\sqrt{a^2 + b^2} \\cdot |k|",
+                    "\\sqrt{a + b} \\cdot |k|"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "先ほど導出したパラメータ k の値を代入します。全体に絶対値がついていることに注目しましょう。",
+                "formula": "\\sqrt{a^2 + b^2} \\times \\left| -\\frac{ax_1 + by_1 + c}{a^2 + b^2} \\right|",
+                "choices": [
+                    "\\sqrt{a^2 + b^2} \\times \\left| -\\frac{ax_1 + by_1 + c}{a^2 + b^2} \\right|",
+                    "\\sqrt{a^2 + b^2} \\times \\frac{ax_1 + by_1 + c}{a^2 + b^2}",
+                    "(a^2 + b^2) \\times \\left| -\\frac{ax_1 + by_1 + c}{a^2 + b^2} \\right|",
+                    "\\sqrt{a^2 + b^2} \\times \\left| -\\frac{ax_1 + by_1 + c}{\\sqrt{a^2 + b^2}} \\right|"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "絶対値の中のマイナスを消去し、分母の (a^2 + b^2) と乗算している √(a^2 + b^2) を約分して公式を完成させます。",
+                "formula": "\\frac{|ax_1 + by_1 + c|}{\\sqrt{a^2 + b^2}}",
+                "choices": [
+                    "\\frac{ax_1 + by_1 + c}{a^2 + b^2}",
+                    "\\frac{|ax_1 + by_1 + c|}{\\sqrt{a^2 + b^2}}",
+                    "\\frac{|ax_1 + by_1 + c|}{a^2 + b^2}",
+                    "\\sqrt{a^2 + b^2} \\cdot |ax_1 + by_1 + c|"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "点と直線の距離"
+    },
+    {
+        "id": "circle_equation_proof",
+        "title": "円の方程式の公式の証明",
+        "initialFormula": "CP = r",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "平面上の2点、中心 C(a, b) と円上の点 P(x, y) の距離 CP を「2点間の距離の公式」を用いて表します。",
+                "formula": "\\sqrt{(x-a)^2 + (y-b)^2}",
+                "choices": [
+                    "\\sqrt{(x+a)^2 + (y+b)^2}",
+                    "(x-a)^2 + (y-b)^2",
+                    "\\sqrt{(x-a)^2 + (y-b)^2}",
+                    "\\sqrt{(x-a) + (y-b)}"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "円の定義「中心からの距離が一定（半径 r）」より、求めた距離の式を CP = r に代入して1つの式に合体させます。",
+                "formula": "\\sqrt{(x-a)^2 + (y-b)^2} = r",
+                "choices": [
+                    "\\sqrt{(x-a)^2 + (y-b)^2} = r",
+                    "(x-a)^2 + (y-b)^2 = r",
+                    "\\sqrt{(x-a)^2 + (y-b)^2} = r^2",
+                    "\\sqrt{(x+a)^2 + (y+b)^2} = r"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "左辺のルートを外して式を整理するために、両辺を2乗して円の方程式の標準形を導き出します。",
+                "formula": "(x-a)^2 + (y-b)^2 = r^2",
+                "choices": [
+                    "(x-a)^2 + (y-b)^2 = r",
+                    "x^2 + y^2 = r^2",
+                    "(x+a)^2 + (y+b)^2 = r^2",
+                    "(x-a)^2 + (y-b)^2 = r^2"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "円の方程式"
+    },
+    {
+        "id": "sector_area_derivation",
+        "title": "扇形のもうひとつの面積公式の導出",
+        "initialFormula": "S = \\frac{1}{2}r^2\\theta",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "面積の公式公式にある r^2θ の部分を、のちに弧の長さの公式（l = rθ）を代入しやすいように r と (rθ) の積に分解します。",
+                "formula": "\\frac{1}{2}r \\times (r\\theta)",
+                "choices": [
+                    "\\frac{1}{2}r^2 \\times \\theta",
+                    "\\frac{1}{2}r \\times (r\\theta)",
+                    "\\frac{1}{2} \\times (r\\theta)^2",
+                    "r \\times (\\frac{1}{2}r\\theta)"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "弧度法における弧の長さの公式 l = rθ を、先ほど分解した式の (rθ) の部分に代入して置き換えます。",
+                "formula": "\\frac{1}{2}lr",
+                "choices": [
+                    "\\frac{1}{2}l^2r",
+                    "\\frac{1}{2}l",
+                    "lr",
+                    "\\frac{1}{2}lr"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "扇形の弧の長さと面積"
+    },
+    {
+        "id": "addition_theorem_sin",
+        "title": "sinの加法定理の幾何学的証明",
+        "initialFormula": "\\sin(\\alpha + \\beta)",
+        "diagramSVG": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240' width='100%' height='100%'><path d='M 120 120 L 136 120 A 16 16 0 0 0 133.1 110.8 Z' fill='#FFA0A0' fill-opacity='0.85'/><path d='M 120 120 L 136 120 A 16 16 0 0 1 128.0 133.8 Z' fill='#A3E7EF' fill-opacity='0.85'/><line x1='20' y1='120' x2='216' y2='120' stroke='#5E5E5E' stroke-width='1.2'/><path d='M 210 116 L 218 120 L 210 124' fill='none' stroke='#5E5E5E' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/><line x1='120' y1='220' x2='120' y2='24' stroke='#5E5E5E' stroke-width='1.2'/><path d='M 116 30 L 120 22 L 124 30' fill='none' stroke='#5E5E5E' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/><circle cx='120' cy='120' r='75' fill='none' stroke='#5E5E5E' stroke-width='1.2'/><line x1='120' y1='120' x2='181.4' y2='77.0' stroke='#5E5E5E' stroke-width='1.2'/><line x1='120' y1='120' x2='157.5' y2='184.9' stroke='#5E5E5E' stroke-width='1.2'/><line x1='181.4' y1='77.0' x2='157.5' y2='184.9' stroke='#5E5E5E' stroke-width='1.2'/><text x='186' y='66' font-family='system-ui, -apple-system, sans-serif' font-size='16' fill='#5E5E5E'>A</text><text x='155' y='202' font-family='system-ui, -apple-system, sans-serif' font-size='16' fill='#5E5E5E'>B</text><text x='224' y='124' font-family='system-ui' font-size='15' fill='#5E5E5E'>x</text><text x='120' y='15' font-family='system-ui, -apple-system, sans-serif' font-size='15' fill='#5E5E5E' text-anchor='middle'>y</text><text x='142' y='113' font-family='system-ui' font-size='12' fill='#5E5E5E'>α</text><text x='142' y='136' font-family='system-ui' font-size='12' fill='#5E5E5E'>-β</text></svg>",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "斜辺が 1 の直角三角形を組み合わせた図を考えます。長方形の縦の長さ（全体の高さ）を構成する「下のパーツ（黒の三角形の高さ）」の長さを、斜辺 \\cos\\beta と角度 \\alpha を用いて表します。",
+                "formula": "\\sin\\alpha\\cos\\beta",
+                "choices": [
+                    "\\sin\\alpha\\cos\\beta",
+                    "\\cos\\alpha\\cos\\beta",
+                    "\\sin\\alpha\\sin\\beta",
+                    "\\cos\\alpha\\sin\\beta"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "次に、幾何学的な角度のパズルから同じく角度が \\alpha となる「上のパーツ（赤の小さな三角形の高さ）」の長さを、斜辺 \\sin\\beta を用いて表します。",
+                "formula": "\\cos\\alpha\\sin\\beta",
+                "choices": [
+                    "\\sin\\alpha\\cos\\beta",
+                    "\\cos\\alpha\\sin\\beta",
+                    "\\sin\\alpha\\sin\\beta",
+                    "\\cos\\alpha\\cos\\beta"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "全体の縦の長さ（高さ）である \\sin(\\alpha + \\beta) は、これら求めた「下のパーツ」と「上のパーツ」の合計に等しくなるため、2つの式を足し合わせます。",
+                "formula": "\\sin\\alpha\\cos\\beta + \\cos\\alpha\\sin\\beta",
+                "choices": [
+                    "\\sin\\alpha\\cos\\beta - \\cos\\alpha\\sin\\beta",
+                    "\\cos\\alpha\\cos\\beta + \\sin\\alpha\\sin\\beta",
+                    "\\sin\\alpha\\cos\\beta + \\cos\\alpha\\sin\\beta",
+                    "\\cos\\alpha\\cos\\beta - \\sin\\alpha\\sin\\beta"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "addition_theorem_cos",
+        "title": "cosの加法定理の幾何学的証明",
+        "initialFormula": "\\cos(\\alpha + \\beta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "同様の長方形の図において、全体の横幅の基準となる一番下の底辺（緑の三角形の底辺）の長さを、斜辺 \\cos\\beta と角度 \\alpha から表します。",
+                "formula": "\\cos\\alpha\\cos\\beta",
+                "choices": [
+                    "\\sin\\alpha\\cos\\beta",
+                    "\\cos\\alpha\\cos\\beta",
+                    "\\cos\\alpha\\sin\\beta",
+                    "\\sin\\alpha\\sin\\beta"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "次に、長方形の横幅から差し引く必要がある、上の赤の小さな三角形の横の長さを、斜辺 \\sin\\beta と角度 \\alpha から表します。",
+                "formula": "\\sin\\alpha\\sin\\beta",
+                "choices": [
+                    "\\sin\\alpha\\sin\\beta",
+                    "\\cos\\alpha\\cos\\beta",
+                    "\\sin\\alpha\\cos\\beta",
+                    "\\cos\\alpha\\sin\\beta"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "求めたい線分 \\cos(\\alpha + \\beta) は、全体の底辺の長さから、上のはみ出ているパーツの長さを引き算したものになるため、式を合体させて定理を導きます。",
+                "formula": "\\cos\\alpha\\cos\\beta - \\sin\\alpha\\sin\\beta",
+                "choices": [
+                    "\\cos\\alpha\\cos\\beta + \\sin\\alpha\\sin\\beta",
+                    "\\sin\\alpha\\cos\\beta - \\cos\\alpha\\sin\\beta",
+                    "\\cos\\alpha\\cos\\beta - \\sin\\alpha\\sin\\beta",
+                    "\\sin\\alpha\\cos\\beta + \\cos\\alpha\\sin\\beta"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "addition_theorem_tan",
+        "title": "tanの加法定理の代数的導出",
+        "initialFormula": "\\tan(\\alpha + \\beta) = \\frac{\\sin(\\alpha + \\beta)}{\\cos(\\alpha + \\beta)}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "三角関数の基本関係式（tan = sin / cos）に対して、すでに証明された sin と cos の加法定理を分子・分母にそれぞれ代入します。",
+                "formula": "\\frac{\\sin\\alpha\\cos\\beta + \\cos\\alpha\\sin\\beta}{\\cos\\alpha\\cos\\beta - \\sin\\alpha\\sin\\beta}",
+                "choices": [
+                    "\\frac{\\sin\\alpha\\cos\\beta - \\cos\\alpha\\sin\\beta}{\\cos\\alpha\\cos\\beta + \\sin\\alpha\\sin\\beta}",
+                    "\\frac{\\cos\\alpha\\cos\\beta - \\sin\\alpha\\sin\\beta}{\\sin\\alpha\\cos\\beta + \\cos\\alpha\\sin\\beta}",
+                    "\\frac{\\sin\\alpha\\cos\\beta + \\cos\\alpha\\sin\\beta}{\\cos\\alpha\\cos\\beta - \\sin\\alpha\\sin\\beta}",
+                    "\\frac{\\sin\\alpha\\sin\\beta + \\cos\\alpha\\cos\\beta}{\\cos\\alpha\\sin\\beta - \\sin\\alpha\\cos\\beta}"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "式を tan のみで整理するために、分子と分母のすべての項を \\cos\\alpha\\cos\\beta で割り算し、約分を行って公式の形を完成させます。",
+                "formula": "\\frac{\\tan\\alpha + \\tan\\beta}{1 - \\tan\\alpha\\tan\\beta}",
+                "choices": [
+                    "\\frac{\\tan\\alpha - \\tan\\beta}{1 + \\tan\\alpha\\tan\\beta}",
+                    "\\frac{\\tan\\alpha + \\tan\\beta}{1 - \\tan\\alpha\\tan\\beta}",
+                    "\\frac{1 - \\tan\\alpha\\tan\\beta}{\\tan\\alpha + \\tan\\beta}",
+                    "\\frac{\\tan\\alpha + \\tan\\beta}{1 + \\tan\\alpha\\tan\\beta}"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "double_angle_sin",
+        "title": "sinの2倍角の公式の導出",
+        "initialFormula": "\\sin(\\theta + \\theta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "sinの加法定理 sin(α + β) = sinαcosβ + cosαsinβ において、α = θ, β = θ を代入します。",
+                "formula": "\\sin\\theta\\cos\\theta + \\cos\\theta\\sin\\theta",
+                "choices": [
+                    "\\sin\\theta\\cos\\theta - \\cos\\theta\\sin\\theta",
+                    "\\sin\\theta\\cos\\theta + \\cos\\theta\\sin\\theta",
+                    "\\cos\\theta\\cos\\theta + \\sin\\theta\\sin\\theta",
+                    "\\sin\\theta\\sin\\theta + \\cos\\theta\\cos\\theta"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "右辺の2つの項は同じものであるため、同類項をまとめて公式を完成させます。",
+                "formula": "2\\sin\\theta\\cos\\theta",
+                "choices": [
+                    "2\\sin\\theta",
+                    "\\sin^2\\theta\\cos^2\\theta",
+                    "2\\sin\\theta\\cos\\theta",
+                    "\\sin 2\\theta + \\cos 2\\theta"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "double_angle_cos",
+        "title": "cosの2倍角の公式の導出と変形",
+        "initialFormula": "\\cos(\\theta + \\theta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "cosの加法定理 cos(α + β) = cosαcosβ - sinαsinβ において、α = θ, β = θ を代入します。",
+                "formula": "\\cos\\theta\\cos\\theta - \\sin\\theta\\sin\\theta",
+                "choices": [
+                    "\\cos\\theta\\cos\\theta + \\sin\\theta\\sin\\theta",
+                    "\\sin\\theta\\cos\\theta - \\cos\\theta\\sin\\theta",
+                    "\\cos\\theta\\cos\\theta - \\sin\\theta\\sin\\theta",
+                    "\\cos\\theta\\sin\\theta + \\sin\\theta\\cos\\theta"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "それぞれの積を累乗の形にまとめ、cosの2倍角の基本形（パターン1）を導きます。",
+                "formula": "\\cos^2\\theta - \\sin^2\\theta",
+                "choices": [
+                    "\\cos^2\\theta + \\sin^2\\theta",
+                    "\\sin^2\\theta - \\cos^2\\theta",
+                    "2\\cos\\theta - 2\\sin\\theta",
+                    "\\cos^2\\theta - \\sin^2\\theta"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "基本関係式 sin^2θ + cos^2θ = 1 を変形した sin^2θ = 1 - cos^2θ を基本形に代入し、cosのみの式（パターン2）を作ります。",
+                "formula": "2\\cos^2\\theta - 1",
+                "choices": [
+                    "2\\cos^2\\theta - 1",
+                    "1 - 2\\cos^2\\theta",
+                    "2\\cos^2\\theta + 1",
+                    "\\cos^2\\theta - 1"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "同様に cos^2θ = 1 - sin^2θ を基本形に代入することで、sinのみの式（パターン3）へ変形します。",
+                "formula": "1 - 2\\sin^2\\theta",
+                "choices": [
+                    "2\\sin^2\\theta - 1",
+                    "1 - 2\\sin^2\\theta",
+                    "1 - \\sin^2\\theta",
+                    "1 + 2\\sin^2\\theta"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "double_angle_tan",
+        "title": "tanの2倍角の公式の導出",
+        "initialFormula": "\\tan(\\theta + \\theta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "tanの加法定理 tan(α + β) = (tanα + tanβ) / (1 - tanαtanβ) において、α = θ, β = θ を代入します。",
+                "formula": "\\frac{\\tan\\theta + \\tan\\theta}{1 - \\tan\\theta\\tan\\theta}",
+                "choices": [
+                    "\\frac{\\tan\\theta + \\tan\\theta}{1 + \\tan\\theta\\tan\\theta}",
+                    "\\frac{\\tan\\theta - \\tan\\theta}{1 - \\tan\\theta\\tan\\theta}",
+                    "\\frac{\\tan\\theta + \\tan\\theta}{1 - \\tan\\theta\\tan\\theta}",
+                    "\\frac{2\\tan\\theta}{1 - \\tan\\theta}"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "分子の足し算と分母の掛け算をそれぞれ整理し、公式の形を完成させます。",
+                "formula": "\\frac{2\\tan\\theta}{1 - \\tan^2\\theta}",
+                "choices": [
+                    "\\frac{2\\tan\\theta}{1 + \\tan^2\\theta}",
+                    "\\frac{\\tan^2\\theta}{1 - \\tan^2\\theta}",
+                    "2\\tan\\theta (1 - \\tan^2\\theta)",
+                    "\\frac{2\\tan\\theta}{1 - \\tan^2\\theta}"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "trig_composite_sin",
+        "title": "三角関数の合成公式の証明 (sin)",
+        "initialFormula": "a \\sin \\theta + b \\cos \\theta",
+        "diagramSVG": "<svg viewBox='0 0 920 360' xmlns='http://www.w3.org/2000/svg'>   <defs>     <marker id='arrow' viewBox='0 0 10 10' refX='6' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'>       <path d='M 0 1.5 L 10 5 L 0 8.5 z' fill='#000000' />     </marker>     <marker id='red-arrow' viewBox='0 0 10 10' refX='6' refY='5' markerWidth='5' markerHeight='5' orient='auto-start-reverse'>       <path d='M 0 2 L 8 5 L 0 8 z' fill='#E53935' />     </marker>   </defs>    <line x1='60' y1='290' x2='440' y2='290' stroke='#000000' stroke-width='2.5' marker-end='url(#arrow)' />   <line x1='120' y1='330' x2='120' y2='40' stroke='#000000' stroke-width='2.5' marker-end='url(#arrow)' />       <text x='445' y='298' font-family='\"Times New Roman\", Times, serif' font-size='24' font-style='italic'>x</text>   <text x='95' y='45' font-family='\"Times New Roman\", Times, serif' font-size='24' font-style='italic'>y</text>    <line x1='360' y1='110' x2='360' y2='290' stroke='#1E88E5' stroke-width='1.5' stroke-dasharray='4,4' />   <line x1='360' y1='110' x2='120' y2='110' stroke='#1E88E5' stroke-width='1.5' stroke-dasharray='4,4' />    <text x='352' y='318' font-family='\"Times New Roman\", Times, serif' font-size='22' font-style='italic' fill='#1E88E5'>a</text>   <text x='90' y='118' font-family='\"Times New Roman\", Times, serif' font-size='22' font-style='italic' fill='#1E88E5'>b</text>    <path d='M 165 290 A 45 45 0 0 0 156 263' stroke='#E53935' stroke-width='2' fill='none' marker-end='url(#red-arrow)' />   <text x='178' y='282' font-family='\"Times New Roman\", Times, serif' font-size='22' fill='#E53935'>α</text>    <line x1='120' y1='290' x2='360' y2='110' stroke='#000000' stroke-width='4' stroke-linecap='round' />       <path d='M 120 290 Q 210 160 360 110' stroke='#000000' stroke-width='1.5' stroke-dasharray='3,3' fill='none' />   <text x='215' y='180' font-family='\"Times New Roman\", Times, serif' font-size='24' font-style='italic' fill='#E53935'>r</text>    <circle cx='360' cy='110' r='6' fill='#000000' />   <text x='365' y='92' font-family='\"Times New Roman\", Times, serif' font-size='24' font-style='italic'>P(<tspan font-style='normal'>a, b</tspan>)</text>    <rect x='490' y='40' width='400' height='270' rx='10' ry='10' stroke='#000000' stroke-width='1.5' stroke-dasharray='6,4' fill='none' />    <text x='520' y='95' font-family='\"Times New Roman\", Times, serif' font-size='26' font-style='italic' fill='#E53935'>r = </text>   <path d='M 565 83 L 570 96 L 578 68 L 690 68' stroke='#E53935' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' />   <text x='585' y='95' font-family='\"Times New Roman\", Times, serif' font-size='26' font-style='italic' fill='#E53935'>a</text>   <text x='600' y='85' font-family='\"Times New Roman\", Times, serif' font-size='16' fill='#E53935'>2</text>   <text x='618' y='95' font-family='\"Times New Roman\", Times, serif' font-size='26' fill='#E53935'>+</text>   <text x='645' y='95' font-family='\"Times New Roman\", Times, serif' font-size='26' font-style='italic' fill='#E53935'>b</text>   <text x='660' y='85' font-family='\"Times New Roman\", Times, serif' font-size='16' fill='#E53935'>2</text>    <text x='520' y='172' font-family='\"Times New Roman\", Times, serif' font-size='24' fill='#000000'>cos <tspan font-style='italic'>α</tspan> = </text>   <text x='605' y='154' font-family='\"Times New Roman\", Times, serif' font-size='22' font-style='italic' fill='#000000'>a</text>   <line x1='598' y1='162' x2='622' y2='162' stroke='#000000' stroke-width='2' />   <text x='606' y='184' font-family='\"Times New Roman\", Times, serif' font-size='22' font-style='italic' fill='#000000'>r</text>       <text x='640' y='172' font-family='\"Times New Roman\", Times, serif' font-size='24' fill='#000000'>⇔</text>   <text x='690' y='172' font-family='\"Times New Roman\", Times, serif' font-size='24' font-style='italic' fill='#E53935'>a <tspan font-style='normal' fill='#E53935'>=</tspan> r <tspan font-style='normal' fill='#E53935'>cos</tspan> α</text>    <text x='520' y='257' font-family='\"Times New Roman\", Times, serif' font-size='24' fill='#000000'>sin <tspan font-style='italic'>α</tspan> = </text>   <text x='605' y='239' font-family='\"Times New Roman\", Times, serif' font-size='22' font-style='italic' fill='#000000'>b</text>   <line x1='598' y1='247' x2='622' y2='247' stroke='#000000' stroke-width='2' />   <text x='606' y='269' font-family='\"Times New Roman\", Times, serif' font-size='22' font-style='italic' fill='#000000'>r</text>       <text x='640' y='257' font-family='\"Times New Roman\", Times, serif' font-size='24' fill='#000000'>⇔</text>   <text x='690' y='257' font-family='\"Times New Roman\", Times, serif' font-size='24' font-style='italic' fill='#E53935'>b <tspan font-style='normal' fill='#E53935'>=</tspan> r <tspan font-style='normal' fill='#E53935'>sin</tspan> α</text> </svg>",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "座標平面上に点P(a, b)をとり、OP = r、線分OPがx軸の正の向きとなす角をαとすると、a = r \\cos \\alpha, b = r \\sin \\alpha と表せます。これらを下の式に代入します。",
+                "formula": "r \\cos \\alpha \\sin \\theta + r \\sin \\alpha \\cos \\theta",
+                "choices": [
+                    "r \\sin \\alpha \\sin \\theta + r \\cos \\alpha \\cos \\theta",
+                    "r \\cos \\alpha \\sin \\theta + r \\sin \\alpha \\cos \\theta",
+                    "r \\cos \\alpha \\cos \\theta + r \\sin \\alpha \\sin \\theta",
+                    "r \\sin \\alpha \\cos \\theta + r \\cos \\alpha \\sin \\theta"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "共通因数 r で全体をくくり、加法定理を適用しやすくするために項の順序を整理します。",
+                "formula": "r (\\sin \\theta \\cos \\alpha + \\cos \\theta \\sin \\alpha)",
+                "choices": [
+                    "r (\\sin \\theta \\sin \\alpha + \\cos \\theta \\cos \\alpha)",
+                    "r (\\sin \\theta \\cos \\alpha - \\cos \\theta \\sin \\alpha)",
+                    "r (\\cos \\theta \\cos \\alpha - \\sin \\theta \\sin \\alpha)",
+                    "r (\\sin \\theta \\cos \\alpha + \\cos \\theta \\sin \\alpha)"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "括弧の中身にsinの加法定理 \\sin(\\theta + \\alpha) = \\sin \\theta \\cos \\alpha + \\cos \\theta \\sin \\alpha を逆向きに適用してまとめます。",
+                "formula": "r \\sin (\\theta + \\alpha)",
+                "choices": [
+                    "r \\sin (\\theta + \\alpha)",
+                    "r \\cos (\\theta + \\alpha)",
+                    "r \\sin (\\theta - \\alpha)",
+                    "r \\cos (\\theta - \\alpha)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "三平方の定理より r = \\sqrt{a^2 + b^2} であるため、これを r に代入して最終的な合成公式を導きます。",
+                "formula": "\\sqrt{a^2 + b^2} \\sin (\\theta + \\alpha)",
+                "choices": [
+                    "\\sqrt{a^2 - b^2} \\sin (\\theta + \\alpha)",
+                    "\\sqrt{a^2 + b^2} \\sin (\\theta + \\alpha)",
+                    "\\sqrt{a^2 + b^2} \\cos (\\theta + \\alpha)",
+                    "(a^2 + b^2) \\sin (\\theta + \\alpha)"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "cos_composition_proof",
+        "title": "cosの合成公式の証明",
+        "initialFormula": "a \\sin \\theta + b \\cos \\theta",
+        "diagramSVG": "<svg viewBox='0 0 800 400' xmlns='http://www.w3.org/2000/svg'>   <line x1='50' y1='350' x2='380' y2='350' stroke='black' stroke-width='2' />   <polygon points='380,345 390,350 380,355' fill='black' />   <text x='385' y='370' font-family='sans-serif' font-size='20' font-style='italic' fill='black'>x</text>   <line x1='100' y1='380' x2='100' y2='50' stroke='black' stroke-width='2' />   <polygon points='95,50 100,40 105,50' fill='black' />   <text x='75' y='55' font-family='sans-serif' font-size='20' font-style='italic' fill='black'>y</text>   <line x1='300' y1='100' x2='300' y2='350' stroke='#1E90FF' stroke-width='1.5' stroke-dasharray='4,4' />   <line x1='300' y1='100' x2='100' y2='100' stroke='#1E90FF' stroke-width='1.5' stroke-dasharray='4,4' />   <text x='295' y='375' font-family='sans-serif' font-size='20' font-style='italic' fill='#1E90FF'>b</text>   <text x='75' y='105' font-family='sans-serif' font-size='20' font-style='italic' fill='#1E90FF'>a</text>   <line x1='100' y1='350' x2='300' y2='100' stroke='black' stroke-width='3' stroke-linecap='round' />   <circle cx='300' cy='100' r='6' fill='black' />   <text x='275' y='80' font-family='sans-serif' font-size='22' fill='black'>Q(<tspan font-style='italic'>b</tspan>, <tspan font-style='italic'>a</tspan>)</text>   <path d='M 100 350 Q 165 205 300 100' stroke='#FF4500' stroke-width='1.5' stroke-dasharray='3,3' fill='none' />   <text x='170' y='215' font-family='sans-serif' font-size='22' font-style='italic' fill='#FF4500'>r</text>   <path d='M 160 350 A 60 60 0 0 0 137.5 303.15' stroke='#FF4500' stroke-width='2' fill='none' />   <polygon points='137.5,303.15 143,309 134,312' fill='#FF4500' />   <text x='170' y='330' font-family='sans-serif' font-size='24' fill='#FF4500'>β</text>   <rect x='440' y='70' width='330' height='240' stroke='black' stroke-width='1.5' stroke-dasharray='4,4' fill='none' />   <text x='465' y='120' font-family='sans-serif' font-size='22' fill='#FF4500'><tspan font-style='italic'>r</tspan> =</text>   <path d='M 505 112 L 510 112 L 515 125 L 523 98 L 605 98' stroke='#FF4500' stroke-width='2' fill='none' />   <text x='527' y='118' font-family='sans-serif' font-size='20' fill='#FF4500'><tspan font-style='italic'>b</tspan><tspan font-size='13' x='539' y='108'>2</tspan><tspan font-style='normal' x='552' y='118'> + </tspan><tspan font-style='italic' x='575' y='118'>a</tspan><tspan font-size='13' x='587' y='108'>2</tspan></text>   <text x='465' y='190' font-family='sans-serif' font-size='22' fill='black'>cos β =</text>   <text x='555' y='173' font-family='sans-serif' font-size='20' font-style='italic' fill='black'>b</text>   <line x1='550' y1='181' x2='570' y2='181' stroke='black' stroke-width='1.5' />   <text x='556' y='201' font-family='sans-serif' font-size='20' font-style='italic' fill='black'>r</text>   <text x='590' y='190' font-family='sans-serif' font-size='22' fill='black'>⇔</text>   <text x='635' y='190' font-family='sans-serif' font-size='22' fill='#FF4500'><tspan font-style='italic'>b</tspan> = <tspan font-style='italic'>r</tspan> cos β</text>   <text x='465' y='260' font-family='sans-serif' font-size='22' fill='black'>sin β =</text>   <text x='555' y='243' font-family='sans-serif' font-size='20' font-style='italic' fill='black'>a</text>   <line x1='550' y1='251' x2='570' y2='251' stroke='black' stroke-width='1.5' />   <text x='556' y='271' font-family='sans-serif' font-size='20' font-style='italic' fill='black'>r</text>   <text x='590' y='260' font-family='sans-serif' font-size='22' fill='black'>⇔</text>   <text x='635' y='260' font-family='sans-serif' font-size='22' fill='#FF4500'><tspan font-style='italic'>a</tspan> = <tspan font-style='italic'>r</tspan> sin β</text> </svg>",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "項の順序を入れ替えて、\\cos の加法定理を適用しやすくします。",
+                "formula": "b \\cos \\theta + a \\sin \\theta",
+                "choices": [
+                    "b \\cos \\theta - a \\sin \\theta",
+                    "b \\cos \\theta + a \\sin \\theta",
+                    "a \\cos \\theta + b \\sin \\theta",
+                    "b \\sin \\theta + a \\cos \\theta"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "b = r \\cos \\beta, a = r \\sin \\beta を代入します。ただし r = \\sqrt{a^2+b^2} です。",
+                "formula": "r \\cos \\beta \\cos \\theta + r \\sin \\beta \\sin \\theta",
+                "choices": [
+                    "r \\cos \\beta \\cos \\theta + r \\sin \\beta \\sin \\theta",
+                    "r \\sin \\beta \\cos \\theta + r \\cos \\beta \\sin \\theta",
+                    "r \\cos \\beta \\cos \\theta - r \\sin \\beta \\sin \\theta",
+                    "r \\sin \\beta \\cos \\theta - r \\cos \\beta \\sin \\theta"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "共通因数 r で式全体をくくります。",
+                "formula": "r(\\cos \\theta \\cos \\beta + \\sin \\theta \\sin \\beta)",
+                "choices": [
+                    "r(\\cos \\theta \\cos \\beta - \\sin \\theta \\sin \\beta)",
+                    "r(\\sin \\theta \\cos \\beta + \\cos \\theta \\sin \\beta)",
+                    "r(\\cos \\theta \\cos \\beta + \\sin \\theta \\sin \\beta)",
+                    "r(\\cos \\theta \\sin \\beta + \\sin \\theta \\cos \\beta)"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 4,
+                "explanation": "\\cos の加法定理を逆に適用し、r を元の形に戻して証明を完了します。",
+                "formula": "\\sqrt{a^2+b^2} \\cos(\\theta - \\beta)",
+                "choices": [
+                    "\\sqrt{a^2+b^2} \\cos(\\theta + \\beta)",
+                    "\\sqrt{a^2+b^2} \\sin(\\theta - \\beta)",
+                    "\\sqrt{a^2+b^2} \\sin(\\theta + \\beta)",
+                    "\\sqrt{a^2+b^2} \\cos(\\theta - \\beta)"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "sin_cos_product",
+        "title": "積和公式の導出 (sin A cos B)",
+        "initialFormula": "\\sin(A+B) + \\sin(A-B)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "\\sin の加法定理を用いて、それぞれの項を展開します。",
+                "formula": "(\\sin A \\cos B + \\cos A \\sin B) + (\\sin A \\cos B - \\cos A \\sin B)",
+                "choices": [
+                    "(\\sin A \\cos B - \\cos A \\sin B) + (\\sin A \\cos B - \\cos A \\sin B)",
+                    "(\\sin A \\cos B + \\cos A \\sin B) + (\\sin A \\cos B - \\cos A \\sin B)",
+                    "(\\sin A \\sin B + \\cos A \\cos B) + (\\sin A \\sin B - \\cos A \\cos B)",
+                    "(\\cos A \\cos B - \\sin A \\sin B) + (\\cos A \\cos B + \\sin A \\sin B)"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "同類項をまとめて式を簡潔にします。\\cos A \\sin B の項が相殺されます。",
+                "formula": "2 \\sin A \\cos B",
+                "choices": [
+                    "2 \\cos A \\sin B",
+                    "2 \\sin A \\cos B",
+                    "2 \\sin A \\sin B",
+                    "0"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "両辺を2で割ることで、\\sin A \\cos B の積和公式を導きます。",
+                "formula": "\\frac{1}{2}\\{\\sin(A+B) + \\sin(A-B)\\}",
+                "choices": [
+                    "\\frac{1}{2}\\{\\sin(A+B) - \\sin(A-B)\\}",
+                    "\\frac{1}{2}\\{\\cos(A+B) + \\cos(A-B)\\}",
+                    "2\\{\\sin(A+B) + \\sin(A-B)\\}",
+                    "\\frac{1}{2}\\{\\sin(A+B) + \\sin(A-B)\\}"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "cos_cos_product",
+        "title": "積和公式の導出 (cos A cos B)",
+        "initialFormula": "\\cos(A+B) + \\cos(A-B)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "\\cos の加法定理を用いて、それぞれの項を展開します。",
+                "formula": "(\\cos A \\cos B - \\sin A \\sin B) + (\\cos A \\cos B + \\sin A \\sin B)",
+                "choices": [
+                    "(\\cos A \\cos B - \\sin A \\sin B) + (\\cos A \\cos B + \\sin A \\sin B)",
+                    "(\\cos A \\cos B + \\sin A \\sin B) + (\\cos A \\cos B + \\sin A \\sin B)",
+                    "(\\sin A \\sin B - \\cos A \\cos B) + (\\sin A \\sin B + \\cos A \\cos B)",
+                    "(\\cos A \\sin B - \\sin A \\cos B) + (\\cos A \\sin B + \\sin A \\cos B)"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "同類項を整理して相殺される項を消去します。",
+                "formula": "2 \\cos A \\cos B",
+                "choices": [
+                    "-2 \\sin A \\sin B",
+                    "2 \\cos A \\cos B",
+                    "2 \\sin A \\sin B",
+                    "2 \\cos A \\sin B"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "全体を2で割り、\\cos A \\cos B の積を和の形に変形します。",
+                "formula": "\\frac{1}{2}\\{\\cos(A+B) + \\cos(A-B)\\}",
+                "choices": [
+                    "\\frac{1}{2}\\{\\cos(A+B) - \\cos(A-B)\\}",
+                    "\\frac{1}{2}\\{\\cos(A+B) + \\cos(A-B)\\}",
+                    "\\frac{1}{2}\\{\\sin(A+B) + \\sin(A-B)\\}",
+                    "2\\{\\cos(A+B) + \\cos(A-B)\\}"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "sin_sin_product",
+        "title": "積和公式の導出 (sin A sin B)",
+        "initialFormula": "\\cos(A-B) - \\cos(A+B)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "各項を \\cos の加法定理で展開します。引き算の符号の扱いに注意しましょう。",
+                "formula": "(\\cos A \\cos B + \\sin A \\sin B) - (\\cos A \\cos B - \\sin A \\sin B)",
+                "choices": [
+                    "(\\cos A \\cos B - \\sin A \\sin B) - (\\cos A \\cos B + \\sin A \\sin B)",
+                    "(\\cos A \\cos B + \\sin A \\sin B) - (\\cos A \\cos B - \\sin A \\sin B)",
+                    "(\\cos A \\cos B + \\sin A \\sin B) + (\\cos A \\cos B - \\sin A \\sin B)",
+                    "(\\sin A \\sin B - \\cos A \\cos B) - (\\sin A \\sin B + \\cos A \\cos B)"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "マイナスの分配法則に気をつけながら同類項をまとめます。\\cos A \\cos B の項が消去されます。",
+                "formula": "2 \\sin A \\sin B",
+                "choices": [
+                    "2 \\cos A \\cos B",
+                    "0",
+                    "-2 \\sin A \\sin B",
+                    "2 \\sin A \\sin B"
+                ],
+                "correctIndex": 3
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "全体を2で割り、\\sin A \\sin B の公式を完成させます。",
+                "formula": "\\frac{1}{2}\\{\\cos(A-B) - \\cos(A+B)\\}",
+                "choices": [
+                    "\\frac{1}{2}\\{\\cos(A-B) - \\cos(A+B)\\}",
+                    "\\frac{1}{2}\\{\\cos(A+B) - \\cos(A-B)\\}",
+                    "\\frac{1}{2}\\{\\cos(A-B) + \\cos(A+B)\\}",
+                    "\\frac{1}{2}\\{\\sin(A-B) - \\sin(A+B)\\}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "sum_to_product_sin_plus",
+        "title": "和積公式の導出 (sin A + sin B)",
+        "initialFormula": "\\sin(\\alpha + \\beta) + \\sin(\\alpha - \\beta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "サインの加法定理を用いて展開し、同類項をまとめます。",
+                "formula": "2 \\sin \\alpha \\cos \\beta",
+                "choices": [
+                    "2 \\cos \\alpha \\sin \\beta",
+                    "2 \\sin \\alpha \\cos \\beta",
+                    "2 \\sin \\alpha \\sin \\beta",
+                    "0"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "\\alpha + \\beta = A, \\alpha - \\beta = B とおき、\\alpha, \\beta を A, B で表した式を代入します。",
+                "formula": "2 \\sin \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                "choices": [
+                    "2 \\sin \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "2 \\sin \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                    "2 \\cos \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "2 \\cos \\frac{A+B}{2} \\cos \\frac{A-B}{2}"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "左辺を A, B で置き換えることで、目的の和積公式を完成させます。",
+                "formula": "\\sin A + \\sin B = 2 \\sin \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                "choices": [
+                    "\\sin A + \\sin B = 2 \\sin \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                    "\\sin A - \\sin B = 2 \\cos \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "\\sin A + \\sin B = 2 \\cos \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                    "\\sin A + \\sin B = -2 \\sin \\frac{A+B}{2} \\cos \\frac{A-B}{2}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "sum_to_product_sin_minus",
+        "title": "和積公式の導出 (sin A - sin B)",
+        "initialFormula": "\\sin(\\alpha + \\beta) - \\sin(\\alpha - \\beta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "サインの加法定理を展開し、引き算の符号に注意して同類項を整理します。",
+                "formula": "2 \\cos \\alpha \\sin \\beta",
+                "choices": [
+                    "2 \\sin \\alpha \\cos \\beta",
+                    "-2 \\cos \\alpha \\sin \\beta",
+                    "2 \\cos \\alpha \\sin \\beta",
+                    "2 \\cos \\alpha \\cos \\beta"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "\\alpha + \\beta = A, \\alpha - \\beta = B より得られる \\alpha, \\beta の値を代入します。",
+                "formula": "2 \\cos \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                "choices": [
+                    "2 \\sin \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                    "2 \\cos \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "2 \\cos \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                    "-2 \\cos \\frac{A+B}{2} \\sin \\frac{A-B}{2}"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "左辺を A, B で置き換え、サインの差に関する和積公式を完成させます。",
+                "formula": "\\sin A - \\sin B = 2 \\cos \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                "choices": [
+                    "\\sin A + \\sin B = 2 \\sin \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                    "\\sin A - \\sin B = -2 \\cos \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "\\cos A - \\cos B = 2 \\cos \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "\\sin A - \\sin B = 2 \\cos \\frac{A+B}{2} \\sin \\frac{A-B}{2}"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "sum_to_product_cos_plus",
+        "title": "和積公式の導出 (cos A + cos B)",
+        "initialFormula": "\\cos(\\alpha + \\beta) + \\cos(\\alpha - \\beta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "コサインの加法定理を用いて展開し、異符号の項を相殺して整理します。",
+                "formula": "2 \\cos \\alpha \\cos \\beta",
+                "choices": [
+                    "2 \\sin \\alpha \\sin \\beta",
+                    "2 \\cos \\alpha \\cos \\beta",
+                    "-2 \\sin \\alpha \\sin \\beta",
+                    "2 \\cos \\alpha \\sin \\beta"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "変数を \\alpha, \\beta から A, B を用いた式へと置き換えます。",
+                "formula": "2 \\cos \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                "choices": [
+                    "2 \\sin \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                    "2 \\cos \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "2 \\cos \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                    "-2 \\cos \\frac{A+B}{2} \\cos \\frac{A-B}{2}"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "左辺を A, B で表し、コサインの和に関する和積公式を完成させます。",
+                "formula": "\\cos A + \\cos B = 2 \\cos \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                "choices": [
+                    "\\cos A + \\cos B = 2 \\cos \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                    "\\cos A - \\cos B = 2 \\cos \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                    "\\cos A + \\cos B = -2 \\sin \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "\\sin A + \\sin B = 2 \\cos \\frac{A+B}{2} \\cos \\frac{A-B}{2}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "sum_to_product_cos_minus",
+        "title": "和積公式の導出 (cos A - cos B)",
+        "initialFormula": "\\cos(\\alpha + \\beta) - \\cos(\\alpha - \\beta)",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "コサインの加法定理を展開し、引き算によって残る異符号の項をまとめます。",
+                "formula": "-2 \\sin \\alpha \\sin \\beta",
+                "choices": [
+                    "-2 \\sin \\alpha \\sin \\beta",
+                    "2 \\sin \\alpha \\sin \\beta",
+                    "-2 \\cos \\alpha \\cos \\beta",
+                    "2 \\cos \\alpha \\cos \\beta"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "\\alpha, \\beta に A, B の関係式を正しく代入します。",
+                "formula": "-2 \\sin \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                "choices": [
+                    "2 \\sin \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "-2 \\cos \\frac{A+B}{2} \\cos \\frac{A-B}{2}",
+                    "-2 \\sin \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "-2 \\sin \\frac{A+B}{2} \\cos \\frac{A-B}{2}"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "左辺を A, B で表現し、コサインの差に関する和積公式を完成させます。",
+                "formula": "\\cos A - \\cos B = -2 \\sin \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                "choices": [
+                    "\\cos A - \\cos B = 2 \\sin \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "\\cos A - \\cos B = -2 \\sin \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "\\cos A + \\cos B = -2 \\sin \\frac{A+B}{2} \\sin \\frac{A-B}{2}",
+                    "\\sin A - \\sin B = -2 \\sin \\frac{A+B}{2} \\sin \\frac{A-B}{2}"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "三角関数"
+    },
+    {
+        "id": "log_properties_sum",
+        "title": "対数の性質の証明 (log_a M + log_a N)",
+        "initialFormula": "\\log_{a} M + \\log_{a} N",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "\\log_{a} M = x, \\log_{a} N = y とおいたとき、対数の定義から指数の形に変形します。",
+                "formula": "a^{x} = M, a^{y} = N",
+                "choices": [
+                    "a^{x} = M, a^{y} = N",
+                    "x^{a} = M, y^{a} = N",
+                    "a^{M} = x, a^{N} = y",
+                    "M^{x} = a, N^{y} = a"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "指数法則を用いて、積 MN を指数の形で表します。",
+                "formula": "a^{x+y} = a^{x} a^{y} = MN",
+                "choices": [
+                    "a^{xy} = a^{x} a^{y} = MN",
+                    "a^{x+y} = a^{x} a^{y} = MN",
+                    "a^{x+y} = a^{x} + a^{y} = MN",
+                    "a^{x-y} = \\frac{a^{x}}{a^{y}} = MN"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "a^{x+y} = MN に対数の定義を逆に適用して、元の変数に戻します。",
+                "formula": "\\log_{a} MN = x + y",
+                "choices": [
+                    "\\log_{a} (x+y) = MN",
+                    "\\log_{MN} a = x + y",
+                    "\\log_{a} MN = xy",
+                    "\\log_{a} MN = x + y"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "指数関数・対数関数"
+    },
+    {
+        "id": "log_properties_power",
+        "title": "対数の性質の証明 (log_a M^p)",
+        "initialFormula": "\\log_{a} M^{p}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "\\log_{a} M = x とおき、対数の定義から指数の形に変形します。",
+                "formula": "a^{x} = M",
+                "choices": [
+                    "x^{a} = M",
+                    "a^{M} = x",
+                    "a^{x} = M",
+                    "M^{x} = a"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "指数法則を使い、両辺を p 乗します。",
+                "formula": "a^{px} = M^{p}",
+                "choices": [
+                    "a^{px} = M^{p}",
+                    "a^{p+x} = M^{p}",
+                    "(a^{x})^{p} = pM",
+                    "a^{x} = M^{p}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "対数の定義を適用して、対数の形に戻します。",
+                "formula": "\\log_{a} M^{p} = px",
+                "choices": [
+                    "\\log_{a} px = M^{p}",
+                    "\\log_{a} M^{p} = p + x",
+                    "\\log_{a} M^{p} = px",
+                    "\\log_{a} p = M^{x}"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "指数関数・対数関数"
+    },
+    {
+        "id": "log_properties_reciprocal",
+        "title": "対数の性質の証明 (log_a 1/M)",
+        "initialFormula": "\\log_{a} \\frac{1}{M}",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "真数の分数を指数の形に変形します。",
+                "formula": "\\log_{a} M^{-1}",
+                "choices": [
+                    "\\log_{a} M^{-1}",
+                    "\\log_{a} (-M)",
+                    "-\\log_{a} M",
+                    "\\log_{a} M^{0}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "対数の性質 \\log_{a} M^{p} = p \\log_{a} M において、p = -1 とします。",
+                "formula": "-1 \\cdot \\log_{a} M",
+                "choices": [
+                    "\\log_{a} (-1 \\cdot M)",
+                    "-1 \\cdot \\log_{a} M",
+                    "\\log_{a} M - 1",
+                    "-\\log_{a} (-M)"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "式を整理して、公式を完成させます。",
+                "formula": "-\\log_{a} M",
+                "choices": [
+                    "\\log_{a} M",
+                    "\\log_{a} (-M)",
+                    "-\\log_{a} M",
+                    "-1"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "指数関数・対数関数"
+    },
+    {
+        "id": "log_properties_diff",
+        "title": "対数の性質の証明 (log_a M - log_a N)",
+        "initialFormula": "\\log_{a} M - \\log_{a} N",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "公式 \\log_{a} M + \\log_{a} N = \\log_{a} MN の N を \\frac{1}{N} に置き換えます。",
+                "formula": "\\log_{a} M + \\log_{a} \\frac{1}{N} = \\log_{a} \\left(M \\cdot \\frac{1}{N}\\right)",
+                "choices": [
+                    "\\log_{a} M + \\log_{a} \\frac{1}{N} = \\log_{a} (M + \\frac{1}{N})",
+                    "\\log_{a} M - \\log_{a} \\frac{1}{N} = \\log_{a} \\frac{M}{N}",
+                    "\\log_{a} M + \\log_{a} \\frac{1}{N} = \\log_{a} \\left(M \\cdot \\frac{1}{N}\\right)",
+                    "\\log_{a} M \\cdot \\log_{a} \\frac{1}{N} = \\log_{a} \\frac{M}{N}"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "右辺の括弧内を整理して、一つの分数にします。",
+                "formula": "\\log_{a} \\frac{M}{N}",
+                "choices": [
+                    "\\log_{a} (M - N)",
+                    "\\log_{a} \\frac{M}{N}",
+                    "\\log_{a} \\frac{N}{M}",
+                    "\\frac{\\log_{a} M}{\\log_{a} N}"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "左辺第二項に \\log_{a} \\frac{1}{N} = -\\log_{a} N を適用します。",
+                "formula": "\\log_{a} M - \\log_{a} N = \\log_{a} \\frac{M}{N}",
+                "choices": [
+                    "\\log_{a} M - \\log_{a} N = \\log_{a} \\frac{M}{N}",
+                    "\\log_{a} M + \\log_{a} N = \\log_{a} \\frac{M}{N}",
+                    "\\log_{a} M - \\log_{a} N = \\log_{a} (M - N)",
+                    "\\log_{a} M - \\log_{a} N = \\frac{\\log_{a} M}{\\log_{a} N}"
+                ],
+                "correctIndex": 0
+            }
+        ],
+        "directory": "指数関数・対数関数"
+    },
+    {
+        "id": "log_properties_one",
+        "title": "対数の性質の証明 (log_a 1)",
+        "initialFormula": "\\log_{a} 1",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "a^{0} = 1 であることから、真数の1を指数の形に変形します。",
+                "formula": "\\log_{a} a^{0}",
+                "choices": [
+                    "\\log_{a} a^{1}",
+                    "\\log_{a} 1^{a}",
+                    "\\log_{a} a^{0}",
+                    "\\log_{a} 0"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "対数の性質 \\log_{a} M^{p} = p \\log_{a} M を適用して、指数を前に出します。",
+                "formula": "0 \\cdot \\log_{a} a",
+                "choices": [
+                    "1 \\cdot \\log_{a} a",
+                    "0 \\cdot \\log_{a} a",
+                    "\\log_{a} 0",
+                    "a \\cdot \\log_{a} 0"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "計算を完了させます（ \\log_{a} a = 1 より）。",
+                "formula": "0",
+                "choices": [
+                    "1",
+                    "a",
+                    "0",
+                    "-1"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "指数関数・対数関数"
+    },
+    {
+        "id": "log_properties_base_change",
+        "title": "底の変換公式の導出 (log_a b)",
+        "initialFormula": "\\log_{a} b",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "対数の定義より成り立つ等式 a^{\\log_{a} b} = b の両辺について、底を c とする対数を取ります。",
+                "formula": "\\log_{c} a^{\\log_{a} b} = \\log_{c} b",
+                "choices": [
+                    "\\log_{c} a^{\\log_{a} b} = \\log_{c} b",
+                    "\\log_{a} c^{\\log_{a} b} = \\log_{a} b",
+                    "\\log_{c} (a \\cdot \\log_{a} b) = \\log_{c} b",
+                    "\\log_{c} a = \\log_{c} b"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "左辺に対数の性質 \\log_{c} a^{X} = X \\log_{c} a を適用して変形します。",
+                "formula": "\\log_{a} b \\cdot \\log_{c} a = \\log_{c} b",
+                "choices": [
+                    "\\log_{c} b \\cdot \\log_{c} a = \\log_{c} b",
+                    "\\log_{a} b \\cdot \\log_{c} a = \\log_{c} b",
+                    "\\log_{a} b + \\log_{c} a = \\log_{c} b",
+                    "\\frac{\\log_{a} b}{\\log_{c} a} = \\log_{c} b"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "両辺を \\log_{c} a (\\neq 0) で割ることで、底の変換公式を導きます。",
+                "formula": "\\log_{a} b = \\frac{\\log_{c} b}{\\log_{c} a}",
+                "choices": [
+                    "\\log_{a} b = \\frac{\\log_{c} a}{\\log_{c} b}",
+                    "\\log_{a} b = \\log_{c} b - \\log_{c} a",
+                    "\\log_{a} b = \\frac{\\log_{c} b}{\\log_{c} a}",
+                    "\\log_{a} b = \\log_{c} b \\cdot \\log_{c} a"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "指数関数・対数関数"
+    },
+    {
+        "id": "calculus_derivative_xn_binomial",
+        "title": "x^n の導関数の導出 (二項定理)",
+        "initialFormula": "(x^n)'",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "導関数の定義式に $f(x) = x^n$ を代入します。",
+                "formula": "\\lim_{h \\to 0} \\frac{(x+h)^n - x^n}{h}",
+                "choices": [
+                    "\\lim_{h \\to 0} \\frac{(x+h)^n - x^n}{h}",
+                    "\\lim_{h \\to 0} \\frac{x^{n+h} - x^n}{h}",
+                    "\\lim_{h \\to 0} \\frac{(x+h)^n + x^n}{h}",
+                    "\\frac{(x+h)^n - x^n}{h}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "分子の $(x+h)^n$ を二項定理を用いて展開し、先頭の $x^n$ を相殺します。",
+                "formula": "\\lim_{h \\to 0} \\frac{nhx^{n-1} + {}_{n}\\mathrm{C}_{2} h^2 x^{n-2} + \\cdots + h^n}{h}",
+                "choices": [
+                    "\\lim_{h \\to 0} \\frac{x^n + nhx^{n-1} + \\cdots + h^n}{h}",
+                    "\\lim_{h \\to 0} \\frac{nhx^{n-1} + {}_{n}\\mathrm{C}_{2} h^2 x^{n-2} + \\cdots + h^n}{h}",
+                    "\\lim_{h \\to 0} \\frac{nhx^{n-1} + h^n}{h}",
+                    "\\lim_{h \\to 0} (nx^{n-1} + {}_{n}\\mathrm{C}_{2} h x^{n-2} + \\cdots + h^{n-1})"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "分母と分子を $h$ で約分し、$h \\to 0$ の極限を適用することで第2項以降を消去します。",
+                "formula": "nx^{n-1}",
+                "choices": [
+                    "x^{n-1}",
+                    "n x^n",
+                    "nx^{n-1}",
+                    "n(n-1)x^{n-2}"
+                ],
+                "correctIndex": 2
+            }
+        ],
+        "directory": "微分積分"
+    },
+    {
+        "id": "calculus_derivative_xn_induction",
+        "title": "x^n の導関数の導出 (数学的帰納法)",
+        "initialFormula": "(x^n)'",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "数学的帰納法の第1ステップとして、$n=1$ のときを微分の定義に従って計算し、公式が成り立つか確かめます。",
+                "formula": "\\lim_{h \\to 0} \\frac{(x + h) - x}{h} = 1",
+                "choices": [
+                    "\\lim_{h \\to 0} \\frac{(x + h) - x}{h} = 1",
+                    "\\lim_{h \\to 0} \\frac{(x + h) - x}{h} = x",
+                    "\\lim_{h \\to 0} \\frac{(x + h)^1 - x^1}{h} = 0",
+                    "1 \\cdot x^1 = x"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "$n=k$ での成立を仮定し、$n=k+1$ のときの微分 $(x^{k+1})'$ を積の形に分解して「積 of 微分公式」を適用します。",
+                "formula": "(x)' \\cdot x^k + x \\cdot (x^k)'",
+                "choices": [
+                    "(x)' \\cdot (x^k)'",
+                    "(x)' \\cdot x^k - x \\cdot (x^k)'",
+                    "(x)' \\cdot x^k + x \\cdot (x^k)'",
+                    "kx^{k-1} + x^k"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "帰納法の仮定 $(x^k)' = kx^{k-1}$ を代入して式を整理し、$n=k+1$ のときも公式が成り立つことを示します。",
+                "formula": "(k + 1)x^k",
+                "choices": [
+                    "x^k + kx^{k-1}",
+                    "(k + 1)x^k",
+                    "k x^{k+1}",
+                    "(k - 1)x^k"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "微分積分"
+    },
+    {
+        "id": "sequence_arithmetic_general_term",
+        "title": "等差数列の一般項の導出",
+        "initialFormula": "a_1 = ?, \\ a_2 = ?, \\ a_3 = ?, \\ a_4 = ?",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "初項を $a$、公差を $d$ としたとき、次々と $d$ を足していくことで第2項から第4項までの規則性を書き出します。",
+                "formula": "a_1 = a, \\ a_2 = a + d, \\ a_3 = a + 2d, \\ a_4 = a + 3d",
+                "choices": [
+                    "a_1 = a, \\ a_2 = a + d, \\ a_3 = a + 2d, \\ a_4 = a + 3d",
+                    "a_1 = a, \\ a_2 = ad, \\ a_3 = ad^2, \\ a_4 = ad^3",
+                    "a_1 = a, \\ a_2 = a + d, \\ a_3 = a + d^2, \\ a_4 = a + d^3",
+                    "a_1 = a, \\ a_2 = a + 2d, \\ a_3 = a + 4d, \\ a_4 = a + 6d"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "項の番号 $n$ と、足されている公差 $d$ の個数の法則性に注目します。第 $n$ 項のとき、足される $d$ の個数を $n$ を用いて表します。",
+                "formula": "a_n = ?",
+                "choices": [
+                    "n \\text{個}",
+                    "(n - 1) \\text{個}",
+                    "(n + 1) \\text{個}",
+                    "2n \\text{個}"
+                ],
+                "correctIndex": 1
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "初項 $a$ に、$(n - 1)$個の $d$ が足されることから、第 $n$ 項の一般項を表す公式を導きます。",
+                "formula": "a_n = a + (n - 1)d",
+                "choices": [
+                    "a_n = a + nd",
+                    "a_n = a + (n - 1)d",
+                    "a_n = a + (n + 1)d",
+                    "a_n = ad^{n-1}"
+                ],
+                "correctIndex": 1
+            }
+        ],
+        "directory": "数列"
+    },
+    {
+        "id": "sequence_arithmetic_sum",
+        "title": "等差数列の和の公式の導出",
+        "initialFormula": "S_n = \\frac{1}{2}\\{2a + (n-1)d\\}",
+        "diagramSVG": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 290'>   <text x='180' y='70' text-anchor='middle' font-family='sans-serif' font-size='13' fill='#0066cc' font-weight='bold'>初項 + 末項</text>      <text x='320' y='70' text-anchor='middle' font-family='sans-serif' font-size='13' fill='#0066cc' font-weight='bold'>2項 + 末項 − 1項</text>      <text x='560' y='70' text-anchor='middle' font-family='sans-serif' font-size='13' fill='#0066cc' font-weight='bold'>末項 − 初項 + 2項</text>      <text x='700' y='70' text-anchor='middle' font-family='sans-serif' font-size='13' fill='#0066cc' font-weight='bold'>末項 + 初項</text>    <text x='75' y='100' text-anchor='end' font-family='sans-serif' font-size='20' font-weight='bold'>S</text>   <text x='77' y='110' text-anchor='start' font-family='sans-serif' font-size='14' font-weight='bold'>n</text>   <text x='110' y='100' text-anchor='middle' font-family='sans-serif' font-size='20'>=</text>    <text x='180' y='100' text-anchor='middle' font-family='sans-serif' font-size='20'>a</text>   <text x='250' y='100' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='320' y='100' text-anchor='middle' font-family='sans-serif' font-size='20'>(a + d)</text>   <text x='390' y='100' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='440' y='100' text-anchor='middle' font-family='sans-serif' font-size='20'>⋯</text>   <text x='490' y='100' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='560' y='100' text-anchor='middle' font-family='sans-serif' font-size='20'>{a + (n − 2)d}</text>   <text x='630' y='100' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='700' y='100' text-anchor='middle' font-family='sans-serif' font-size='20'>{a + (n − 1)d}</text>    <text x='25' y='140' text-anchor='middle' font-family='sans-serif' font-size='26' fill='#000000'>+</text>   <path d='M 45 100 Q 65 130 45 155' stroke='#000000' stroke-width='2' fill='none' />      <text x='75' y='140' text-anchor='end' font-family='sans-serif' font-size='20' font-weight='bold'>S</text>   <text x='77' y='146' text-anchor='start' font-family='sans-serif' font-size='14' font-weight='bold'>n</text>   <text x='110' y='140' text-anchor='middle' font-family='sans-serif' font-size='20'>=</text>    <text x='180' y='140' text-anchor='middle' font-family='sans-serif' font-size='20'>{a + (n − 1)d}</text>   <text x='250' y='140' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='320' y='140' text-anchor='middle' font-family='sans-serif' font-size='20'>{a + (n − 2)d}</text>   <text x='390' y='140' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='440' y='140' text-anchor='middle' font-family='sans-serif' font-size='20'>⋯</text>   <text x='490' y='140' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='560' y='140' text-anchor='middle' font-family='sans-serif' font-size='20'>(a + d)</text>   <text x='630' y='140' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='700' y='140' text-anchor='middle' font-family='sans-serif' font-size='20'>a</text>    <line x1='15' y1='160' x2='770' y2='160' stroke='#000000' stroke-width='2' />    <text x='75' y='200' text-anchor='end' font-family='sans-serif' font-size='20' font-weight='bold'>2S</text>   <text x='77' y='206' text-anchor='start' font-family='sans-serif' font-size='14' font-weight='bold'>n</text>   <text x='110' y='200' text-anchor='middle' font-family='sans-serif' font-size='20'>=</text>    <text x='180' y='200' text-anchor='middle' font-family='sans-serif' font-size='20'>2a + (n − 1)d</text>   <text x='250' y='200' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='320' y='200' text-anchor='middle' font-family='sans-serif' font-size='20'>2a + (n − 1)d</text>   <text x='390' y='200' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='440' y='200' text-anchor='middle' font-family='sans-serif' font-size='20'>⋯</text>   <text x='490' y='200' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='560' y='200' text-anchor='middle' font-family='sans-serif' font-size='20'>2a + (n − 1)d</text>   <text x='630' y='200' text-anchor='middle' font-family='sans-serif' font-size='20' fill='#888888'>+</text>   <text x='700' y='200' text-anchor='middle' font-family='sans-serif' font-size='20'>2a + (n − 1)d</text>    <path d='M 125 225 L 125 233 L 432 233 L 440 241 L 448 233 L 755 233 L 755 225' stroke='#cc0000' stroke-width='2' fill='none' />   <text x='440' y='265' text-anchor='middle' font-family='sans-serif' font-size='16' fill='#cc0000' font-weight='bold'>n 個</text> </svg>",
+        "steps": [
+            {
+                "stepNumber": 1,
+                "explanation": "画像のように、求めたい和 $S_n$ を「最初の項から順に足した式（昇順）」と「末項から逆にたどって足した式（降順）」として上下に並べます。",
+                "formula": "\\begin{aligned} S_n &= a + (a+d) + \\cdots + \\{a+(n-1)d\\} \\\\ S_n &= \\{a+(n-1)d\\} + \\{a+(n-2)d\\} + \\cdots + a \\end{aligned}",
+                "choices": [
+                    "\\begin{aligned} S_n &= a + (a+d) + \\cdots + \\{a+(n-1)d\\} \\\\ S_n &= \\{a+(n-1)d\\} + \\{a+(n-2)d\\} + \\cdots + a \\end{aligned}",
+                    "\\begin{aligned} S_n &= a + ad + \\cdots + ad^{n-1} \\\\ S_n &= ad^{n-1} + ad^{n-2} + \\cdots + a \\end{aligned}",
+                    "\\begin{aligned} S_n &= a + (a+d) + \\cdots + \\{a+(n-1)d\\} \\\\ S_n &= -a - (a+d) - \\cdots - \\{a+(n-1)d\\} \\end{aligned}",
+                    "\\begin{aligned} S_n &= 1 + 2 + \\cdots + n \\\\ S_n &= n + (n-1) + \\cdots + 1 \\end{aligned}"
+                ],
+                "correctIndex": 0
+            },
+            {
+                "stepNumber": 2,
+                "explanation": "上下に並べた2つの式を縦に足し合わせます。どの上下のペア（縦の列）を足しても、すべて同じ値になることにに注目して、その1ペア分の和を計算します。",
+                "formula": "a + \\{a + (n-1)d\\} = 2a + (n-1)d",
+                "choices": [
+                    "a + \\{a + nd\\} = 2a + nd",
+                    "a + \\{a + (n-1)d\\} = 2a - (n-1)d",
+                    "a + \\{a + (n-1)d\\} = 2a + (n-1)d",
+                    "a + \\{a + (n-1)d\\} = a^2 + (n-1)d"
+                ],
+                "correctIndex": 2
+            },
+            {
+                "stepNumber": 3,
+                "explanation": "同じ値のペア $2a + (n-1)d$ が全部で $n$ 個並ぶことから $2S_n = n\\{2a + (n-1)d\\}$ となり、最後に両辺を 2 で割って公式を完成させます。",
+                "formula": "S_n = \\frac{1}{2}n\\{2a + (n-1)d\\}",
+                "choices": [
+                    "S_n = n\\{2a + (n-1)d\\}",
+                    "S_n = \\frac{1}{2}n(a + nd)",
+                    "S_n = \\frac{1}{2}\\{2a + (n-1)d\\}",
+                    "S_n = \\frac{1}{2}n\\{2a + (n-1)d\\}"
+                ],
+                "correctIndex": 3
+            }
+        ],
+        "directory": "数列"
+    },
 ]
