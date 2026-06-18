@@ -4,6 +4,8 @@ import Combine
 // 💡 データの読み込みと合体ロジックをカプセル化する管理職人クラス
 // 画面側（UI）はこのクラスだけを呼べばよくなるので、お互いの存在に依存しない「疎結合」な設計になるよ！
 class GameDataManager: ObservableObject {
+    private let isVerboseLoggingEnabled = false
+
     // 💡 合体済みの問題リスト（この値が更新されると、SwiftUIの画面が自動でピキーンと再描画されるよ！）
     @Published var menuProblems: [ProblemWithProgress] = []
     
@@ -37,10 +39,12 @@ class GameDataManager: ObservableObject {
         }
         
         print("--- 💡 GameDataManager: データの合体が完了しました（総数: \(menuProblems.count)件） ---")
-        // 💡 【修正ポイント】for-in文を使って、配列のすべてのデータをループで回して把握するよ！
-                for item in menuProblems {
-                    print("[確認] ID: \(item.id) | タイトル: \(item.problem.title) | 進捗状態: \(item.status)")
-                }
+        if isVerboseLoggingEnabled {
+            // 💡 【修正ポイント】for-in文を使って、配列のすべてのデータをループで回して把握するよ！
+            for item in menuProblems {
+                print("[確認] ID: \(item.id) | タイトル: \(item.problem.title) | 進捗状態: \(item.status)")
+            }
+        }
     }
     
     // 💡 今後ゲームをクリアした時に、進捗を保存して合体データを最新に更新するための関数

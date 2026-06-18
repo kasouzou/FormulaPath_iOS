@@ -1,442 +1,1014 @@
 [
   {
-    "id": "eps_delta_linear",
-    "title": "1次関数の極限のε-δ論法による証明",
-    "initialFormula": "\\lim_{x \\to 3} (2x + 1) = 7",
+    "id": "uni_eps_delta_linear",
+    "title": "一次関数の ε-δ 証明",
+    "directory": "極限",
+    "initialFormula": "\\lim_{x\to a}(mx+b)=ma+b",
     "steps": [
       {
         "stepNumber": 1,
-        "explanation": "任意の ε > 0 に対して、ある δ > 0 が存在し、0 < |x - 3| < δ ならば |(2x + 1) - 7| < ε が成り立つことを示します。まずは目標となる不等式 |(2x + 1) - 7| < ε を変形して、|x - 3| の形を作り出しましょう。",
-        "formula": "2|x - 3| < \\varepsilon",
+        "explanation": "目標の差を整理します。",
+        "formula": "|(mx+b)-(ma+b)|=|m||x-a|",
         "choices": [
-          "2|x - 3| < \\varepsilon",
-          "|2x - 6| < \\delta",
-          "2|x + 3| < \\varepsilon",
-          "|x - 3| < 2\\varepsilon"
+          "|(mx+b)-(ma+b)|=|m||x-a|",
+          "|(mx+b)-(ma+b)|=|x-a|",
+          "|(mx+b)-(ma+b)|=|m|+|x-a|",
+          "|(mx+b)-(ma+b)|=|b||x-a|"
         ],
         "correctIndex": 0
       },
       {
         "stepNumber": 2,
-        "explanation": "2|x - 3| < ε の両辺を2で割ることで、|x - 3| が満たすべき評価式が明らかになります。ここから δ を ε を用いてどのように設定すればよいかを見出します。",
-        "formula": "|x - 3| < \\frac{\\varepsilon}{2}",
+        "explanation": "$|m|>0$ のとき、$\\delta$ を $\u000barepsilon/|m|$ 以下に取ります。",
+        "formula": "\\delta=\frac{\u000barepsilon}{|m|}",
         "choices": [
-          "|x - 3| < \\frac{\\varepsilon}{2}",
-          "|x - 3| < 2\\varepsilon",
-          "|x - 3| < \\varepsilon - 2",
-          "|x - 3| < \\frac{2}{\\varepsilon}"
+          "\\delta=|m|\u000barepsilon",
+          "\\delta=\frac{\u000barepsilon}{|m|}",
+          "\\delta=\u000barepsilon+|m|",
+          "\\delta=\frac{|m|}{\u000barepsilon}"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
       },
       {
         "stepNumber": 3,
-        "explanation": "0 < |x - 3| < δ としたとき、先ほどの評価式が自動的に導かれるように δ を定めます。適切な δ の値を ε を用いて指定してください。",
-        "formula": "\\delta = \\frac{\\varepsilon}{2}",
+        "explanation": "すると $0<|x-a|<\\delta$ から目標不等式が従います。",
+        "formula": "|(mx+b)-(ma+b)|<\u000barepsilon",
         "choices": [
-          "\\delta = \\frac{\\varepsilon}{2}",
-          "\\delta = 2\\varepsilon",
-          "\\delta = \\varepsilon",
-          "\\delta = \\frac{2}{\\varepsilon}"
+          "|(mx+b)-(ma+b)|>\u000barepsilon",
+          "|x-a|<|m|\u000barepsilon",
+          "|(mx+b)-(ma+b)|<\u000barepsilon",
+          "|mx+b|<\\delta"
         ],
-        "correctIndex": 0
-      },
-      {
-        "stepNumber": 4,
-        "explanation": "δ = ε/2 と置くことで、0 < |x - 3| < δ のとき、恒等変形によって |(2x + 1) - 7| = 2|x - 3| < 2δ = ε が成り立ち、証明が完了します。極限の定義を満たす最終的な結論の形を確認しましょう。",
-        "formula": "0 < |x - 3| < \\delta \\implies |(2x + 1) - 7| < \\varepsilon",
-        "choices": [
-          "0 < |x - 3| < \\delta \\implies |(2x + 1) - 7| < \\varepsilon",
-          "0 < |x - 7| < \\delta \\implies |(2x + 1) - 3| < \\varepsilon",
-          "0 < |x - 3| < \\varepsilon \\implies |(2x + 1) - 7| < \\delta",
-          "0 < |x - 3| < \\delta \\implies |2x + 1| < \\varepsilon"
-        ],
-        "correctIndex": 0
+        "correctIndex": 2
       }
-    ],
-    "directory": "極限"
+    ]
   },
   {
-    "id": "eps_delta_const",
-    "title": "定数関数の極限のε-δ論法による証明",
-    "initialFormula": "\\lim_{x \\to a} c = c",
+    "id": "uni_limit_product",
+    "title": "極限の積の法則",
+    "directory": "極限",
+    "initialFormula": "\\lim f(x)=A,\\quad \\lim g(x)=B",
     "steps": [
       {
         "stepNumber": 1,
-        "explanation": "任意の ε > 0 に対して、0 < |x - a| < δ ならば |c - c| < ε となる δ > 0 を見つけます。まず、ターゲットとなる差の絶対値 |c - c| を計算して整理してください。",
-        "formula": "0 < \\varepsilon",
+        "explanation": "差を足し引きして分解します。",
+        "formula": "f(x)g(x)-AB=f(x)(g(x)-B)+B(f(x)-A)",
         "choices": [
-          "0 < \\varepsilon",
-          "|c| < \\varepsilon",
-          "|x - a| < \\varepsilon",
-          "c < \\varepsilon"
+          "f(x)g(x)-AB=f(x)(g(x)-B)+B(f(x)-A)",
+          "f(x)g(x)-AB=(f(x)-A)(g(x)-B)",
+          "f(x)g(x)-AB=f(x)+g(x)-A-B",
+          "f(x)g(x)-AB=A(g(x)-B)"
         ],
         "correctIndex": 0
       },
       {
         "stepNumber": 2,
-        "explanation": "0 < ε は任意の ε > 0 に対して常に成立するため、δ の値は x の動きに依存せず、任意の正の実数で問題ありません。最もシンプルに δ を設定する形を選んでください。",
-        "formula": "\\delta = 1",
+        "explanation": "三角不等式で評価します。",
+        "formula": "|fg-AB|\\le |f||g-B|+|B||f-A|",
         "choices": [
-          "\\delta = 1",
-          "\\delta = \\varepsilon",
-          "\\delta = \\frac{1}{\\varepsilon}",
-          "\\delta = 0"
+          "|fg-AB|\\le |f-A||g-B|",
+          "|fg-AB|\\le |f||g-B|+|B||f-A|",
+          "|fg-AB|=|f|+|g|",
+          "|fg-AB|\\le |A|+|B|"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
       },
       {
         "stepNumber": 3,
-        "explanation": "δ = 1 とすれば、0 < |x - a| < 1 を満たす全ての x に対して |c - c| = 0 < ε が成立し、証明が完了します。",
-        "formula": "0 < |x - a| < 1 \\implies |c - c| < \\varepsilon",
+        "explanation": "各項を小さくできるので積の極限が得られます。",
+        "formula": "\\lim_{x\to a}f(x)g(x)=AB",
         "choices": [
-          "0 < |x - a| < 1 \\implies |c - c| < \\varepsilon",
-          "0 < |x - a| < \\delta \\implies |c| < \\varepsilon",
-          "0 < |x - a| < \\varepsilon \\implies |c - c| < 1",
-          "0 < |x - c| < 1 \\implies |a - a| < \\varepsilon"
+          "\\lim fg=A+B",
+          "\\lim fg=A-B",
+          "\\lim_{x\to a}f(x)g(x)=AB",
+          "\\lim fg=\frac{A}{B}"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
       }
-    ],
-    "directory": "極限"
+    ]
   },
   {
-    "id": "eps_delta_identity",
-    "title": "恒等関数 f(x) = x の極限のε-δ論法",
-    "initialFormula": "\\lim_{x \\to a} x = a",
+    "id": "uni_chain_rule",
+    "title": "合成関数の微分（連鎖律）",
+    "directory": "微分積分",
+    "initialFormula": "y=f(g(x))",
     "steps": [
       {
         "stepNumber": 1,
-        "explanation": "任意の ε > 0 に対し、0 < |x - a| < δ のとき |x - a| < ε が成り立つような δ > 0 を探します。条件式の左辺と右辺の形をそのまま比較して、δ をどのように選べばよいか決定しましょう。",
-        "formula": "\\delta = \\varepsilon",
+        "explanation": "中間変数 $u=g(x)$ を置きます。",
+        "formula": "y=f(u),\\quad u=g(x)",
         "choices": [
-          "\\delta = \\varepsilon",
-          "\\delta = \\frac{\\varepsilon}{2}",
-          "\\delta = 1",
-          "\\delta = \\varepsilon^2"
+          "y=f(u),\\quad u=g(x)",
+          "y=g(u),\\quad u=f(x)",
+          "y=f(x)+g(x)",
+          "u=fg"
         ],
         "correctIndex": 0
       },
       {
         "stepNumber": 2,
-        "explanation": "δ = ε と選ぶことで、0 < |x - a| < δ という前提から直接目的の不等式が導かれ、証明が成立します。",
-        "formula": "0 < |x - a| < \\delta \\implies |x - a| < \\varepsilon",
+        "explanation": "微小変化の比を分解します。",
+        "formula": "\frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}",
         "choices": [
-          "0 < |x - a| < \\delta \\implies |x - a| < \\varepsilon",
-          "0 < |x - a| < \\delta \\implies |x| < \\varepsilon",
-          "0 < |x| < \\delta \\implies |x - a| < \\varepsilon",
-          "0 < |x - a| < \\varepsilon \\implies |x - a| < \\delta"
+          "\frac{dy}{dx}=\frac{du}{dy}\frac{dx}{du}",
+          "\frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}",
+          "\frac{dy}{dx}=\frac{dy}{du}+\frac{du}{dx}",
+          "\frac{dy}{dx}=\frac{dy}{du}"
         ],
-        "correctIndex": 0
-      }
-    ],
-    "directory": "極限"
-  },
-  {
-    "id": "eps_delta_quad_step1",
-    "title": "2次関数 f(x) = x^2 の極限（x→2）におけるδの有界化",
-    "initialFormula": "\\lim_{x \\to 2} x^2 = 4",
-    "steps": [
-      {
-        "stepNumber": 1,
-        "explanation": "任意の ε > 0 に対し、0 < |x - 2| < δ のとき |x^2 - 4| < ε を目指します。まずは因数分解を使って |x^2 - 4| を |x - 2| を含む形に変形します。",
-        "formula": "|x - 2||x + 2| < \\varepsilon",
-        "choices": [
-          "|x - 2||x + 2| < \\varepsilon",
-          "|x - 2|^2 < \\varepsilon",
-          "|x - 2||x - 2| < \\varepsilon",
-          "2|x - 2| < \\varepsilon"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "stepNumber": 2,
-        "explanation": "|x + 2| の大きさをコントロールするため、あらかじめ δ の上限を 1 と制限します（δ ≦ 1）。このとき、|x - 2| < 1 から導かれる x のとり得る範囲を指定してください。",
-        "formula": "1 < x < 3",
-        "choices": [
-          "1 < x < 3",
-          "-1 < x < 1",
-          "0 < x < 4",
-          "2 < x < 3"
-        ],
-        "correctIndex": 0
+        "correctIndex": 1
       },
       {
         "stepNumber": 3,
-        "explanation": "1 < x < 3 の範囲において、|x + 2| の最大値を評価します。両辺に 2 を足して |x + 2| が何より小さくなるかを突き止めましょう。",
-        "formula": "|x + 2| < 5",
+        "explanation": "元の関数で書き戻します。",
+        "formula": "\frac{d}{dx}f(g(x))=f\\prime(g(x))g\\prime(x)",
         "choices": [
-          "|x + 2| < 5",
-          "|x + 2| < 3",
-          "|x + 2| < 4",
-          "|x + 2| < 1"
+          "\frac{d}{dx}f(g(x))=f\\prime(x)g\\prime(x)",
+          "\frac{d}{dx}f(g(x))=f\\prime(g(x))+g\\prime(x)",
+          "\frac{d}{dx}f(g(x))=f\\prime(g(x))g\\prime(x)",
+          "\frac{d}{dx}f(g(x))=g\\prime(f(x))f\\prime(x)"
         ],
-        "correctIndex": 0
-      },
-      {
-        "stepNumber": 4,
-        "explanation": "|x + 2| < 5 より、|x - 2||x + 2| < 5|x - 2| が言えます。これが ε 未満となるためには、|x - 2| < ε/5 であれば十分です。δ ≦ 1 との共通範囲をとるための δ の最終的な定義を選んでください。",
-        "formula": "\\delta = \\min\\left(1, \\frac{\\varepsilon}{5}\\right)",
-        "choices": [
-          "\\delta = \\min\\left(1, \\frac{\\varepsilon}{5}\\right)",
-          "\\delta = \\max\\left(1, \\frac{\\varepsilon}{5}\\right)",
-          "\\delta = \\frac{\\varepsilon}{5}",
-          "\\delta = \\min\\left(1, 5\\varepsilon\\right)"
-        ],
-        "correctIndex": 0
+        "correctIndex": 2
       }
-    ],
-    "directory": "極限"
+    ]
   },
   {
-    "id": "eps_delta_sum_rule",
-    "title": "極限の性質（和の公式）の証明",
-    "initialFormula": "\\lim_{x \\to a} (f(x) + g(x)) = L + M",
+    "id": "uni_taylor",
+    "title": "テイラー展開の係数",
+    "directory": "微分積分",
+    "initialFormula": "f(x)=\\sum_{k=0}^{\\infty}c_k(x-a)^k",
     "steps": [
       {
         "stepNumber": 1,
-        "explanation": "任意の ε > 0 に対し、|(f(x) + g(x)) - (L + M)| < ε を示すため、三角不等式 ||A| + |B|| ≧ |A + B| を利用して、f(x) と g(x) のそれぞれの誤差の形に分割します。",
-        "formula": "|(f(x) - L) + (g(x) - M)| \\le |f(x) - L| + |g(x) - M|",
+        "explanation": "$x=a$ を代入すると定数項が決まります。",
+        "formula": "c_0=f(a)",
         "choices": [
-          "|(f(x) - L) + (g(x) - M)| \\le |f(x) - L| + |g(x) - M|",
-          "|(f(x) - L) + (g(x) - M)| \\le |f(x) - L| - |g(x) - M|",
-          "|(f(x) - L) + (g(x) - M)| = |f(x) - L| + |g(x) - M|",
-          "|(f(x) - L) + (g(x) - M)| \\le |f(x) + g(x)| - |L + M|"
+          "c_0=f(a)",
+          "c_0=f\\prime(a)",
+          "c_0=0",
+          "c_0=a"
         ],
         "correctIndex": 0
       },
       {
         "stepNumber": 2,
-        "explanation": "全体の誤差を ε 未満にするため、f(x) と g(x) それぞれの極限の定義から、各誤差が何未満となるように δ1, δ2 を選べばよいでしょうか。等分に割り振る形を考えます。",
-        "formula": "|f(x) - L| < \\frac{\\varepsilon}{2} \\quad \\text{and} \\quad |g(x) - M| < \\frac{\\varepsilon}{2}",
+        "explanation": "$n$ 回微分して $x=a$ を代入します。",
+        "formula": "f^{(n)}(a)=n!c_n",
         "choices": [
-          "|f(x) - L| < \\frac{\\varepsilon}{2} \\quad \\text{and} \\quad |g(x) - M| < \\frac{\\varepsilon}{2}",
-          "|f(x) - L| < \\varepsilon \\quad \\text{and} \\quad |g(x) - M| < \\varepsilon",
-          "|f(x) - L| < \\frac{\\varepsilon}{4} \\quad \\text{and} \\quad |g(x) - M| < \\frac{\\varepsilon}{4}",
-          "|f(x) - L| < 2\\varepsilon \\quad \\text{and} \\quad |g(x) - M| < 2\\varepsilon"
+          "f^{(n)}(a)=c_n",
+          "f^{(n)}(a)=n!c_n",
+          "f^{(n)}(a)=\frac{c_n}{n!}",
+          "f^{(n)}(a)=a^n c_n"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
       },
       {
         "stepNumber": 3,
-        "explanation": "0 < |x - a| < δ1 のとき f の不等式が、0 < |x - a| < δ2 のとき g の不等式が成り立ちます。両方を同時に満たさせるために設定すべき δ の条件を選択してください。",
-        "formula": "\\delta = \\min(\\delta_1, \\delta_2)",
+        "explanation": "係数を解いてテイラー展開になります。",
+        "formula": "f(x)=\\sum_{n=0}^{\\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n",
         "choices": [
-          "\\delta = \\min(\\delta_1, \\delta_2)",
-          "\\delta = \\max(\\delta_1, \\delta_2)",
-          "\\delta = \\delta_1 + \\delta_2",
-          "\\delta = \\frac{\\delta_1 \\delta_2}{2}"
+          "f(x)=\\sum f^{(n)}(a)(x-a)^n",
+          "f(x)=\\sum \frac{f^{(n)}(x)}{n!}(x-a)^n",
+          "f(x)=\\sum_{n=0}^{\\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n",
+          "f(x)=\\sum \frac{f(a)}{n!}(x-a)^n"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
       }
-    ],
-    "directory": "極限"
+    ]
   },
   {
-    "id": "eps_delta_sub_rule",
-    "title": "極限の性質（差の公式）の証明",
-    "initialFormula": "\\lim_{x \\to a} (f(x) - g(x)) = L - M",
+    "id": "uni_invertible_matrix",
+    "title": "逆行列の公式（2次）",
+    "directory": "線形代数",
+    "initialFormula": "A=\begin{pmatrix}a&b\\c&d\\end{pmatrix}",
     "steps": [
       {
         "stepNumber": 1,
-        "explanation": "任意の ε > 0 に対し、|(f(x) - g(x)) - (L - M)| < ε を示します。まずは絶対値の中身を f(x)-L と g(x)-M のブロックに整理し、三角不等式を適用できる形にします。",
-        "formula": "|(f(x) - L) - (g(x) - M)| \\le |f(x) - L| + |-(g(x) - M)|",
+        "explanation": "行列式を計算します。",
+        "formula": "\\det A=ad-bc",
         "choices": [
-          "|(f(x) - L) - (g(x) - M)| \\le |f(x) - L| + |-(g(x) - M)|",
-          "|(f(x) - L) - (g(x) - M)| \\le |f(x) - L| - |g(x) - M|",
-          "|(f(x) - L) - (g(x) - M)| = |f(x) - L| - |g(x) - M|",
-          "|(f(x) - L) - (g(x) - M)| \\le |f(x) - g(x)| + |L - M|"
+          "\\det A=ad-bc",
+          "\\det A=ad+bc",
+          "\\det A=ab-cd",
+          "\\det A=a+d"
         ],
         "correctIndex": 0
       },
       {
         "stepNumber": 2,
-        "explanation": "絶対値の性質 |-A| = |A| を利用して、右辺の第二項をスッキリさせましょう。",
-        "formula": "|f(x) - L| + |g(x) - M|",
+        "explanation": "余因子を並べ替えた随伴行列を作ります。",
+        "formula": "\\operatorname{adj}A=\begin{pmatrix}d&-b\\-c&a\\end{pmatrix}",
         "choices": [
-          "|f(x) - L| + |g(x) - M|",
-          "|f(x) - L| - |g(x) - M|",
-          "|f(x) - L| + |M - g(x)|",
-          "|f(x) - L| - |M - g(x)|"
+          "\\operatorname{adj}A=\begin{pmatrix}a&-b\\-c&d\\end{pmatrix}",
+          "\\operatorname{adj}A=\begin{pmatrix}d&-b\\-c&a\\end{pmatrix}",
+          "\\operatorname{adj}A=\begin{pmatrix}d&b\\c&a\\end{pmatrix}",
+          "\\operatorname{adj}A=\begin{pmatrix}-d&b\\c&-a\\end{pmatrix}"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
       },
       {
         "stepNumber": 3,
-        "explanation": "和の証明と同様に、各パーツを ε/2 未満に抑える δ1, δ2 を選び、その最小値を δ とします。最終的に導かれる結論を確認してください。",
-        "formula": "0 < |x - a| < \\delta \\implies |(f(x) - g(x)) - (L - M)| < \\varepsilon",
+        "explanation": "$A\\operatorname{adj}A=(\\det A)I$ を使います。",
+        "formula": "A^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\\end{pmatrix}",
         "choices": [
-          "0 < |x - a| < \\delta \\implies |(f(x) - g(x)) - (L - M)| < \\varepsilon",
-          "0 < |x - a| < \\delta \\implies |(f(x) - g(x)) - (L - M)| < \\frac{\\varepsilon}{2}",
-          "0 < |x - a| < \\varepsilon \\implies |(f(x) - g(x)) - (L - M)| < \\delta",
-          "0 < |x - a| < \\delta \\implies |f(x) - g(x)| < \\varepsilon"
+          "A^{-1}=\frac{1}{ad+bc}\begin{pmatrix}d&-b\\-c&a\\end{pmatrix}",
+          "A^{-1}=\begin{pmatrix}d&-b\\-c&a\\end{pmatrix}",
+          "A^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\\end{pmatrix}",
+          "A^{-1}=\frac{1}{ad-bc}\begin{pmatrix}a&b\\c&d\\end{pmatrix}"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
       }
-    ],
-    "directory": "極限"
+    ]
   },
   {
-    "id": "eps_delta_squeeze_prep",
-    "title": "はさみうちの原理のε-δによる準備",
-    "initialFormula": "g(x) \\le f(x) \\le h(x) \\quad \\text{and} \\quad \\lim_{x \\to a} g(x) = \\lim_{x \\to a} h(x) = L",
+    "id": "uni_cramers_rule",
+    "title": "クラメルの公式（2元）",
+    "directory": "線形代数",
+    "initialFormula": "\begin{cases}ax+by=e\\cx+dy=f\\end{cases}",
     "steps": [
       {
         "stepNumber": 1,
-        "explanation": "任意の ε > 0 に対し、g(x) と h(x) が L に収束することから、ある共通の δ > 0 が存在して 0 < |x - a| < δ のとき両方の誤差が ε 未満になります。このときの g(x) と h(x) が満たす範囲の不等式を展開してください。",
-        "formula": "L - \\varepsilon < g(x) < L + \\varepsilon \\quad \\text{and} \\quad L - \\varepsilon < h(x) < L + \\varepsilon",
+        "explanation": "係数行列の行列式を置きます。",
+        "formula": "D=ad-bc",
         "choices": [
-          "L - \\varepsilon < g(x) < L + \\varepsilon \\quad \\text{and} \\quad L - \\varepsilon < h(x) < L + \\varepsilon",
-          "g(x) < L + \\varepsilon \\quad \\text{and} \\quad L - \\varepsilon < h(x)",
-          "L - \\delta < g(x) < L + \\delta \\quad \\text{and} \\quad L - \\delta < h(x) < L + \\delta",
-          "|g(x) - h(x)| < \\varepsilon"
+          "D=ad-bc",
+          "D=ab-cd",
+          "D=ad+bc",
+          "D=a+d-b-c"
         ],
         "correctIndex": 0
       },
       {
         "stepNumber": 2,
-        "explanation": "与えられた大小関係 g(x) ≦ f(x) ≦ h(x) と先ほどの不等式を結合させて、f(x) を左右からはさみこみます。",
-        "formula": "L - \\varepsilon < g(x) \\le f(x) \\le h(x) < L + \\varepsilon",
+        "explanation": "$x$ の列を定数列に置き換えた行列式を作ります。",
+        "formula": "D_x=ed-bf",
         "choices": [
-          "L - \\varepsilon < g(x) \\le f(x) \\le h(x) < L + \\varepsilon",
-          "L - \\varepsilon < h(x) \\le f(x) \\le g(x) < L + \\varepsilon",
-          "g(x) - \\varepsilon < f(x) < h(x) + \\varepsilon",
-          "L - \\delta < g(x) \\le f(x) \\le h(x) < L + \\delta"
+          "D_x=af-ec",
+          "D_x=ed-bf",
+          "D_x=eb+df",
+          "D_x=ad-bc"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
       },
       {
         "stepNumber": 3,
-        "explanation": "結合した不等式の両端を取り出すことで、L - ε < f(x) < L + ε を得ます。これを絶対値を用いた lim f(x) = L の定義の形に書き直しましょう。",
-        "formula": "|f(x) - L| < \\varepsilon",
+        "explanation": "解は行列式の比で表せます。",
+        "formula": "x=\frac{D_x}{D},\\quad y=\frac{D_y}{D}",
         "choices": [
-          "|f(x) - L| < \\varepsilon",
-          "|f(x) - L| < \\delta",
-          "|f(x) + L| < \\varepsilon",
-          "|f(x)| < L + \\varepsilon"
+          "x=\frac{D}{D_x},\\quad y=\frac{D}{D_y}",
+          "x=D_xD,\\quad y=D_yD",
+          "x=\frac{D_x}{D},\\quad y=\frac{D_y}{D}",
+          "x=D_x+D,\\quad y=D_y+D"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
       }
-    ],
-    "directory": "極限"
+    ]
   },
   {
-    "id": "eps_N_seq_linear",
-    "title": "数列の極限（ε-N論法）の基礎証明",
-    "initialFormula": "\\lim_{n \\to \\infty} \\frac{1}{n} = 0",
+    "id": "uni_eigen_equation",
+    "title": "固有値方程式",
+    "directory": "線形代数",
+    "initialFormula": "A\u000bec{v}=\\lambda\u000bec{v}",
     "steps": [
       {
         "stepNumber": 1,
-        "explanation": "任意の ε > 0 に対して、ある自然数 N が存在し、n ≧ N ならば |1/n - 0| < ε が成り立つことを示します。まずはターゲットとなる誤差の絶対値を単純化してください（nは自然数）。",
-        "formula": "\\frac{1}{n} < \\varepsilon",
+        "explanation": "右辺を左辺へ移項します。",
+        "formula": "(A-\\lambda I)\u000bec{v}=\u000bec{0}",
         "choices": [
-          "\\frac{1}{n} < \\varepsilon",
-          "-\\frac{1}{n} < \\varepsilon",
-          "n < \\varepsilon",
-          "\\frac{1}{n} < \\frac{1}{N}"
+          "(A-\\lambda I)\u000bec{v}=\u000bec{0}",
+          "(A+\\lambda I)\u000bec{v}=\u000bec{0}",
+          "(A-I)\u000bec{v}=\\lambda",
+          "A\u000bec{v}=\u000bec{0}"
         ],
         "correctIndex": 0
       },
       {
         "stepNumber": 2,
-        "explanation": "1/n < ε を n について解くことで、n がどのような数より大きければ目的が達成されるかが分かります。n に関する不等式に変形してください。",
-        "formula": "n > \\frac{1}{\\varepsilon}",
+        "explanation": "非零ベクトル解を持つには係数行列が正則でない必要があります。",
+        "formula": "\\det(A-\\lambda I)=0",
         "choices": [
-          "n > \\frac{1}{\\varepsilon}",
-          "n < \\frac{1}{\\varepsilon}",
-          "n > \\varepsilon",
-          "n < \\varepsilon"
+          "\\det(A-\\lambda I)=1",
+          "\\det(A-\\lambda I)=0",
+          "\\det(A)=\\lambda",
+          "A-\\lambda I=I"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
       },
       {
         "stepNumber": 3,
-        "explanation": "n ≧ N のとき常に n > 1/ε が成り立つように、自然数 N をアルキメデスの原理に基づいて設定します。ガウス記号 [ ] を用いて適切な N の条件を選んでください。",
-        "formula": "N > \\frac{1}{\\varepsilon}",
+        "explanation": "この方程式の解が固有値です。",
+        "formula": "\\lambda\\ \text{は}\\ \\det(A-\\lambda I)=0\\ \text{の解}",
         "choices": [
-          "N > \\frac{1}{\\varepsilon}",
-          "N < \\frac{1}{\\varepsilon}",
-          "N > \\varepsilon",
-          "N = 1"
+          "\\lambda\\ \text{は}\\ A\u000bec{v}=\u000bec{0}\\ \text{の解}",
+          "\\lambda=\\det A\\ \text{のみ}",
+          "\\lambda\\ \text{は}\\ \\det(A-\\lambda I)=0\\ \text{の解}",
+          "\\lambda\\ \text{は任意の実数}"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
       }
-    ],
-    "directory": "極限"
+    ]
   },
   {
-    "id": "eps_delta_negation",
-    "title": "極限が成り立たないことの否定命題（非収束）の構築",
-    "initialFormula": "\\neg \\left[ \\forall \\varepsilon > 0, \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+    "id": "uni_projection",
+    "title": "正射影の公式",
+    "directory": "線形代数",
+    "initialFormula": "\\operatorname{proj}_{\u000bec{u}}\u000bec{v}",
     "steps": [
       {
         "stepNumber": 1,
-        "explanation": "「極限が L にならない」ことを証明するため、ε-δ論法の定義文の否定をとります。論理記号の否定の規則（∀の否定は∃、∃の否定は∀）に従って、最初の「任意の ε > 0」の部分を否定してください。",
-        "formula": "\\exists \\varepsilon > 0, \\neg \\left[ \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+        "explanation": "射影は $\u000bec u$ のスカラー倍とおきます。",
+        "formula": "\\operatorname{proj}_{\u000bec{u}}\u000bec{v}=c\u000bec{u}",
         "choices": [
-          "\\exists \\varepsilon > 0, \\neg \\left[ \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
-          "\\forall \\varepsilon \\le 0, \\neg \\left[ \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
-          "\\exists \\varepsilon \\le 0, \\neg \\left[ \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
-          "\\forall \\varepsilon > 0, \\neg \\left[ \\exists \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]"
+          "\\operatorname{proj}_{\u000bec{u}}\u000bec{v}=c\u000bec{u}",
+          "\\operatorname{proj}_{\u000bec{u}}\u000bec{v}=c\u000bec{v}",
+          "\\operatorname{proj}_{\u000bec{u}}\u000bec{v}=\u000bec{u}+\u000bec{v}",
+          "\\operatorname{proj}_{\u000bec{u}}\u000bec{v}=0"
         ],
         "correctIndex": 0
       },
       {
         "stepNumber": 2,
-        "explanation": "次に、内側の「ある δ > 0 が存在し」の部分まで否定を送り込みます。",
-        "formula": "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\neg \\left[ \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
+        "explanation": "残差 $\u000bec v-c\u000bec u$ は $\u000bec u$ と直交します。",
+        "formula": "(\u000bec{v}-c\u000bec{u})\\cdot\u000bec{u}=0",
         "choices": [
-          "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\neg \\left[ \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
-          "\\exists \\varepsilon > 0, \\exists \\delta \\le 0, \\neg \\left[ \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
-          "\\exists \\varepsilon > 0, \\forall \\delta \\le 0, \\neg \\left[ \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]",
-          "\\forall \\varepsilon > 0, \\forall \\delta > 0, \\neg \\left[ \\forall x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon \\right) \\right]"
+          "(\u000bec{v}+c\u000bec{u})\\cdot\u000bec{u}=0",
+          "(\u000bec{v}-c\u000bec{u})\\cdot\u000bec{u}=0",
+          "(\u000bec{v}-c\u000bec{u})\\cdot\u000bec{v}=0",
+          "c\u000bec{u}=\u000bec{0}"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
       },
       {
         "stepNumber": 3,
-        "explanation": "さらに「全ての x について」を否定し、一番奥の含意命題 P ⇒ Q の否定（P かつ Q でない）を完成させてください。",
-        "formula": "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\exists x \\left( 0 < |x - a| < \\delta \\land |f(x) - L| \\ge \\varepsilon \\right)",
+        "explanation": "$c$ を解いて公式を得ます。",
+        "formula": "\\operatorname{proj}_{\u000bec{u}}\u000bec{v}=\frac{\u000bec{v}\\cdot\u000bec{u}}{\u000bec{u}\\cdot\u000bec{u}}\u000bec{u}",
         "choices": [
-          "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\exists x \\left( 0 < |x - a| < \\delta \\land |f(x) - L| \\ge \\varepsilon \\right)",
-          "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\forall x \\left( 0 < |x - a| < \\delta \\land |f(x) - L| \\ge \\varepsilon \\right)",
-          "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\exists x \\left( 0 < |x - a| \\ge \\delta \\land |f(x) - L| < \\varepsilon \\right)",
-          "\\exists \\varepsilon > 0, \\forall \\delta > 0, \\exists x \\left( 0 < |x - a| < \\delta \\implies |f(x) - L| \\ge \\varepsilon \\right)"
+          "\\operatorname{proj}_{\u000bec{u}}\u000bec{v}=\frac{\u000bec{v}\\cdot\u000bec{u}}{\u000bec{v}\\cdot\u000bec{v}}\u000bec{v}",
+          "\\operatorname{proj}_{\u000bec{u}}\u000bec{v}=(\u000bec{v}\\cdot\u000bec{u})\u000bec{u}",
+          "\\operatorname{proj}_{\u000bec{u}}\u000bec{v}=\frac{\u000bec{v}\\cdot\u000bec{u}}{\u000bec{u}\\cdot\u000bec{u}}\u000bec{u}",
+          "\\operatorname{proj}_{\u000bec{u}}\u000bec{v}=\u000bec{v}-\u000bec{u}"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
       }
-    ],
-    "directory": "極限"
+    ]
   },
   {
-    "id": "eps_delta_continuous",
-    "title": "関数 f(x) = x が任意の点で連続であることの証明",
-    "initialFormula": "\\forall x_0 \\in \\mathbb{R}, \\quad \\lim_{x \\to x_0} x = x_0",
+    "id": "uni_bayes_continuous",
+    "title": "連続型ベイズの公式",
+    "directory": "確率統計",
+    "initialFormula": "p(\theta|x)",
     "steps": [
       {
         "stepNumber": 1,
-        "explanation": "任意の x0 と任意の ε > 0 に対し、0 < |x - x0| < δ ならば |x - x0| < ε となる δ を定めます。連続性の定義のコアとなる不等式をそのまま満たすための最も簡単なアプローチを選びましょう。",
-        "formula": "\\delta = \\varepsilon",
+        "explanation": "同時密度を2通りに分解します。",
+        "formula": "p(\theta,x)=p(x|\theta)p(\theta)=p(\theta|x)p(x)",
         "choices": [
-          "\\delta = \\varepsilon",
-          "\\delta = |x_0|",
-          "\\delta = \\frac{\\varepsilon}{|x_0|}",
-          "\\delta = 1"
+          "p(\theta,x)=p(x|\theta)p(\theta)=p(\theta|x)p(x)",
+          "p(\theta,x)=p(x)+p(\theta)",
+          "p(\theta,x)=p(x|\theta)-p(\theta)",
+          "p(\theta,x)=p(\theta|x)/p(x)"
         ],
         "correctIndex": 0
       },
       {
         "stepNumber": 2,
-        "explanation": "δ = ε と選べば、0 < |x - x0| < δ のとき自動的に |x - x0| < ε が導出され、関数がすべての実数において連続であることが証明されます。",
-        "formula": "|x - x_0| < \\delta \\implies |x - x_0| < \\varepsilon",
+        "explanation": "$p(\theta|x)$ について解きます。",
+        "formula": "p(\theta|x)=\frac{p(x|\theta)p(\theta)}{p(x)}",
         "choices": [
-          "|x - x_0| < \\delta \\implies |x - x_0| < \\varepsilon",
-          "|x - x_0| < \\delta \\implies |x| < \\varepsilon",
-          "|x| < \\delta \\implies |x - x_0| < \\varepsilon",
-          "|x - x_0| < \\varepsilon \\implies |x - x_0| < \\delta"
+          "p(\theta|x)=p(x|\theta)p(x)",
+          "p(\theta|x)=\frac{p(x|\theta)p(\theta)}{p(x)}",
+          "p(\theta|x)=\frac{p(x)}{p(x|\theta)p(\theta)}",
+          "p(\theta|x)=p(\theta)-p(x)"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "周辺尤度は $\theta$ で積分して得ます。",
+        "formula": "p(x)=\\int p(x|\theta)p(\theta)\\,d\theta",
+        "choices": [
+          "p(x)=\\int p(\theta|x)\\,dx",
+          "p(x)=p(x|\theta)+p(\theta)",
+          "p(x)=\\int p(x|\theta)p(\theta)\\,d\theta",
+          "p(x)=\frac{p(x|\theta)}{p(\theta)}"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_variance_formula",
+    "title": "分散公式 V(X)=E[X^2]-E[X]^2",
+    "directory": "確率統計",
+    "initialFormula": "V(X)=E[(X-\\mu)^2]",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "二乗を展開します。",
+        "formula": "(X-\\mu)^2=X^2-2\\mu X+\\mu^2",
+        "choices": [
+          "(X-\\mu)^2=X^2-2\\mu X+\\mu^2",
+          "(X-\\mu)^2=X^2-\\mu^2",
+          "(X-\\mu)^2=X^2+2\\mu X+\\mu^2",
+          "(X-\\mu)^2=X-\\mu"
         ],
         "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "期待値の線形性を使います。",
+        "formula": "V(X)=E[X^2]-2\\mu E[X]+\\mu^2",
+        "choices": [
+          "V(X)=E[X]^2-2\\mu E[X]+\\mu",
+          "V(X)=E[X^2]-2\\mu E[X]+\\mu^2",
+          "V(X)=E[X^2]-2E[\\mu X^2]",
+          "V(X)=E[X^2]+2\\mu E[X]+\\mu^2"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "$\\mu=E[X]$ を代入して整理します。",
+        "formula": "V(X)=E[X^2]-\\{E[X]\\}^2",
+        "choices": [
+          "V(X)=E[X^2]+\\{E[X]\\}^2",
+          "V(X)=E[X]-\\{E[X]\\}^2",
+          "V(X)=E[X^2]-\\{E[X]\\}^2",
+          "V(X)=\\{E[X]\\}^2-E[X^2]"
+        ],
+        "correctIndex": 2
       }
-    ],
-    "directory": "極限"
+    ]
+  },
+  {
+    "id": "uni_fourier_coeff",
+    "title": "フーリエ係数",
+    "directory": "フーリエ解析",
+    "initialFormula": "f(x)\\sim\frac{a_0}{2}+\\sum_{n=1}^{\\infty}(a_n\\cos nx+b_n\\sin nx)",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "両辺に $\\cos mx$ を掛けて $[-\\pi,\\pi]$ で積分します。",
+        "formula": "\\int_{-\\pi}^{\\pi}f(x)\\cos mx\\,dx",
+        "choices": [
+          "\\int_{-\\pi}^{\\pi}f(x)\\cos mx\\,dx",
+          "\\int f(x)\\sin mx\\,dx",
+          "\\int f(x)\\,dx",
+          "\\int \\cos nx\\,dx"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "三角関数の直交性で $m$ 番目だけが残ります。",
+        "formula": "\\int_{-\\pi}^{\\pi}\\cos nx\\cos mx\\,dx=\\pi\\delta_{mn}",
+        "choices": [
+          "\\int \\cos nx\\cos mx\\,dx=0\\ \text{always}",
+          "\\int_{-\\pi}^{\\pi}\\cos nx\\cos mx\\,dx=\\pi\\delta_{mn}",
+          "\\int \\cos nx\\cos mx\\,dx=2\\pi",
+          "\\int \\cos nx\\sin mx\\,dx=\\pi"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "係数公式が得られます。",
+        "formula": "a_m=\frac{1}{\\pi}\\int_{-\\pi}^{\\pi}f(x)\\cos mx\\,dx",
+        "choices": [
+          "a_m=\\pi\\int f(x)\\cos mx\\,dx",
+          "a_m=\frac{1}{\\pi}\\int f(x)\\sin mx\\,dx",
+          "a_m=\frac{1}{\\pi}\\int_{-\\pi}^{\\pi}f(x)\\cos mx\\,dx",
+          "a_m=\\int f(x)\\,dx"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_laplace_derivative",
+    "title": "ラプラス変換の微分公式",
+    "directory": "ラプラス変換",
+    "initialFormula": "\\mathcal{L}\\{f\\prime(t)\\}",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "定義に代入します。",
+        "formula": "\\int_0^{\\infty}e^{-st}f\\prime(t)\\,dt",
+        "choices": [
+          "\\int_0^{\\infty}e^{-st}f\\prime(t)\\,dt",
+          "\\int_0^{\\infty}e^{-st}f(t)\\,dt",
+          "\\int_0^{\\infty}se^{-st}f\\prime(t)\\,dt",
+          "\\int_0^{\\infty}e^{st}f\\prime(t)\\,dt"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "部分積分を使います。",
+        "formula": "[e^{-st}f(t)]_0^{\\infty}+s\\int_0^{\\infty}e^{-st}f(t)\\,dt",
+        "choices": [
+          "[e^{-st}f(t)]_0^{\\infty}-s\\int e^{-st}f(t)dt",
+          "[e^{-st}f(t)]_0^{\\infty}+s\\int_0^{\\infty}e^{-st}f(t)\\,dt",
+          "sf(0)+F(s)",
+          "F(s)-f(0)"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "境界項を評価して公式にします。",
+        "formula": "\\mathcal{L}\\{f\\prime(t)\\}=sF(s)-f(0)",
+        "choices": [
+          "\\mathcal{L}\\{f\\prime(t)\\}=sF(s)+f(0)",
+          "\\mathcal{L}\\{f\\prime(t)\\}=F(s)-f(0)",
+          "\\mathcal{L}\\{f\\prime(t)\\}=sF(s)-f(0)",
+          "\\mathcal{L}\\{f\\prime(t)\\}=s^2F(s)"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_ode_first_order",
+    "title": "一階線形微分方程式の積分因子",
+    "directory": "微分方程式",
+    "initialFormula": "y\\prime+p(x)y=q(x)",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "積分因子を $\\mu(x)$ と置き、積の微分にしたい形を考えます。",
+        "formula": "(\\mu y)\\prime=\\mu y\\prime+\\mu\\prime y",
+        "choices": [
+          "(\\mu y)\\prime=\\mu y\\prime+\\mu\\prime y",
+          "(\\mu y)\\prime=\\mu y\\prime-\\mu\\prime y",
+          "(\\mu y)\\prime=\\mu+y",
+          "(\\mu y)\\prime=\\mu y"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "$\\mu\\prime=\\mu p$ となるように選びます。",
+        "formula": "\frac{\\mu\\prime}{\\mu}=p(x)",
+        "choices": [
+          "\frac{\\mu}{\\mu\\prime}=p(x)",
+          "\frac{\\mu\\prime}{\\mu}=p(x)",
+          "\\mu\\prime=q(x)",
+          "\\mu=p\\prime(x)"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "積分して積分因子を得ます。",
+        "formula": "\\mu(x)=e^{\\int p(x)\\,dx}",
+        "choices": [
+          "\\mu(x)=\\int p(x)\\,dx",
+          "\\mu(x)=e^{-\\int p(x)\\,dx}",
+          "\\mu(x)=e^{\\int p(x)\\,dx}",
+          "\\mu(x)=p(x)e^x"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_green_theorem",
+    "title": "グリーンの定理",
+    "directory": "ベクトル解析",
+    "initialFormula": "\\oint_C P\\,dx+Q\\,dy",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "微小長方形の境界積分を考えると、内部で打ち消しが起こります。",
+        "formula": "\\Delta\\oint \u0007pprox \\left(\frac{\\partial Q}{\\partial x}-\frac{\\partial P}{\\partial y}\right)\\Delta A",
+        "choices": [
+          "\\Delta\\oint \u0007pprox \\left(\frac{\\partial Q}{\\partial x}-\frac{\\partial P}{\\partial y}\right)\\Delta A",
+          "\\Delta\\oint \u0007pprox (P+Q)\\Delta A",
+          "\\Delta\\oint \u0007pprox \frac{\\partial P}{\\partial x}+\frac{\\partial Q}{\\partial y}",
+          "\\Delta\\oint \u0007pprox \frac{\\partial P}{\\partial y}-\frac{\\partial Q}{\\partial x}"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "領域全体で足し合わせると内部境界は相殺されます。",
+        "formula": "\\oint_C P\\,dx+Q\\,dy=\\iint_D\\left(\frac{\\partial Q}{\\partial x}-\frac{\\partial P}{\\partial y}\right)dA",
+        "choices": [
+          "\\oint_C P\\,dx+Q\\,dy=\\iint_D(P+Q)dA",
+          "\\oint_C P\\,dx+Q\\,dy=\\iint_D\\left(\frac{\\partial Q}{\\partial x}-\frac{\\partial P}{\\partial y}\right)dA",
+          "\\oint_C P\\,dx+Q\\,dy=\\iint_D\\left(\frac{\\partial P}{\\partial x}+\frac{\\partial Q}{\\partial y}\right)dA",
+          "\\oint_C P\\,dx+Q\\,dy=0"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "正向きの単純閉曲線で成り立つ形としてまとめます。",
+        "formula": "\\oint_C P\\,dx+Q\\,dy=\\iint_D(Q_x-P_y)\\,dA",
+        "choices": [
+          "\\oint_C P\\,dx+Q\\,dy=\\iint_D(P_x+Q_y)\\,dA",
+          "\\oint_C P\\,dx+Q\\,dy=\\int_D(P-Q)\\,dA",
+          "\\oint_C P\\,dx+Q\\,dy=\\iint_D(Q_x-P_y)\\,dA",
+          "\\oint_C P\\,dx+Q\\,dy=Q_x-P_y"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_divergence_theorem",
+    "title": "発散定理",
+    "directory": "ベクトル解析",
+    "initialFormula": "\\iiint_V \nabla\\cdot\u000bec{F}\\,dV",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "小さな直方体で流出量を各方向に分けて近似します。",
+        "formula": "\text{net flux}\u0007pprox (F_{x,x}+F_{y,y}+F_{z,z})\\Delta V",
+        "choices": [
+          "\text{net flux}\u0007pprox (F_{x,x}+F_{y,y}+F_{z,z})\\Delta V",
+          "\text{net flux}\u0007pprox (F_x+F_y+F_z)\\Delta V",
+          "\text{net flux}\u0007pprox \nabla\times\u000bec F",
+          "\text{net flux}\u0007pprox 0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "内部の面の流束は隣同士で相殺されます。",
+        "formula": "\\sum \text{internal flux}=0",
+        "choices": [
+          "\\sum \text{internal flux}=\nabla\\cdot\u000bec F",
+          "\\sum \text{internal flux}=0",
+          "\\sum \text{internal flux}=\\partial V",
+          "\\sum \text{internal flux}=1"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "境界面の流束だけが残ります。",
+        "formula": "\\iiint_V\nabla\\cdot\u000bec{F}\\,dV=\\iint_{\\partial V}\u000bec{F}\\cdot\u000bec{n}\\,dS",
+        "choices": [
+          "\\iiint_V\nabla\times\u000bec{F}\\,dV=\\iint_{\\partial V}\u000bec{F}\\cdot\u000bec{n}\\,dS",
+          "\\iiint_V\nabla\\cdot\u000bec{F}\\,dV=\\int_{\\partial V}\u000bec F\\,dx",
+          "\\iiint_V\nabla\\cdot\u000bec{F}\\,dV=\\iint_{\\partial V}\u000bec{F}\\cdot\u000bec{n}\\,dS",
+          "\\iiint_V\u000bec{F}\\,dV=\\iint_{\\partial V}\nabla\\cdot\u000bec F\\,dS"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_stokes",
+    "title": "ストークスの定理",
+    "directory": "ベクトル解析",
+    "initialFormula": "\\oint_{\\partial S}\u000bec{F}\\cdot d\u000bec{r}",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "小領域ごとの循環は回転の法線成分で近似されます。",
+        "formula": "\\Delta circulation\u0007pprox (\nabla\times\u000bec{F})\\cdot\u000bec{n}\\,\\Delta S",
+        "choices": [
+          "\\Delta circulation\u0007pprox (\nabla\times\u000bec{F})\\cdot\u000bec{n}\\,\\Delta S",
+          "\\Delta circulation\u0007pprox (\nabla\\cdot\u000bec{F})\\Delta S",
+          "\\Delta circulation\u0007pprox \u000bec{F}\\cdot\u000bec{n}\\Delta S",
+          "\\Delta circulation\u0007pprox 0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "隣り合う小領域の内部境界は逆向きに打ち消します。",
+        "formula": "\\sum \text{internal circulation}=0",
+        "choices": [
+          "\\sum \text{internal circulation}=1",
+          "\\sum \text{internal circulation}=0",
+          "\\sum \text{internal circulation}=\nabla\\cdot\u000bec F",
+          "\\sum \text{internal circulation}=\\partial S"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "外側の境界だけが残ります。",
+        "formula": "\\oint_{\\partial S}\u000bec{F}\\cdot d\u000bec{r}=\\iint_S(\nabla\times\u000bec{F})\\cdot\u000bec{n}\\,dS",
+        "choices": [
+          "\\oint_{\\partial S}\u000bec{F}\\cdot d\u000bec{r}=\\iint_S\nabla\\cdot\u000bec{F}\\,dS",
+          "\\oint_{\\partial S}\u000bec{F}\\cdot d\u000bec{r}=\\iint_S\u000bec{F}\\cdot\u000bec{n}\\,dS",
+          "\\oint_{\\partial S}\u000bec{F}\\cdot d\u000bec{r}=\\iint_S(\nabla\times\u000bec{F})\\cdot\u000bec{n}\\,dS",
+          "\\oint_{\\partial S}\u000bec{F}\\cdot d\u000bec{r}=0"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_cauchy_riemann",
+    "title": "コーシー・リーマン方程式",
+    "directory": "複素解析",
+    "initialFormula": "f(z)=u(x,y)+iv(x,y)",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "実軸方向から微分します。",
+        "formula": "f\\prime(z)=u_x+iv_x",
+        "choices": [
+          "f\\prime(z)=u_x+iv_x",
+          "f\\prime(z)=u_y+iv_y",
+          "f\\prime(z)=u_x+iu_y",
+          "f\\prime(z)=v_x+iv_y"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "虚軸方向からの微分も同じ値でなければなりません。",
+        "formula": "f\\prime(z)=v_y-iu_y",
+        "choices": [
+          "f\\prime(z)=u_y+iv_y",
+          "f\\prime(z)=v_y-iu_y",
+          "f\\prime(z)=v_x-iu_x",
+          "f\\prime(z)=u_x-iv_x"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "実部と虚部を比較します。",
+        "formula": "u_x=v_y,\\quad u_y=-v_x",
+        "choices": [
+          "u_x=u_y,\\quad v_x=v_y",
+          "u_x=-v_y,\\quad u_y=v_x",
+          "u_x=v_y,\\quad u_y=-v_x",
+          "u_x=v_x,\\quad u_y=v_y"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_cauchy_integral",
+    "title": "コーシーの積分公式",
+    "directory": "複素解析",
+    "initialFormula": "f(a)",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "$\frac{f(z)}{z-a}$ は $z=a$ に単純極を持ちます。",
+        "formula": "\\operatorname{Res}_{z=a}\frac{f(z)}{z-a}=f(a)",
+        "choices": [
+          "\\operatorname{Res}_{z=a}\frac{f(z)}{z-a}=f(a)",
+          "\\operatorname{Res}=f\\prime(a)",
+          "\\operatorname{Res}=0",
+          "\\operatorname{Res}=\frac{1}{f(a)}"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "留数定理を適用します。",
+        "formula": "\\oint_C\frac{f(z)}{z-a}\\,dz=2\\pi i f(a)",
+        "choices": [
+          "\\oint_C\frac{f(z)}{z-a}\\,dz=f(a)",
+          "\\oint_C\frac{f(z)}{z-a}\\,dz=2\\pi i f(a)",
+          "\\oint_C\frac{f(z)}{z-a}\\,dz=0",
+          "\\oint_C\frac{f(z)}{z-a}\\,dz=\\pi i f(a)"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "両辺を $2\\pi i$ で割ります。",
+        "formula": "f(a)=\frac{1}{2\\pi i}\\oint_C\frac{f(z)}{z-a}\\,dz",
+        "choices": [
+          "f(a)=2\\pi i\\oint_C\frac{f(z)}{z-a}\\,dz",
+          "f(a)=\\oint_C\frac{f(z)}{z-a}\\,dz",
+          "f(a)=\frac{1}{2\\pi i}\\oint_C\frac{f(z)}{z-a}\\,dz",
+          "f(a)=\frac{1}{\\pi i}\\oint_C\frac{f(z)}{z-a}\\,dz"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_entropy",
+    "title": "エントロピー最大化と一様分布",
+    "directory": "情報理論",
+    "initialFormula": "H(p)=-\\sum_i p_i\\log p_i",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "制約 $\\sum_i p_i=1$ をラグランジュ乗数で入れます。",
+        "formula": "L=-\\sum_i p_i\\log p_i+\\lambda\\left(\\sum_i p_i-1\right)",
+        "choices": [
+          "L=-\\sum_i p_i\\log p_i+\\lambda\\left(\\sum_i p_i-1\right)",
+          "L=\\sum_i p_i\\log p_i",
+          "L=-\\sum_i p_i+\\lambda",
+          "L=-\\prod_i p_i\\log p_i"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "$p_i$ で偏微分して0にします。",
+        "formula": "-(\\log p_i+1)+\\lambda=0",
+        "choices": [
+          "\\log p_i+\\lambda=0",
+          "-(\\log p_i+1)+\\lambda=0",
+          "-p_i+\\lambda=0",
+          "-\frac{1}{p_i}+\\lambda=0"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "すべての $p_i$ が同じ値になり、制約から一様分布です。",
+        "formula": "p_i=\frac{1}{n}",
+        "choices": [
+          "p_i=i",
+          "p_i=0",
+          "p_i=\frac{1}{n}",
+          "p_i=\frac{i}{n}"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_least_squares",
+    "title": "最小二乗法の正規方程式",
+    "directory": "線形代数",
+    "initialFormula": "\\min_x\\|Ax-b\\|^2",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "目的関数を内積で書きます。",
+        "formula": "\\|Ax-b\\|^2=(Ax-b)^T(Ax-b)",
+        "choices": [
+          "\\|Ax-b\\|^2=(Ax-b)^T(Ax-b)",
+          "\\|Ax-b\\|^2=A^TA-b^Tb",
+          "\\|Ax-b\\|^2=Ax-b",
+          "\\|Ax-b\\|^2=x^TAx"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "$x$ で微分して勾配を0にします。",
+        "formula": "2A^T(Ax-b)=0",
+        "choices": [
+          "2A(Ax-b)=0",
+          "2A^T(Ax-b)=0",
+          "A^T(Ax+b)=0",
+          "A^TA=0"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "整理すると正規方程式になります。",
+        "formula": "A^TAx=A^Tb",
+        "choices": [
+          "AA^Tx=Ab",
+          "A^Tx=A^Tb",
+          "A^TAx=A^Tb",
+          "A^TAx=b"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_gradient_descent",
+    "title": "勾配降下法の更新式",
+    "directory": "最適化",
+    "initialFormula": "\\min_x f(x)",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "最も増加する方向は勾配方向です。",
+        "formula": "\nabla f(x)",
+        "choices": [
+          "\nabla f(x)",
+          "-\nabla f(x)",
+          "f(x)",
+          "x+\nabla f(x)"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "値を下げるには勾配と逆向きに進みます。",
+        "formula": "x_{k+1}=x_k-\\eta\nabla f(x_k)",
+        "choices": [
+          "x_{k+1}=x_k+\\eta\nabla f(x_k)",
+          "x_{k+1}=x_k-\\eta\nabla f(x_k)",
+          "x_{k+1}=\\eta\nabla f(x_k)",
+          "x_{k+1}=x_k-\\eta f(x_k)"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "$\\eta$ は学習率またはステップ幅です。",
+        "formula": "\\eta>0",
+        "choices": [
+          "\\eta<0",
+          "\\eta=\nabla f",
+          "\\eta>0",
+          "\\eta=f(x_k)"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_pca",
+    "title": "PCA と分散最大化",
+    "directory": "統計・機械学習",
+    "initialFormula": "\\max_{\\|w\\|=1} w^T\\Sigma w",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "制約付き最大化をラグランジュ関数にします。",
+        "formula": "L=w^T\\Sigma w-\\lambda(w^Tw-1)",
+        "choices": [
+          "L=w^T\\Sigma w-\\lambda(w^Tw-1)",
+          "L=w^T\\Sigma w+\\lambda w",
+          "L=\\Sigma w-\\lambda",
+          "L=w^Tw-\\lambda\\Sigma"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "$w$ で微分して0にします。",
+        "formula": "2\\Sigma w-2\\lambda w=0",
+        "choices": [
+          "2\\Sigma-2\\lambda=0",
+          "2\\Sigma w-2\\lambda w=0",
+          "\\Sigma w+\\lambda w=0",
+          "w^T\\Sigma=\\lambda"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "固有値問題になり、最大固有値の固有ベクトルが第1主成分です。",
+        "formula": "\\Sigma w=\\lambda w",
+        "choices": [
+          "\\Sigma=\\lambda w",
+          "w=\\lambda\\Sigma",
+          "\\Sigma w=\\lambda w",
+          "\\Sigma w=w"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "uni_logistic_derivative",
+    "title": "シグモイド関数の微分",
+    "directory": "統計・機械学習",
+    "initialFormula": "\\sigma(x)=\frac{1}{1+e^{-x}}",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "微分しやすいように $(1+e^{-x})^{-1}$ と見ます。",
+        "formula": "\\sigma\\prime(x)=\frac{e^{-x}}{(1+e^{-x})^2}",
+        "choices": [
+          "\\sigma\\prime(x)=\frac{e^{-x}}{(1+e^{-x})^2}",
+          "\\sigma\\prime(x)=\frac{-e^{-x}}{(1+e^{-x})^2}",
+          "\\sigma\\prime(x)=\frac{1}{1+e^{-x}}",
+          "\\sigma\\prime(x)=e^{-x}"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "$\\sigma(x)$ と $1-\\sigma(x)$ を掛けます。",
+        "formula": "\\sigma(x)(1-\\sigma(x))=\frac{e^{-x}}{(1+e^{-x})^2}",
+        "choices": [
+          "\\sigma(x)(1-\\sigma(x))=\frac{1}{(1+e^{-x})^2}",
+          "\\sigma(x)(1-\\sigma(x))=\frac{e^{-x}}{(1+e^{-x})^2}",
+          "\\sigma(x)(1-\\sigma(x))=e^{-x}",
+          "\\sigma(x)(1-\\sigma(x))=\frac{-e^{-x}}{(1+e^{-x})^2}"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "同じ形なので微分公式になります。",
+        "formula": "\\sigma\\prime(x)=\\sigma(x)(1-\\sigma(x))",
+        "choices": [
+          "\\sigma\\prime(x)=1-\\sigma(x)",
+          "\\sigma\\prime(x)=\\sigma(x)^2",
+          "\\sigma\\prime(x)=\\sigma(x)(1-\\sigma(x))",
+          "\\sigma\\prime(x)=\\sigma(x)(1+\\sigma(x))"
+        ],
+        "correctIndex": 2
+      }
+    ]
   }
 ]

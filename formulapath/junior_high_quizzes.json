@@ -1,234 +1,750 @@
 [
-    {
-        "id": "quad",
-        "title": "２次方程式の解の公式",
-        "initialFormula": "x^2 + 4x = 5",
-        "steps": [
-            {
-                "stepNumber": 1,
-                "explanation": "左辺を平方完成するために、両辺に4を加えます。",
-                "formula": "x^2 + 4x + 4 = 5 + 4",
-                "choices": [
-                    "x^2 + 4x + 4 = 5 + 4",
-                    "x^2 + 4x + 2 = 5 + 2",
-                    "x^2 + 4x = 5 + 4",
-                    "x^2 + 4x - 4 = 5 - 4"
-                ],
-                "correctIndex": 0
-            },
-            {
-                "stepNumber": 2,
-                "explanation": "左辺を因数分解し、右辺を計算します。",
-                "formula": "(x + 2)^2 = 9",
-                "choices": [
-                    "(x + 4)^2 = 9",
-                    "(x + 2)^2 = 9",
-                    "(x + 2)^2 = 5",
-                    "(x - 2)^2 = 9"
-                ],
-                "correctIndex": 1
-            },
-            {
-                "stepNumber": 3,
-                "explanation": "平方根をとります。",
-                "formula": "x + 2 = \\pm 3",
-                "choices": [
-                    "x + 2 = 3",
-                    "x + 2 = \\pm 9",
-                    "x + 2 = \\pm 3",
-                    "x - 2 = \\pm 3"
-                ],
-                "correctIndex": 2
-            },
-            {
-                "stepNumber": 4,
-                "explanation": "2を右辺に移項して、最終的な解を求めます。",
-                "formula": "x = 1, -5",
-                "choices": [
-                    "x = 1, -5",
-                    "x = 5, -1",
-                    "x = 1, 5",
-                    "x = -1, -5"
-                ],
-                "correctIndex": 0
-            }
+  {
+    "id": "jh_distributive_basic",
+    "title": "分配法則 a(b+c) の導出",
+    "directory": "文字式と展開",
+    "initialFormula": "a(b+c)",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "同じ数 $a$ を $b$ 個分と $c$ 個分に分けて掛けると考え、足し算のまとまりに分配します。",
+        "formula": "a\times b+a\times c",
+        "choices": [
+          "a\times b+a\times c",
+          "ab-c",
+          "a+b+c",
+          "bc+a"
         ],
-        "directory": "二次方程式"
-    },
-    {
-        "id": "pythagoras",
-        "title": "三平方の定理の導出（面積法）",
-        "initialFormula": "(a + b)^2 = 4 \\times \\frac{1}{2}ab + c^2",
-        "steps": [
-            {
-                "stepNumber": 1,
-                "explanation": "大正方形の面積を表す左辺の (a + b)^2 を展開してみよう。",
-                "formula": "a^2 + 2ab + b^2 = 4 \\times \\frac{1}{2}ab + c^2",
-                "choices": [
-                    "a^2 + 2ab + b^2 = 4 \\times \\frac{1}{2}ab + c^2",
-                    "a^2 + b^2 = 4 \\times \\frac{1}{2}ab + c^2",
-                    "a^2 + ab + b^2 = 4 \\times \\frac{1}{2}ab + c^2",
-                    "a^2 - 2ab + b^2 = 4 \\times \\frac{1}{2}ab + c^2"
-                ],
-                "correctIndex": 0
-            },
-            {
-                "stepNumber": 2,
-                "explanation": "右辺にある「4つの直角三角形の面積」のパーツ（4 × 1/2 ab）を計算してスッキリさせよう。",
-                "formula": "a^2 + 2ab + b^2 = 2ab + c^2",
-                "choices": [
-                    "a^2 + 2ab + b^2 = 4ab + c^2",
-                    "a^2 + 2ab + b^2 = 2ab + c^2",
-                    "a^2 + 2ab + b^2 = ab + c^2",
-                    "a^2 + 2ab + b^2 = 2ab - c^2"
-                ],
-                "correctIndex": 1
-            },
-            {
-                "stepNumber": 3,
-                "explanation": "両辺に共通して存在する 2ab を引いて（消去して）、数式を完成させよう！",
-                "formula": "a^2 + b^2 = c^2",
-                "choices": [
-                    "a^2 - b^2 = c^2",
-                    "a^2 + b^2 = 2c^2",
-                    "a^2 + b^2 = c^2",
-                    "a^2 + 2ab + b^2 = c^2"
-                ],
-                "correctIndex": 2
-            }
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "掛け算の省略記法に直して、文字式として整理します。",
+        "formula": "ab+ac",
+        "choices": [
+          "a+b+c",
+          "ab+ac",
+          "abc",
+          "ab+c"
         ],
-        "directory": "三平方の定理"
-    },
-    {
-        "id": "root_multiply",
-        "title": "ルートのかけ算の性質の証明",
-        "initialFormula": "\\sqrt{a}\\sqrt{b} = \\sqrt{ab} \\quad (a>0, b>0)",
-        "steps": [
-            {
-                "stepNumber": 1,
-                "explanation": "左辺の \\sqrt{a}\\sqrt{b} を2乗して、指数法則を使ってバラバラにしてみよう。",
-                "formula": "(\\sqrt{a}\\sqrt{b})^2 = (\\sqrt{a})^2(\\sqrt{b})^2",
-                "choices": [
-                    "(\\sqrt{a}\\sqrt{b})^2 = (\\sqrt{a})^2(\\sqrt{b})^2",
-                    "(\\sqrt{a}\\sqrt{b})^2 = \\sqrt{a^2}\\sqrt{b^2}",
-                    "(\\sqrt{a}\\sqrt{b})^2 = ab",
-                    "(\\sqrt{a}\\sqrt{b})^2 = 2\\sqrt{a}\\sqrt{b}"
-                ],
-                "correctIndex": 0
-            },
-            {
-                "stepNumber": 2,
-                "explanation": "ルートの定義「2乗すると中身の数になる」を使って、それぞれのルートを外してみよう。",
-                "formula": "(\\sqrt{a}\\sqrt{b})^2 = ab",
-                "choices": [
-                    "(\\sqrt{a}\\sqrt{b})^2 = a^2b^2",
-                    "(\\sqrt{a}\\sqrt{b})^2 = \\sqrt{ab}",
-                    "(\\sqrt{a}\\sqrt{b})^2 = ab",
-                    "(\\sqrt{a}\\sqrt{b})^2 = a+b"
-                ],
-                "correctIndex": 2
-            },
-            {
-                "stepNumber": 3,
-                "explanation": "\\sqrt{a}>0, \\sqrt{b}>0 より、かける前の数も正 (\\sqrt{a}\\sqrt{b}>0) だね。「2乗して ab になる正の数」をルートの記号で表すとどうなるかな？",
-                "formula": "\\sqrt{a}\\sqrt{b} = \\sqrt{ab}",
-                "choices": [
-                    "\\sqrt{a}\\sqrt{b} = ab",
-                    "\\sqrt{a}\\sqrt{b} = \\sqrt{ab}",
-                    "\\sqrt{a}\\sqrt{b} = \\pm\\sqrt{ab}",
-                    "\\sqrt{a}\\sqrt{b} = (ab)^2"
-                ],
-                "correctIndex": 1
-            }
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "共通因数 $a$ でくくれる形であることも確認します。",
+        "formula": "ab+ac=a(b+c)",
+        "choices": [
+          "ab+ac=(a+b)c",
+          "ab+ac=a+bc",
+          "ab+ac=a(b+c)",
+          "ab+ac=abc"
         ],
-        "directory": "平方根"
-    },
-    {
-        "id": "root_divide",
-        "title": "ルートのわり算の性質の証明",
-        "initialFormula": "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}} \\quad (a>0, b>0)",
-        "steps": [
-            {
-                "stepNumber": 1,
-                "explanation": "左辺の分数全体を2乗して、分子と分母のそれぞれを2乗する形に変形してみよう。",
-                "formula": "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{(\\sqrt{a})^2}{(\\sqrt{b})^2}",
-                "choices": [
-                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{a}{b}",
-                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{(\\sqrt{a})^2}{(\\sqrt{b})^2}",
-                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\sqrt{\\frac{a^2}{b^2}}",
-                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{\\sqrt{a^2}}{\\sqrt{b^2}}"
-                ],
-                "correctIndex": 1
-            },
-            {
-                "stepNumber": 2,
-                "explanation": "分子と分母、それぞれのルートを2乗の定義を使って外してスッキリさせよう。",
-                "formula": "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{a}{b}",
-                "choices": [
-                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{a^2}{b^2}",
-                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\sqrt{\\frac{a}{b}}",
-                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = ab",
-                    "\\left(\\frac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\frac{a}{b}"
-                ],
-                "correctIndex": 3
-            },
-            {
-                "stepNumber": 3,
-                "explanation": "元の分数も正の数 (\\frac{\\sqrt{a}}{\\sqrt{b}}>0) だね。「2乗して a/b になる正の数」を平方根の定義通りに表して、証明を完成させよう！",
-                "formula": "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}}",
-                "choices": [
-                    "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}}",
-                    "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\frac{a}{b}",
-                    "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\pm\\sqrt{\\frac{a}{b}}",
-                    "\\frac{\\sqrt{a}}{\\sqrt{b}} = \\frac{a^2}{b^2}"
-                ],
-                "correctIndex": 0
-            }
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_binomial_square_plus",
+    "title": "乗法公式 (a+b)^2 の導出",
+    "directory": "文字式と展開",
+    "initialFormula": "(a+b)^2",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "2乗を同じ式の積に直します。",
+        "formula": "(a+b)(a+b)",
+        "choices": [
+          "(a+b)(a+b)",
+          "a^2+b^2",
+          "2(a+b)",
+          "(a-b)(a+b)"
         ],
-        "directory": "平方根"
-    },
-    {
-        "id": "root_simplify",
-        "title": "ルートの簡略化 (k√a) の証明",
-        "initialFormula": "\\sqrt{k^2a} = k\\sqrt{a} \\quad (a>0, k>0)",
-        "steps": [
-            {
-                "stepNumber": 1,
-                "explanation": "右辺の k\\sqrt{a} を丸ごと2乗して、k と \\sqrt{a} のそれぞれに2乗を振り分けてみよう。",
-                "formula": "(k\\sqrt{a})^2 = k^2(\\sqrt{a})^2",
-                "choices": [
-                    "(k\\sqrt{a})^2 = k^2a^2",
-                    "(k\\sqrt{a})^2 = k^2(\\sqrt{a})^2",
-                    "(k\\sqrt{a})^2 = \\sqrt{k^2a}",
-                    "(k\\sqrt{a})^2 = k(\\sqrt{a})^2"
-                ],
-                "correctIndex": 1
-            },
-            {
-                "stepNumber": 2,
-                "explanation": "(\\sqrt{a})^2 のルートを外して、掛け算の形にまとめよう。",
-                "formula": "(k\\sqrt{a})^2 = k^2a",
-                "choices": [
-                    "(k\\sqrt{a})^2 = ka",
-                    "(k\\sqrt{a})^2 = k^2a^2",
-                    "(k\\sqrt{a})^2 = k^2a",
-                    "(k\\sqrt{a})^2 = \\sqrt{k^2a}"
-                ],
-                "correctIndex": 2
-            },
-            {
-                "stepNumber": 3,
-                "explanation": "k>0, \\sqrt{a}>0 だから 2乗する前の数も正 (k\\sqrt{a}>0) だね。「2乗して k^2a になる正の数」は元の形（左辺）に戻すとどうなるかな？",
-                "formula": "k\\sqrt{a} = \\sqrt{k^2a}",
-                "choices": [
-                    "k\\sqrt{a} = k^2a",
-                    "k\\sqrt{a} = \\sqrt{ka}",
-                    "k\\sqrt{a} = \\pm\\sqrt{k^2a}",
-                    "k\\sqrt{a} = \\sqrt{k^2a}"
-                ],
-                "correctIndex": 3
-            }
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "分配法則で4つの積に展開します。",
+        "formula": "a^2+ab+ba+b^2",
+        "choices": [
+          "a^2+ab+b^2",
+          "a^2+ab+ba+b^2",
+          "a^2-ba+b^2",
+          "2a+2b"
         ],
-        "directory": "平方根"
-    }
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "$ab=ba$ を使って同類項をまとめます。",
+        "formula": "a^2+2ab+b^2",
+        "choices": [
+          "a^2+ab+b^2",
+          "a^2-2ab+b^2",
+          "a^2+2ab+b^2",
+          "2a^2+2b^2"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_binomial_square_minus",
+    "title": "乗法公式 (a-b)^2 の導出",
+    "directory": "文字式と展開",
+    "initialFormula": "(a-b)^2",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "2乗を積の形に戻します。",
+        "formula": "(a-b)(a-b)",
+        "choices": [
+          "(a-b)(a-b)",
+          "(a+b)(a-b)",
+          "a^2-b^2",
+          "2(a-b)"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "各項を分配して符号を丁寧に追います。",
+        "formula": "a^2-ab-ba+b^2",
+        "choices": [
+          "a^2+ab+ba+b^2",
+          "a^2-ab-ba+b^2",
+          "a^2-ab+b^2",
+          "a^2-b^2"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "中央の2項をまとめて公式の形にします。",
+        "formula": "a^2-2ab+b^2",
+        "choices": [
+          "a^2+2ab+b^2",
+          "a^2-b^2",
+          "a^2-2ab+b^2",
+          "a^2-ab+b^2"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_difference_squares",
+    "title": "差の平方公式 a^2-b^2 の導出",
+    "directory": "文字式と展開",
+    "initialFormula": "(a+b)(a-b)",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "分配法則で前の括弧の $a$ を後ろへ掛けます。",
+        "formula": "a(a-b)+b(a-b)",
+        "choices": [
+          "a(a-b)+b(a-b)",
+          "a(a+b)+b(a-b)",
+          "a(a-b)-b(a-b)",
+          "(a-b)^2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "それぞれの積を展開します。",
+        "formula": "a^2-ab+ab-b^2",
+        "choices": [
+          "a^2+ab+ab+b^2",
+          "a^2-ab+ab-b^2",
+          "a^2-ab-b^2",
+          "a^2+b^2"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "$-ab$ と $+ab$ が打ち消し合うので、差の平方公式になります。",
+        "formula": "(a+b)(a-b)=a^2-b^2",
+        "choices": [
+          "(a+b)(a-b)=a^2+b^2",
+          "(a+b)(a-b)=a^2-2ab+b^2",
+          "(a+b)(a-b)=a^2-b^2",
+          "(a+b)(a-b)=2a-2b"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_factor_common",
+    "title": "共通因数でくくる因数分解",
+    "directory": "因数分解",
+    "initialFormula": "6x+9",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "2つの項に共通する最大の数を見つけます。",
+        "formula": "6x+9=3(2x)+3(3)",
+        "choices": [
+          "6x+9=3(2x)+3(3)",
+          "6x+9=2(3x)+9",
+          "6x+9=9(x+1)",
+          "6x+9=15x"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "共通する $3$ を括弧の外へ出します。",
+        "formula": "6x+9=3(2x+3)",
+        "choices": [
+          "6x+9=3(2x+9)",
+          "6x+9=3(2x+3)",
+          "6x+9=6(x+3)",
+          "6x+9=(3x+2)"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "展開して元に戻ることを確認します。",
+        "formula": "3(2x+3)=6x+9",
+        "choices": [
+          "3(2x+3)=6x+3",
+          "3(2x+3)=2x+9",
+          "3(2x+3)=6x+9",
+          "3(2x+3)=9x"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_factor_quadratic",
+    "title": "二次式 x^2+5x+6 の因数分解",
+    "directory": "因数分解",
+    "initialFormula": "x^2+5x+6",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "積が $6$、和が $5$ になる2数を探します。",
+        "formula": "2+3=5,\\quad 2\times3=6",
+        "choices": [
+          "2+3=5,\\quad 2\times3=6",
+          "1+6=7,\\quad 1\times6=6",
+          "-2-3=-5",
+          "2+4=6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "中央の項を $2x+3x$ に分けます。",
+        "formula": "x^2+2x+3x+6",
+        "choices": [
+          "x^2+x+6x+6",
+          "x^2+2x+3x+6",
+          "x^2+2x+2x+6",
+          "x^2-2x-3x+6"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "組ごとにくくって共通の括弧を作ります。",
+        "formula": "x^2+5x+6=(x+2)(x+3)",
+        "choices": [
+          "x^2+5x+6=(x+1)(x+6)",
+          "x^2+5x+6=(x-2)(x-3)",
+          "x^2+5x+6=(x+2)(x+3)",
+          "x^2+5x+6=(x+2)(x-3)"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_linear_equation",
+    "title": "一次方程式 3x+5=20 の解法",
+    "directory": "方程式",
+    "initialFormula": "3x+5=20",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "両辺から5を引いて、$x$ を含む項だけを左辺に残します。",
+        "formula": "3x=15",
+        "choices": [
+          "3x=15",
+          "3x=25",
+          "3x+5=15",
+          "x=15"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "両辺を3で割って $x$ を求めます。",
+        "formula": "x=5",
+        "choices": [
+          "x=3",
+          "x=5",
+          "x=15",
+          "x=45"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "元の式へ代入して成立を確認します。",
+        "formula": "3\times5+5=20",
+        "choices": [
+          "3\times5=20",
+          "3\times20+5=5",
+          "3\times5+5=20",
+          "5+5=20"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_simultaneous_elimination",
+    "title": "連立方程式の加減法",
+    "directory": "方程式",
+    "initialFormula": "\begin{cases}x+y=7\\x-y=1\\end{cases}",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "2つの式を足すと $y$ が消去されます。",
+        "formula": "2x=8",
+        "choices": [
+          "2x=8",
+          "2y=8",
+          "x=8",
+          "2x=6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "両辺を2で割って $x$ を求めます。",
+        "formula": "x=4",
+        "choices": [
+          "x=2",
+          "x=4",
+          "x=8",
+          "x=3"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "$x+y=7$ に代入して $y$ を求めます。",
+        "formula": "y=3",
+        "choices": [
+          "y=4",
+          "y=7",
+          "y=3",
+          "y=-3"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_quadratic_factor_solve",
+    "title": "因数分解による二次方程式",
+    "directory": "二次方程式",
+    "initialFormula": "x^2-5x+6=0",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "左辺を因数分解します。",
+        "formula": "(x-2)(x-3)=0",
+        "choices": [
+          "(x-2)(x-3)=0",
+          "(x+2)(x+3)=0",
+          "(x-1)(x-6)=0",
+          "(x-2)(x+3)=0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "積が0なら、少なくとも一方の因数が0です。",
+        "formula": "x-2=0\\ \text{または}\\ x-3=0",
+        "choices": [
+          "x-2=1\\ \text{または}\\ x-3=1",
+          "x-2=0\\ \text{または}\\ x-3=0",
+          "x+2=0\\ \text{または}\\ x+3=0",
+          "x-5=0"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "それぞれを解いて解をまとめます。",
+        "formula": "x=2,\\ 3",
+        "choices": [
+          "x=-2,\\ -3",
+          "x=1,\\ 6",
+          "x=2,\\ 3",
+          "x=5,\\ 6"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_quad_formula",
+    "title": "二次方程式の解の公式",
+    "directory": "二次方程式",
+    "initialFormula": "ax^2+bx+c=0\\quad(a\neq0)",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "両辺を $a$ で割り、定数項を右辺へ移します。",
+        "formula": "x^2+\frac{b}{a}x=-\frac{c}{a}",
+        "choices": [
+          "x^2+\frac{b}{a}x=-\frac{c}{a}",
+          "x^2+bx=-c",
+          "ax^2+bx=-c",
+          "x^2+\frac{c}{a}x=-\frac{b}{a}"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "平方完成のため、両辺に $\\left(\frac{b}{2a}\right)^2$ を加えます。",
+        "formula": "\\left(x+\frac{b}{2a}\right)^2=\frac{b^2-4ac}{4a^2}",
+        "choices": [
+          "\\left(x+\frac{b}{a}\right)^2=\frac{b^2-4ac}{a^2}",
+          "\\left(x+\frac{b}{2a}\right)^2=\frac{b^2-4ac}{4a^2}",
+          "\\left(x-\frac{b}{2a}\right)^2=\frac{b^2+4ac}{4a^2}",
+          "x^2=\frac{b^2-4ac}{4a^2}"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "平方根を取り、$x$ について解きます。",
+        "formula": "x=\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+        "choices": [
+          "x=\frac{b\\pm\\sqrt{b^2-4ac}}{2a}",
+          "x=\frac{-b\\pm\\sqrt{b^2+4ac}}{2a}",
+          "x=\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+          "x=\frac{-b\\pm\\sqrt{b^2-4ac}}{a}"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_pythagoras_area",
+    "title": "三平方の定理の導出（面積法）",
+    "directory": "図形",
+    "initialFormula": "(a+b)^2=4\\cdot\frac{1}{2}ab+c^2",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "大きな正方形の左辺を展開します。",
+        "formula": "a^2+2ab+b^2=2ab+c^2",
+        "choices": [
+          "a^2+2ab+b^2=2ab+c^2",
+          "a^2+b^2=2ab+c^2",
+          "a^2+ab+b^2=2ab+c^2",
+          "a^2+2ab+b^2=ab+c^2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "両辺から $2ab$ を引いて共通部分を消します。",
+        "formula": "a^2+b^2=c^2",
+        "choices": [
+          "a^2-b^2=c^2",
+          "a^2+b^2=c^2",
+          "a^2+b^2=2c^2",
+          "a+b=c"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "直角三角形の斜辺を $c$ とすると三平方の定理が得られます。",
+        "formula": "c^2=a^2+b^2",
+        "choices": [
+          "c=a+b",
+          "c^2=a^2-b^2",
+          "c^2=a^2+b^2",
+          "a^2=b^2+c^2"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_circle_area",
+    "title": "円の面積公式の直感的導出",
+    "directory": "図形",
+    "initialFormula": "\text{円を細かい扇形に分けて並べる}",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "細かい扇形を交互に並べると、平行四辺形に近い形になります。",
+        "formula": "\text{底辺}\u0007pprox \\pi r",
+        "choices": [
+          "\text{底辺}\u0007pprox \\pi r",
+          "\text{底辺}\u0007pprox 2\\pi r",
+          "\text{底辺}\u0007pprox r",
+          "\text{底辺}\u0007pprox \\pi r^2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "高さは円の半径に対応します。",
+        "formula": "\text{高さ}=r",
+        "choices": [
+          "\text{高さ}=2r",
+          "\text{高さ}=r",
+          "\text{高さ}=\\pi r",
+          "\text{高さ}=r^2"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "平行四辺形の面積として、底辺×高さを計算します。",
+        "formula": "S=\\pi r\times r=\\pi r^2",
+        "choices": [
+          "S=2\\pi r^2",
+          "S=\\pi r",
+          "S=\\pi r\times r=\\pi r^2",
+          "S=\frac{1}{2}\\pi r^2"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_cone_volume",
+    "title": "円錐の体積公式",
+    "directory": "図形",
+    "initialFormula": "\text{同じ底面と高さの円柱と円錐}",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "同じ底面積 $S$、高さ $h$ の円柱の体積を確認します。",
+        "formula": "V_{\text{cylinder}}=Sh",
+        "choices": [
+          "V_{\text{cylinder}}=Sh",
+          "V_{\text{cylinder}}=\frac{1}{3}Sh",
+          "V_{\text{cylinder}}=S+h",
+          "V_{\text{cylinder}}=\\pi h"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "円錐は同じ底面・高さの円柱の3分の1です。",
+        "formula": "V_{\text{cone}}=\frac{1}{3}Sh",
+        "choices": [
+          "V_{\text{cone}}=3Sh",
+          "V_{\text{cone}}=\frac{1}{3}Sh",
+          "V_{\text{cone}}=\frac{1}{2}Sh",
+          "V_{\text{cone}}=Sh"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "底面が半径 $r$ の円なら $S=\\pi r^2$ を代入します。",
+        "formula": "V=\frac{1}{3}\\pi r^2h",
+        "choices": [
+          "V=\\pi r^2h",
+          "V=\frac{1}{2}\\pi r^2h",
+          "V=\frac{1}{3}\\pi r^2h",
+          "V=\frac{1}{3}\\pi rh^2"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_slope_intercept",
+    "title": "一次関数 y=ax+b の傾き",
+    "directory": "関数",
+    "initialFormula": "y=ax+b",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "$x$ が1増えたときの $y$ の増加量を調べます。",
+        "formula": "\\Delta y=a(x+1)+b-(ax+b)",
+        "choices": [
+          "\\Delta y=a(x+1)+b-(ax+b)",
+          "\\Delta y=a(x+1)-b",
+          "\\Delta y=ax+b",
+          "\\Delta y=x+a"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "式を整理すると、増加量は $a$ だけになります。",
+        "formula": "\\Delta y=a",
+        "choices": [
+          "\\Delta y=b",
+          "\\Delta y=a",
+          "\\Delta y=a+b",
+          "\\Delta y=x"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "よって $a$ はグラフの傾きを表します。",
+        "formula": "\text{傾き}=a",
+        "choices": [
+          "\text{傾き}=b",
+          "\text{傾き}=a+b",
+          "\text{傾き}=a",
+          "\text{傾き}=\frac{b}{a}"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_inverse_variation",
+    "title": "反比例 y=a/x の性質",
+    "directory": "関数",
+    "initialFormula": "y=\frac{a}{x}",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "両辺に $x$ を掛けて積の形にします。",
+        "formula": "xy=a",
+        "choices": [
+          "xy=a",
+          "x+y=a",
+          "\frac{x}{y}=a",
+          "y=ax"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "$x$ と $y$ の積が一定であることを読み取ります。",
+        "formula": "xy=\text{一定}",
+        "choices": [
+          "x+y=\text{一定}",
+          "xy=\text{一定}",
+          "x-y=\text{一定}",
+          "\frac{y}{x}=\text{一定}"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "したがって一方が2倍になると他方は半分になります。",
+        "formula": "x\to2x\\Rightarrow y\to\frac{y}{2}",
+        "choices": [
+          "x\to2x\\Rightarrow y\to2y",
+          "x\to2x\\Rightarrow y\to y+2",
+          "x\to2x\\Rightarrow y\to\frac{y}{2}",
+          "x\to2x\\Rightarrow y\to y^2"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_probability_addition",
+    "title": "確率の加法定理（排反）",
+    "directory": "確率・統計",
+    "initialFormula": "A\\cap B=\u000barnothing",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "排反事象では、同時に起こる部分がありません。",
+        "formula": "P(A\\cap B)=0",
+        "choices": [
+          "P(A\\cap B)=0",
+          "P(A\\cap B)=1",
+          "P(A\\cap B)=P(A)P(B)",
+          "P(A\\cap B)=P(A)+P(B)"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "和事象の確率から重なりを引く一般式を使います。",
+        "formula": "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)",
+        "choices": [
+          "P(A\\cup B)=P(A)P(B)",
+          "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)",
+          "P(A\\cup B)=P(A)-P(B)",
+          "P(A\\cup B)=P(A\\cap B)"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "重なりが0なので、足し算だけで求められます。",
+        "formula": "P(A\\cup B)=P(A)+P(B)",
+        "choices": [
+          "P(A\\cup B)=P(A)P(B)",
+          "P(A\\cup B)=P(A)-P(B)",
+          "P(A\\cup B)=P(A)+P(B)",
+          "P(A\\cup B)=1-P(A)"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "jh_mean_formula",
+    "title": "平均値の公式",
+    "directory": "確率・統計",
+    "initialFormula": "x_1,x_2,\\ldots,x_n",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "explanation": "すべてのデータを足し合わせます。",
+        "formula": "x_1+x_2+\\cdots+x_n",
+        "choices": [
+          "x_1+x_2+\\cdots+x_n",
+          "x_1x_2\\cdots x_n",
+          "x_n-x_1",
+          "n(x_1+x_n)"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "stepNumber": 2,
+        "explanation": "データの個数は $n$ 個です。",
+        "formula": "\text{個数}=n",
+        "choices": [
+          "\text{個数}=x_n",
+          "\text{個数}=n",
+          "\text{個数}=n+1",
+          "\text{個数}=2n"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "stepNumber": 3,
+        "explanation": "合計を個数で割ると平均値になります。",
+        "formula": "\bar{x}=\frac{x_1+x_2+\\cdots+x_n}{n}",
+        "choices": [
+          "\bar{x}=x_1+x_2+\\cdots+x_n",
+          "\bar{x}=\frac{x_1+x_n}{2n}",
+          "\bar{x}=\frac{x_1+x_2+\\cdots+x_n}{n}",
+          "\bar{x}=n(x_1+x_2+\\cdots+x_n)"
+        ],
+        "correctIndex": 2
+      }
+    ]
+  }
 ]
