@@ -52,6 +52,7 @@
       {
         "stepNumber": 1,
         "explanation": "和を逆順にした式と並べ、各列の和を見ます。",
+        "diagramSVG": "<svg viewBox=\"0 0 360 170\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"sumRow\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#fff1f7\"/><stop offset=\"100%\" stop-color=\"#f3edff\"/></linearGradient><filter id=\"softShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"5\" stdDeviation=\"5\" flood-color=\"#7c3aed\" flood-opacity=\"0.12\"/></filter></defs><rect x=\"10\" y=\"8\" width=\"340\" height=\"154\" rx=\"18\" fill=\"#ffffff\" stroke=\"#eadcfb\"/><text x=\"28\" y=\"44\" font-family=\"-apple-system, BlinkMacSystemFont, sans-serif\" font-size=\"15\" font-weight=\"700\" fill=\"#7c3aed\">S_n</text><text x=\"28\" y=\"104\" font-family=\"-apple-system, BlinkMacSystemFont, sans-serif\" font-size=\"15\" font-weight=\"700\" fill=\"#7c3aed\">S_n</text><g filter=\"url(#softShadow)\"><rect x=\"74\" y=\"24\" width=\"54\" height=\"38\" rx=\"10\" fill=\"url(#sumRow)\" stroke=\"#e9c5ff\"/><rect x=\"134\" y=\"24\" width=\"54\" height=\"38\" rx=\"10\" fill=\"url(#sumRow)\" stroke=\"#e9c5ff\"/><rect x=\"194\" y=\"24\" width=\"54\" height=\"38\" rx=\"10\" fill=\"url(#sumRow)\" stroke=\"#e9c5ff\"/><rect x=\"254\" y=\"24\" width=\"54\" height=\"38\" rx=\"10\" fill=\"url(#sumRow)\" stroke=\"#e9c5ff\"/><rect x=\"74\" y=\"84\" width=\"54\" height=\"38\" rx=\"10\" fill=\"url(#sumRow)\" stroke=\"#e9c5ff\"/><rect x=\"134\" y=\"84\" width=\"54\" height=\"38\" rx=\"10\" fill=\"url(#sumRow)\" stroke=\"#e9c5ff\"/><rect x=\"194\" y=\"84\" width=\"54\" height=\"38\" rx=\"10\" fill=\"url(#sumRow)\" stroke=\"#e9c5ff\"/><rect x=\"254\" y=\"84\" width=\"54\" height=\"38\" rx=\"10\" fill=\"url(#sumRow)\" stroke=\"#e9c5ff\"/></g><text x=\"101\" y=\"48\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"16\" fill=\"#231f20\">a₁</text><text x=\"161\" y=\"48\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"16\" fill=\"#231f20\">a₂</text><text x=\"221\" y=\"48\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"16\" fill=\"#231f20\">...</text><text x=\"281\" y=\"48\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"16\" fill=\"#231f20\">aₙ</text><text x=\"101\" y=\"108\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"16\" fill=\"#231f20\">aₙ</text><text x=\"161\" y=\"108\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"16\" fill=\"#231f20\">...</text><text x=\"221\" y=\"108\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"16\" fill=\"#231f20\">a₂</text><text x=\"281\" y=\"108\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"16\" fill=\"#231f20\">a₁</text><path d=\"M101 66 L101 80\" stroke=\"#ec4899\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M281 66 L281 80\" stroke=\"#ec4899\" stroke-width=\"3\" stroke-linecap=\"round\"/><text x=\"181\" y=\"147\" text-anchor=\"middle\" font-family=\"-apple-system, BlinkMacSystemFont, sans-serif\" font-size=\"13\" fill=\"#6b7280\">上下の同じ列を足すと、端同士のペアになる</text></svg>",
         "formula": "2S_n=(a_1+a_n)+(a_2+a_{n-1})+\\cdots",
         "choices": [
           "2S_n=(a_1+a_n)+(a_2+a_{n-1})+\\cdots",
@@ -64,9 +65,10 @@
       {
         "stepNumber": 2,
         "explanation": "各ペアの和はすべて $a_1+a_n$ で、ペアは $n$ 個あります。",
+        "diagramSVG": "<svg viewBox=\"0 0 360 170\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"pairCard\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#fdf2f8\"/><stop offset=\"100%\" stop-color=\"#eef2ff\"/></linearGradient></defs><rect x=\"10\" y=\"8\" width=\"340\" height=\"154\" rx=\"18\" fill=\"#ffffff\" stroke=\"#eadcfb\"/><g><rect x=\"32\" y=\"42\" width=\"78\" height=\"54\" rx=\"13\" fill=\"url(#pairCard)\" stroke=\"#e9c5ff\"/><rect x=\"122\" y=\"42\" width=\"78\" height=\"54\" rx=\"13\" fill=\"url(#pairCard)\" stroke=\"#e9c5ff\"/><rect x=\"212\" y=\"42\" width=\"78\" height=\"54\" rx=\"13\" fill=\"url(#pairCard)\" stroke=\"#e9c5ff\"/><text x=\"71\" y=\"72\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"17\" fill=\"#231f20\">a₁ + aₙ</text><text x=\"161\" y=\"72\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"17\" fill=\"#231f20\">a₁ + aₙ</text><text x=\"251\" y=\"72\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"17\" fill=\"#231f20\">a₁ + aₙ</text><text x=\"306\" y=\"72\" text-anchor=\"middle\" font-family=\"Georgia, serif\" font-size=\"20\" fill=\"#7c3aed\">...</text></g><path d=\"M38 116 C70 134, 252 134, 284 116\" fill=\"none\" stroke=\"#ec4899\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M38 116 L47 114 L43 122\" fill=\"none\" stroke=\"#ec4899\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M284 116 L275 114 L279 122\" fill=\"none\" stroke=\"#ec4899\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"161\" y=\"147\" text-anchor=\"middle\" font-family=\"-apple-system, BlinkMacSystemFont, sans-serif\" font-size=\"14\" font-weight=\"700\" fill=\"#7c3aed\">同じ和のペアが n 個</text><text x=\"181\" y=\"31\" text-anchor=\"middle\" font-family=\"-apple-system, BlinkMacSystemFont, sans-serif\" font-size=\"13\" fill=\"#6b7280\">列ごとの和を同じ形にそろえる</text></svg>",
         "formula": "2S_n=n(a_1+a_n)",
         "choices": [
-          "2S_n=\frac{n}{2}(a_1+a_n)",
+          "2S_n=\\frac{n}{2}(a_1+a_n)",
           "2S_n=n(a_1+a_n)",
           "S_n=n(a_1+a_n)",
           "2S_n=a_1+a_n"
@@ -76,12 +78,13 @@
       {
         "stepNumber": 3,
         "explanation": "両辺を2で割ります。",
-        "formula": "S_n=\frac{n(a_1+a_n)}{2}",
+        "diagramDisplayMode": "hidden",
+        "formula": "S_n=\\frac{n(a_1+a_n)}{2}",
         "choices": [
           "S_n=n(a_1+a_n)",
-          "S_n=\frac{a_1+a_n}{2}",
-          "S_n=\frac{n(a_1+a_n)}{2}",
-          "S_n=\frac{n(a_1-a_n)}{2}"
+          "S_n=\\frac{a_1+a_n}{2}",
+          "S_n=\\frac{n(a_1+a_n)}{2}",
+          "S_n=\\frac{n(a_1-a_n)}{2}"
         ],
         "correctIndex": 2
       }

@@ -1,11 +1,16 @@
 import Foundation
 
+enum DiagramDisplayMode: String, Codable, Hashable {
+    case hidden
+}
+
 // 途中式の1ステップ分のデータ
 // 💡 NavigationPathで使えるように、Hashableを追加するよ！
 struct DerivationStep: Codable, Hashable {
     let stepNumber: Int
     let explanation: String
     let diagramSVG: String?
+    let diagramDisplayMode: DiagramDisplayMode?
     let formula: String
     let choices: [String]      // 💡 追加：4択の選択肢の文字列配列
     let correctIndex: Int   // 💡 追加：正解のインデックス（0〜3）

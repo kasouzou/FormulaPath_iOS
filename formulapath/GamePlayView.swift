@@ -37,6 +37,21 @@ final class GamePlayViewModel: ObservableObject {
         }
     }
 
+    var shouldShowCurrentEquation: Bool {
+        !currentEquation.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    // 💡 ステップ側の指定を優先し、図形を隠したい計算フェーズでは明示的に非表示にする
+    var currentDiagramSVG: String? {
+        guard let currentStep else { return nil }
+
+        if currentStep.diagramDisplayMode == .hidden {
+            return nil
+        }
+
+        return currentStep.diagramSVG ?? problem.diagramSVG
+    }
+
     init(problem: MathProblem, dataManager: GameDataManager) {
         self.problem = problem
         self.dataManager = dataManager
@@ -199,40 +214,19 @@ struct GamePlayView: View {
                     .padding(.horizontal, 8)
                     .animation(.default, value: viewModel.showWrongAnswerEffect)
 
-                if let diagramSVG = step.diagramSVG ?? viewModel.problem.diagramSVG {
+                if let diagramSVG = viewModel.currentDiagramSVG {
                     // 💡 図形を使った説明があるステップだけ、JSON内のSVGを透明背景で表示するよ！
                     SVGDiagramView(svg: diagramSVG)
                         .padding(.horizontal, 8)
+                        .transition(.opacity.combined(with: .scale(scale: 0.98)))
                 }
 
-                // メインの数式ボード（ほんのりピンクの枠線でFormulaPathらしさをプラス）
-                // 独自にカプセル化したLaTeXViewに差し替えて、数式レンダラーをいつでも受け入れられるようにしたよ
-                LaTeXView(latex: viewModel.currentEquation)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 180) // ワイヤーフレームの縦長ゾーンを意識
-                    .background(
-                        RoundedRectangle(cornerRadius: 24, style: .continuous)
-                            .fill(Color(uiColor: .systemBackground))
-                            .shadow(color: Color.black.opacity(0.04), radius: 16, y: 8)
-                    )
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 24, style: .continuous)
-                            .stroke(
-                                LinearGradient(
-                                    colors: [
-                                        viewModel.showWrongAnswerEffect ? .red.opacity(0.6) : .pink.opacity(0.2),
-                                        viewModel.showWrongAnswerEffect ? .red.opacity(0.6) : .purple.opacity(0.2)
-                                    ],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                ),
-                                lineWidth: viewModel.showWrongAnswerEffect ? 2 : 1
-                            )
-                    )
-                    .offset(x: viewModel.showWrongAnswerEffect ? -10 : 0)
-                    .animation(.interactiveSpring(response: 0.15, dampingFraction: 0.2), value: viewModel.showWrongAnswerEffect)
+                if viewModel.shouldShowCurrentEquation {
+                    equationBoard
+                }
             }
             .padding(.horizontal, 24)
+            .animation(.easeInOut(duration: 0.2), value: viewModel.currentStepIndex)
 
             Spacer(minLength: 12)
 
@@ -257,6 +251,35 @@ struct GamePlayView: View {
             .controlSize(.large)
         }
         .padding()
+    }
+
+    private var equationBoard: some View {
+        // メインの数式ボード（ほんのりピンクの枠線でFormulaPathらしさをプラス）
+        // 独自にカプセル化したLaTeXViewに差し替えて、数式レンダラーをいつでも受け入れられるようにしたよ
+        LaTeXView(latex: viewModel.currentEquation)
+            .frame(maxWidth: .infinity)
+            .frame(height: viewModel.currentDiagramSVG == nil ? 220 : 160)
+            .background(
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .fill(Color(uiColor: .systemBackground))
+                    .shadow(color: Color.black.opacity(0.04), radius: 16, y: 8)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .stroke(
+                        LinearGradient(
+                            colors: [
+                                viewModel.showWrongAnswerEffect ? .red.opacity(0.6) : .pink.opacity(0.2),
+                                viewModel.showWrongAnswerEffect ? .red.opacity(0.6) : .purple.opacity(0.2)
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ),
+                        lineWidth: viewModel.showWrongAnswerEffect ? 2 : 1
+                    )
+            )
+            .offset(x: viewModel.showWrongAnswerEffect ? -10 : 0)
+            .animation(.interactiveSpring(response: 0.15, dampingFraction: 0.2), value: viewModel.showWrongAnswerEffect)
     }
 
     @ViewBuilder
